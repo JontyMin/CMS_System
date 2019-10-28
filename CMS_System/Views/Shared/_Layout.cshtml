@@ -1,0 +1,274 @@
+﻿@{ 
+	Dal.IndexDal db = new Dal.IndexDal();
+	var list = db.GetCMS_Categories();
+
+
+}
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>云阿拉丁商务 - 您身边的解决方案专家</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link href="~/css/default.css" rel="stylesheet" />
+</head>
+<body>
+	<!-- 网站头部 -->
+	<header class="hd">
+		<div class="hd-top am-hide-sm-down">
+			<div class="cg">
+				<div class="hd-top-left">
+					<a href="#">设为首页</a>
+					<a href="#">收藏</a>
+					<a href="#">RSS订阅</a>
+				</div>
+				<div class="hd-top-right">
+					<a href="register.html">注册</a>
+					<a href="login.html">登录</a>
+				</div>
+			</div>
+		</div>
+		<div class="cg">
+			<div class="hd-search">
+				<div class="hd-search-left">
+					<a href="index.html"><img src="../images/logo.jpg" /></a>
+				</div>
+				<div class="hd-search-right">
+					<div class="hd-search-right-input">
+						<input type="text" name="name" value="" placeholder="搜索" />
+						<button class="font">&#xe634;</button>
+					</div>
+					<div class="hd-search-right-keyword">
+						<a href="#">包装用品</a>
+						<a href="#">母婴</a>
+						<a href="#">教育</a>
+						<a href="#">招聘</a>
+						<a href="#">绿化</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hd-bottom">
+			<div class="cg">
+				<div class="hd-bottom-category">
+					<!-- 需要到这里开通：http://shang.qq.com/v3/widget.html  -->
+					<h1><a href="http://wpa.qq.com/msgrd?v=3&uin=191458000&site=qq&menu=yes" target="_blank" class="am-icon-qq">业务咨询QQ</a></h1>
+				</div>
+				<div class="hd-bottom-nav" id="my-modal">
+					<ul>
+						<li class="on"><a href="/Index/Index">首页</a></li>
+						@foreach (var item in list)
+						{
+							<li><a href="/Index/List?cid=@item.cid">@item.ctitle</a></li>
+						}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	@RenderBody()
+	<!-- 网站公告 -->
+	@*<div class="notice">
+		<div class="cg">
+			<!-- 左边 -->
+			<div class="am-u-sm-12 am-u-md-8">
+				<div class="notice-left">
+					<div class="notice-left-img" id="noticeimg">
+						<a href="#"><img src="../images/demo1.jpg" /></a>
+					</div>
+				</div>
+			</div>
+			<!-- 右边 -->
+			<div class="am-u-sm-12 am-u-md-4">
+				<div class="notice-right">
+					<div class="notice-right-div">
+						<h1 class="comh1">
+							网站公告
+							<em>
+								<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+							</em>
+						</h1>
+
+						<strong><a href="page.html">外卖O2O系统无线云打印支持型号系统无线云打印支持型号</a></strong>
+						<ul>
+							<li><a href="page.html"><span>微信微分销系统怎么提高微商城的市场盈利</span></a></li>
+							<li><a href="page.html"><span>微信分销怎么做可以打造出微分销商城的爆款</span></a></li>
+							<li><a href="page.html"><span>微分销要避免什么问题</span></a></li>
+							<li><a href="page.html"><span>微信运营之中最重要的载体是什么？</span></a></li>
+							<li><a href="page.html"><span>微分销要避免什么问题</span></a></li>
+							<li><a href="page.html"><span>微信运营之中最重要的载体是什么？</span></a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 广告 -->
+	<div class="ads">
+		<div class="cg">
+			<img src="../images/demo3.jpg" />
+		</div>
+	</div>
+
+	<!-- 文章组 -->
+	<div class="index-category">
+		<div class="cg">
+			<div class="am-u-sm-12 am-u-md-4">
+				<div class="index-category-left">
+					<h1 class="comh1">
+						产品中心
+						<em>
+							<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+						</em>
+					</h1>
+					<img src="../images/demo4.jpg" />
+					<ul class="comcategory">
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="am-u-sm-12 am-u-md-4">
+				<div class="index-category-left">
+					<h1 class="comh1">
+						定制服务
+						<em>
+							<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+						</em>
+					</h1>
+					<img src="../images/demo5.jpg" />
+					<ul class="comcategory">
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="am-u-sm-12 am-u-md-4">
+				<div class="index-category-left index-category-right">
+					<h1 class="comh1">
+						成功案例
+						<em>
+							<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+						</em>
+					</h1>
+					<img src="../images/demo5.jpg" />
+					<ul class="comcategory">
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 第三组文章end -->
+		</div>
+	</div>*@
+
+	<!-- 广告 -->
+	<div class="ads">
+		<div class="cg">
+			<img src="../images/demo6.jpg" />
+		</div>
+	</div>
+
+	<!-- 页脚 -->
+	﻿<footer class="footer">
+		<div class="cg">
+			<div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+				<div class="am-u-sm-12 am-u-md-12 am-u-lg-8">
+					<div class="footer-div1 am-hide-md-down">
+						<h1>关于我们</h1>
+						<div class="footer-div1-top">
+							<img src="../images/footer.jpg" />
+							<span><em>长沙市云阿拉丁科技有限公司成立于2019</em></span>
+						</div>
+						<div class="footer-div1-bottom">
+							云阿拉丁科技有限公司创建于2019年10月28日，总部位于时尚之都——长春市。公司致力于帮助传统行业力
+						</div>
+						<em><a href="#">阅读更多>></a></em>
+					</div>
+				</div>
+				<div class="am-u-sm-12 am-u-md-12 am-u-lg-4">
+					<div class="footer-div2 am-hide-md-down">
+						<h1>职位招聘</h1>
+						<ul>
+							<li><a href="#">招聘销售专员销售管理人员</a></li>
+							<li><a href="#">市场销售</a></li>
+							<li><a href="#">营销客服经理</a></li>
+							<li><a href="#">涉外律师</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+				<div class="am-u-sm-12 am-u-md-12 am-u-lg-8">
+					<div class="footer-div3 am-hide-md-down">
+						<h1>联系我们</h1>
+						<ul>
+							<li><i>&#xe617;</i>地址 Add : 长沙市麓谷街道尖山路39号中电软件园21栋</li>
+							<li><i>&#xe601;</i>电话Tel：(86) 0731-8868331</li>
+							<li><i>&#xe602;</i>传真Fax：(86) 0731-8868331</li>
+							<li><i>&#xe691;</i>huaruiedu@@qq.com</li>
+						</ul>
+					</div>
+				</div>
+				<div class="am-u-sm-12 am-u-md-12 am-u-lg-4">
+					<div class="footer-div3 am-hide-md-down">
+						<h1>关注我们</h1>
+						<ul>
+							<li><em>&#xe644;</em><b>新浪微博</b></li>
+							<li><em>&#xe6c9;</em><b>优酷</b></li>
+							<li><em>&#xe66f;</em><b>微信</b></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+				<div class="footer-bottom am-hide-md-down">
+					<div class="footer-bottom-link">
+						<div class="am-u-sm-3 am-u-md-2 am-u-lg-2"><span>友情链接：</span></div>
+						<div class="am-u-sm-9 am-u-md-10 am-u-lg-10">
+							<strong>
+								<a href="#">北京网站建设</a>
+								<a href="#">网站建设</a>
+								<a href="#">网站设计</a>
+								<a href="#">合肥网站建设</a>
+								<a href="#">网站建设</a>
+								<a href="#">网店系统</a>
+								<a href="#">企业网站建设</a>
+								<a href="#">上海网站设计</a>
+								<a href="#">香港服务器</a>
+
+								<a href="#">网站建设</a>
+								<a href="#">网店系统</a>
+								<a href="#">企业网站建设</a>
+								<a href="#">上海网站设计</a>
+								<a href="#">香港服务器</a>
+
+							</strong>
+						</div>
+					</div>
+				</div>
+				<h2>申请友情链接请联系QQ：88888888</h2>
+				<h3>@@2019-2022 版权所有 云阿拉丁商务有限公司.</h3>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

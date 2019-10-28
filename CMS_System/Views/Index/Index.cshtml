@@ -1,0 +1,132 @@
+﻿	<!-- 网站公告 -->
+<div class="notice">
+	<div class="cg">
+		<!-- 左边 -->
+		<div class="am-u-sm-12 am-u-md-8">
+			<div class="notice-left">
+				<div class="notice-left-img" id="noticeimg">
+					<a href="#"><img src="../images/demo1.jpg" /></a>
+				</div>
+			</div>
+		</div>
+		<!-- 右边 -->
+		<div class="am-u-sm-12 am-u-md-4">
+			<div class="notice-right">
+				<div class="notice-right-div">
+					<h1 class="comh1">
+						网站公告
+						<em>
+							<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+						</em>
+					</h1>
+
+					<strong><a href="/Index/Page?aid=@Model[0].aid">@Model[0].title</a></strong>
+					<ul>
+						@{
+							for (int i = 1; i < Model.Count; i++)
+							{
+								<li><a href="/Index/Page?aid=@Model[i].aid"><span>@Model[i].title</span></a></li>
+							}
+						}
+						@*<li><a href="page.html"><span>微信微分销系统怎么提高微商城的市场盈利</span></a></li>
+						<li><a href="page.html"><span>微信分销怎么做可以打造出微分销商城的爆款</span></a></li>
+						<li><a href="page.html"><span>微分销要避免什么问题</span></a></li>
+						<li><a href="page.html"><span>微信运营之中最重要的载体是什么？</span></a></li>
+						<li><a href="page.html"><span>微分销要避免什么问题</span></a></li>
+						<li><a href="page.html"><span>微信运营之中最重要的载体是什么？</span></a></li>*@
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 广告 -->
+<div class="ads">
+	<div class="cg">
+		<img src="../images/demo3.jpg" />
+	</div>
+</div>
+
+<!-- 文章组 -->
+<div class="index-category">
+	<div class="cg">
+		<div class="am-u-sm-12 am-u-md-4">
+			<div class="index-category-left">
+				<h1 class="comh1">
+					产品中心
+					<em>
+						<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+					</em>
+				</h1>
+				<img src="../images/demo4.jpg" />
+				<ul class="comcategory">
+					@{
+						foreach (var item in ViewBag.Center)
+						{
+							<li><a href="/Index/Page?aid=@item.aid"><span>@item.title</span><i>@item.ctime.ToString("yy-MM-dd")</i></a></li>
+						}
+					}
+					@*<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>*@
+				</ul>
+			</div>
+		</div>
+		<div class="am-u-sm-12 am-u-md-4">
+			<div class="index-category-left">
+				<h1 class="comh1">
+					定制服务
+					<em>
+						<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+					</em>
+				</h1>
+				<img src="../images/demo5.jpg" />
+				<ul class="comcategory">
+					@{
+						foreach (var item in ViewBag.service)
+						{
+							<li><a href="/Index/Page?aid=@item.aid"><span>@item.title</span><i>@item.ctime.ToString("yy-MM-dd")</i></a></li>
+						}
+					}
+					@*<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>*@
+				</ul>
+			</div>
+		</div>
+		<div class="am-u-sm-12 am-u-md-4">
+			<div class="index-category-left index-category-right">
+				<h1 class="comh1">
+					成功案例
+					<em>
+						<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+					</em>
+				</h1>
+				<img src="../images/demo5.jpg" />
+				<ul class="comcategory">
+					@{
+						foreach (var item in ViewBag.Case)
+						{
+							<li><a href="/Index/Page?aid=@item.aid"><span>@item.title</span><i>@item.ctime.ToString("yy-MM-dd")</i></a></li>
+						}
+					}
+					@*<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+					<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>*@
+				</ul>
+			</div>
+		</div>
+		<!-- 第三组文章end -->
+	</div>
+</div>
