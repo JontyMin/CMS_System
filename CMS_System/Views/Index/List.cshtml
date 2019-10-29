@@ -59,38 +59,59 @@
 			</div>
 
 			<!-- 分页器 -->
-			<ul class="am-pagination am-pagination-default">
+			@*<ul class="am-pagination am-pagination-default">
 
-				<li class="am-pagination-first ">
-					<a href="#" class="">第一页</a>
-				</li>
-				<li class="am-pagination-prev ">
-					<a href="#" class="">上一页</a>
-				</li>
-				<li class="">
-					<a href="#" class="">1</a>
-				</li>
-				<li class="am-active">
-					<a href="#" class="am-active">2</a>
-				</li>
-				<li class="">
-					<a href="#" class="">3</a>
-				</li>
-				<li class="">
-					<a href="#" class="">4</a>
-				</li>
-				<li class="">
-					<a href="#" class="">5</a>
-				</li>
-				<li class="am-pagination-next ">
-					<a href="#" class="">下一页</a>
-				</li>
+					<li class="am-pagination-first ">
+						<a href="#" class="">第一页</a>
+					</li>
+					<li class="am-pagination-prev ">
+						<a href="#" class="">上一页</a>
+					</li>
+					<li class="">
+						<a href="#" class="">1</a>
+					</li>
+					<li class="am-active">
+						<a href="#" class="am-active">2</a>
+					</li>
+					<li class="">
+						<a href="#" class="">3</a>
+					</li>
+					<li class="">
+						<a href="#" class="">4</a>
+					</li>
+					<li class="">
+						<a href="#" class="">5</a>
+					</li>
+					<li class="am-pagination-next ">
+						<a href="#" class="">下一页</a>
+					</li>
 
-				<li class="am-pagination-last ">
-					<a href="#" class="">最末页</a>
-				</li>
-			</ul>
+					<li class="am-pagination-last ">
+						<a href="#" class="">最末页</a>
+					</li>
+				</ul>*@
+
+			<div id="page"></div>
 
 		</div>
 	</div>
 </div>
+
+@section js{
+<script>
+	$(function () {
+		//alert(1);
+		layui.use('laypage', function () {
+			var laypage = layui.laypage;
+
+			//执行一个laypage实例
+			laypage.render({
+				elem: 'page', //注意，这里的 test1 是 ID，不用加 # 号
+				count: 50 //数据总数，从服务端得到
+			});
+		});
+	});
+	
+</script>
+
+}

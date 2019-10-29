@@ -1,0 +1,89 @@
+﻿@model Model.CMS_User  
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>登陆</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="~/css/default.css" />
+	<script src="~/Script/jquery-3.3.1.js"></script>
+	<script>
+		$(function () {
+			$("#ff").on("submit", function (e) {
+
+				if ($("#uname").val() == null || $("#uname").val() == "") {
+					$(".a").eq(0).text("请输入用户名");
+				} else if ($("#upwd").val() == null || $("#upwd").val() == "") {
+					$(".a").eq(1).text("请输入用户密码");
+				} else {
+
+					//alert(JSON.stringify(ls));
+					$.post("/Index/login", { "uname": $("#uname").val(), "upwd": $("#upwd").val() }, function (d) {
+						if (d.state == true) {
+							window.location.href= "/Index/index";
+						} else {
+							alert(d.message);
+						}
+					});
+				}
+				e.preventDefault();
+			})
+		})
+
+	</script>
+	<style>
+		.a {
+		color:red;
+		}
+	</style>
+</head>
+<body>
+	﻿<header class="hd1">
+		<div class="cg">
+			<div class="hd1-left">
+				<a href="index.html"><img class="am-hide-md-down" src="../images/logo.jpg" /></a>
+				<a href="index.html"><img class="am-show-md-down" src="../images/logo-sm.jpg" /></a>
+			</div>
+			<div class="hd1-right">
+				<a href="/index/login" class="cur">登录</a>
+				<a href="/index/Regiest">注册</a>
+			</div>
+		</div>
+	</header>
+
+
+	<div class="user">
+		<div class="cgs">
+			<div class="am-u-sm-12 am-u-md-7">
+				<form id="ff" action="" method="post">
+					<div class="user-div">
+						<h1>用户登录</h1>
+						<ul>
+							<li><i>&#xe681;</i><input type="text" title="用户名" name="uname" id="uname" value="" placeholder="请输入用户名" /></li>
+							<lable class="a"></lable>
+							<li><i>&#xe680;</i><input type="password" title="用户密码" name="upwd" id="upwd" value="" placeholder="请输入密码" /></li>
+							<lable class="a"></lable>
+						</ul>
+						<span><a href="#">忘记密码</a></span>
+						<button type="submit">登录</button>
+					</div>
+				</form>
+			</div>
+			<div class="am-hide-sm am-u-md-5">
+				<div class="user-right">
+					<a href="/index/Regiest">还没有帐号</a>
+					<button onclick="location.href = '/index/Regiest';">立即注册</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

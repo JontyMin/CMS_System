@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6104F3FF-6DDE-400D-A7D1-90B1FD7E5397}</ProjectGuid>
+    <ProjectGuid>{FA01A639-2901-4D88-A472-563D49649081}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
@@ -56,6 +56,7 @@
     <Compile Include="CMS_Keyword.cs" />
     <Compile Include="CMS_User.cs" />
     <Compile Include="db_CMS.cs" />
+    <Compile Include="LogFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="V_CMS_Article.cs" />
     <Compile Include="V_CMS_Comment.cs" />

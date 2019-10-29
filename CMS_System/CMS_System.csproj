@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\default.css" />
+    <Content Include="css\layui.css" />
     <Content Include="fonts\iconfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\demo1.jpg" />
@@ -114,10 +115,13 @@
     <Content Include="images\index_banner01.jpg" />
     <Content Include="images\logo-sm.jpg" />
     <Content Include="images\logo.jpg" />
+    <Content Include="Script\jquery-3.3.1.js" />
+    <Content Include="Script\layui.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Filter.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -140,6 +144,9 @@
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Views\Index\Page.cshtml" />
     <Content Include="Views\Index\List.cshtml" />
+    <Content Include="Views\Shared\error.cshtml" />
+    <Content Include="Views\Index\Login.cshtml" />
+    <Content Include="Views\Index\Regiest.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,7 +164,7 @@
       <Name>Dal</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{6104f3ff-6dde-400d-a7d1-90b1fd7e5397}</Project>
+      <Project>{fa01a639-2901-4d88-a472-563d49649081}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>

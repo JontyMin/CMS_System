@@ -1,0 +1,56 @@
+﻿
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>注册</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="../css/default.css" />
+</head>
+<body>
+	﻿<header class="hd1">
+		<div class="cg">
+			<div class="hd1-left">
+				<a href="index.html"><img class="am-hide-md-down" src="../images/logo.jpg" /></a>
+				<a href="index.html"><img class="am-show-md-down" src="../images/logo-sm.jpg" /></a>
+			</div>
+			<div class="hd1-right">
+				<a href="/Index/login">登录</a>
+				<a href="/Index/Regiest" class="cur">注册</a>
+			</div>
+		</div>
+	</header>
+
+	<div class="user">
+		<div class="cgs">
+			<div class="am-u-sm-12 am-u-md-7">
+				<div class="user-div">
+					<h1>用户注册</h1>
+					<ul>
+						<li><i>&#xe681;</i><input type="text" name="username" value="" placeholder="请输入用户名" /></li>
+						<li><i>&#xe680;</i><input type="text" name="password" value="" placeholder="请输入密码" /></li>
+						<li><i>&#xe680;</i><input type="text" name="confirm_pwd" value="" placeholder="请输入确认密码" /></li>
+						<li><i>&#xe6ed;</i><input type="text" name="mobile" value="" placeholder="请输入手机号" /></li>
+					</ul>
+					<span><input type="checkbox" name="name" value="" />我已阅读并接受<a href="#">版权说明和隐私保护条款</a></span>
+					<button>注册</button>
+				</div>
+			</div>
+			<div class="am-hide-sm am-u-md-5">
+				<div class="user-right">
+					<a href="/Index/login">已有帐号</a>
+					<button onclick="location.href = '/Index/login';">立即登录</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

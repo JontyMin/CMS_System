@@ -17,6 +17,7 @@ namespace Model
 		public virtual DbSet<CMS_Comment> CMS_Comment { get; set; }
 		public virtual DbSet<CMS_Keyword> CMS_Keyword { get; set; }
 		public virtual DbSet<CMS_User> CMS_User { get; set; }
+		public virtual DbSet<LogFile> LogFile { get; set; }
 		public virtual DbSet<V_CMS_Article> V_CMS_Article { get; set; }
 		public virtual DbSet<V_CMS_Comment> V_CMS_Comment { get; set; }
 
@@ -68,6 +69,18 @@ namespace Model
 
 			modelBuilder.Entity<CMS_User>()
 				.Property(e => e.face)
+				.IsUnicode(false);
+
+			modelBuilder.Entity<LogFile>()
+				.Property(e => e.Logtext)
+				.IsUnicode(false);
+
+			modelBuilder.Entity<LogFile>()
+				.Property(e => e.Logsite)
+				.IsUnicode(false);
+
+			modelBuilder.Entity<LogFile>()
+				.Property(e => e.Errip)
 				.IsUnicode(false);
 
 			modelBuilder.Entity<V_CMS_Article>()

@@ -1,8 +1,23 @@
-﻿@{ 
+﻿@{
 	Dal.IndexDal db = new Dal.IndexDal();
 	var list = db.GetCMS_Categories();
 
 
+}
+
+@helper ExistsSession()
+{
+	if (@Session["uname"] == null)
+	{
+		<a href="/Index/Regiest">注册</a>
+		<a href="/Index/Login">登录</a>
+}
+else
+{
+	 <img src="@Session["src"]"/> @Session["uname"]
+		<a href="/Index/rest">注销</a>
+
+}
 }
 
 <!DOCTYPE html>
@@ -13,8 +28,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<script src="~/Script/jquery-3.3.1.js"></script>
 	<link href="~/css/default.css" rel="stylesheet" />
+	<link href="~/css/layui.css" rel="stylesheet" />
+	<script src="~/Script/layui.js"></script>
+	@RenderSection("js", false)
 </head>
+
 <body>
 	<!-- 网站头部 -->
 	<header class="hd">
@@ -26,15 +46,16 @@
 					<a href="#">RSS订阅</a>
 				</div>
 				<div class="hd-top-right">
-					<a href="register.html">注册</a>
-					<a href="login.html">登录</a>
+					@*<a href="register.html">注册</a>
+					<a href="login.html">登录</a>*@
+					@ExistsSession()
 				</div>
 			</div>
 		</div>
 		<div class="cg">
 			<div class="hd-search">
 				<div class="hd-search-left">
-					<a href="index.html"><img src="../images/logo.jpg" /></a>
+					<a href="/Index/Index"><img src="../images/logo.jpg" /></a>
 				</div>
 				<div class="hd-search-right">
 					<div class="hd-search-right-input">
@@ -72,112 +93,112 @@
 	@RenderBody()
 	<!-- 网站公告 -->
 	@*<div class="notice">
-		<div class="cg">
-			<!-- 左边 -->
-			<div class="am-u-sm-12 am-u-md-8">
-				<div class="notice-left">
-					<div class="notice-left-img" id="noticeimg">
-						<a href="#"><img src="../images/demo1.jpg" /></a>
+			<div class="cg">
+				<!-- 左边 -->
+				<div class="am-u-sm-12 am-u-md-8">
+					<div class="notice-left">
+						<div class="notice-left-img" id="noticeimg">
+							<a href="#"><img src="../images/demo1.jpg" /></a>
+						</div>
+					</div>
+				</div>
+				<!-- 右边 -->
+				<div class="am-u-sm-12 am-u-md-4">
+					<div class="notice-right">
+						<div class="notice-right-div">
+							<h1 class="comh1">
+								网站公告
+								<em>
+									<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+								</em>
+							</h1>
+
+							<strong><a href="page.html">外卖O2O系统无线云打印支持型号系统无线云打印支持型号</a></strong>
+							<ul>
+								<li><a href="page.html"><span>微信微分销系统怎么提高微商城的市场盈利</span></a></li>
+								<li><a href="page.html"><span>微信分销怎么做可以打造出微分销商城的爆款</span></a></li>
+								<li><a href="page.html"><span>微分销要避免什么问题</span></a></li>
+								<li><a href="page.html"><span>微信运营之中最重要的载体是什么？</span></a></li>
+								<li><a href="page.html"><span>微分销要避免什么问题</span></a></li>
+								<li><a href="page.html"><span>微信运营之中最重要的载体是什么？</span></a></li>
+
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-			<!-- 右边 -->
-			<div class="am-u-sm-12 am-u-md-4">
-				<div class="notice-right">
-					<div class="notice-right-div">
+		</div>
+
+		<!-- 广告 -->
+		<div class="ads">
+			<div class="cg">
+				<img src="../images/demo3.jpg" />
+			</div>
+		</div>
+
+		<!-- 文章组 -->
+		<div class="index-category">
+			<div class="cg">
+				<div class="am-u-sm-12 am-u-md-4">
+					<div class="index-category-left">
 						<h1 class="comh1">
-							网站公告
+							产品中心
 							<em>
 								<a href="#"><b>MORE</b><i>&#xe696;</i></a>
 							</em>
 						</h1>
-
-						<strong><a href="page.html">外卖O2O系统无线云打印支持型号系统无线云打印支持型号</a></strong>
-						<ul>
-							<li><a href="page.html"><span>微信微分销系统怎么提高微商城的市场盈利</span></a></li>
-							<li><a href="page.html"><span>微信分销怎么做可以打造出微分销商城的爆款</span></a></li>
-							<li><a href="page.html"><span>微分销要避免什么问题</span></a></li>
-							<li><a href="page.html"><span>微信运营之中最重要的载体是什么？</span></a></li>
-							<li><a href="page.html"><span>微分销要避免什么问题</span></a></li>
-							<li><a href="page.html"><span>微信运营之中最重要的载体是什么？</span></a></li>
-
+						<img src="../images/demo4.jpg" />
+						<ul class="comcategory">
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
 						</ul>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- 广告 -->
-	<div class="ads">
-		<div class="cg">
-			<img src="../images/demo3.jpg" />
-		</div>
-	</div>
-
-	<!-- 文章组 -->
-	<div class="index-category">
-		<div class="cg">
-			<div class="am-u-sm-12 am-u-md-4">
-				<div class="index-category-left">
-					<h1 class="comh1">
-						产品中心
-						<em>
-							<a href="#"><b>MORE</b><i>&#xe696;</i></a>
-						</em>
-					</h1>
-					<img src="../images/demo4.jpg" />
-					<ul class="comcategory">
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-					</ul>
+				<div class="am-u-sm-12 am-u-md-4">
+					<div class="index-category-left">
+						<h1 class="comh1">
+							定制服务
+							<em>
+								<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+							</em>
+						</h1>
+						<img src="../images/demo5.jpg" />
+						<ul class="comcategory">
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						</ul>
+					</div>
 				</div>
-			</div>
-			<div class="am-u-sm-12 am-u-md-4">
-				<div class="index-category-left">
-					<h1 class="comh1">
-						定制服务
-						<em>
-							<a href="#"><b>MORE</b><i>&#xe696;</i></a>
-						</em>
-					</h1>
-					<img src="../images/demo5.jpg" />
-					<ul class="comcategory">
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-					</ul>
+				<div class="am-u-sm-12 am-u-md-4">
+					<div class="index-category-left index-category-right">
+						<h1 class="comh1">
+							成功案例
+							<em>
+								<a href="#"><b>MORE</b><i>&#xe696;</i></a>
+							</em>
+						</h1>
+						<img src="../images/demo5.jpg" />
+						<ul class="comcategory">
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+							<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
+						</ul>
+					</div>
 				</div>
+				<!-- 第三组文章end -->
 			</div>
-			<div class="am-u-sm-12 am-u-md-4">
-				<div class="index-category-left index-category-right">
-					<h1 class="comh1">
-						成功案例
-						<em>
-							<a href="#"><b>MORE</b><i>&#xe696;</i></a>
-						</em>
-					</h1>
-					<img src="../images/demo5.jpg" />
-					<ul class="comcategory">
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-						<li><a href="#"><span>Dreamweaver8创建自定义代码片段的方法</span><i>2016-06-16</i></a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- 第三组文章end -->
-		</div>
-	</div>*@
+		</div>*@
 
 	<!-- 广告 -->
 	<div class="ads">

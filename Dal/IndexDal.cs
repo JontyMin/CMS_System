@@ -36,7 +36,30 @@ namespace Dal
 				.ToList();
 		}
 
+		public bool Login(string uname, string upwd)
+		{
+			try
+			{
+				return db.CMS_User.Any(c => c.uname == uname && c.upwd == upwd);
+			}
+			catch (Exception)
+			{
 
+				throw;
+			}
+			
+		}
+
+		/// <summary>
+		/// 添加错误日志
+		/// </summary>
+		/// <param name="log"></param>
+		/// <returns></returns>
+		public int ErrorLog(LogFile log)
+		{
+			db.LogFile.Add(log);
+			return db.SaveChanges();
+		}
 		/// <summary>
 		/// 资源释放
 		/// </summary>
