@@ -96,6 +96,9 @@
   <ItemGroup>
     <Content Include="css\default.css" />
     <Content Include="css\layui.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\xtiper.css" />
+    <Content Include="css\xui.css" />
     <Content Include="fonts\iconfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\demo1.jpg" />
@@ -110,6 +113,9 @@
     <Content Include="images\demo8.jpg" />
     <Content Include="images\demo9.jpg" />
     <Content Include="images\face.jpg" />
+    <Content Include="images\face2.jpg" />
+    <Content Include="images\face3.jpg" />
+    <Content Include="images\face4.gif" />
     <Content Include="images\footer.jpg" />
     <Content Include="images\index_banner.jpg" />
     <Content Include="images\index_banner01.jpg" />
@@ -117,6 +123,7 @@
     <Content Include="images\logo.jpg" />
     <Content Include="Script\jquery-3.3.1.js" />
     <Content Include="Script\layui.js" />
+    <Content Include="Script\xtiper.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +154,7 @@
     <Content Include="Views\Shared\error.cshtml" />
     <Content Include="Views\Index\Login.cshtml" />
     <Content Include="Views\Index\Regiest.cshtml" />
+    <Content Include="Views\Index\UserInfo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,23 +1,27 @@
-﻿@{
+﻿@using Model
+@{
 	Dal.IndexDal db = new Dal.IndexDal();
 	var list = db.GetCMS_Categories();
-
+	
 
 }
 
 @helper ExistsSession()
 {
-	if (@Session["uname"] == null)
+	if (@Session["user"] == null)
 	{
 		<a href="/Index/Regiest">注册</a>
 		<a href="/Index/Login">登录</a>
-}
-else
-{
-	 <img src="@Session["src"]"/> @Session["uname"]
-		<a href="/Index/rest">注销</a>
+	}
+	else
+	{
+<a title="查看个人资料" href="/Index/UserInfo">
+	<img id="img1" src="../@((Session["user"] as CMS_User).face)" />
+	@((Session["user"]as CMS_User).uname)
+</a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		<a title="退出登录" href="/Index/rest">注销</a>
 
-}
+	}
 }
 
 <!DOCTYPE html>
@@ -33,6 +37,13 @@ else
 	<link href="~/css/layui.css" rel="stylesheet" />
 	<script src="~/Script/layui.js"></script>
 	@RenderSection("js", false)
+	<style>
+		#img1 {
+			width: 30px;
+			height: 30px;
+			border-radius: 20px;
+		}
+	</style>
 </head>
 
 <body>
@@ -47,7 +58,7 @@ else
 				</div>
 				<div class="hd-top-right">
 					@*<a href="register.html">注册</a>
-					<a href="login.html">登录</a>*@
+						<a href="login.html">登录</a>*@
 					@ExistsSession()
 				</div>
 			</div>
@@ -60,7 +71,7 @@ else
 				<div class="hd-search-right">
 					<div class="hd-search-right-input">
 						<input type="text" name="name" value="" placeholder="搜索" />
-						<button class="font">&#xe634;</button>
+						<button class="font" onclick="alert(1)">&#xe634;</button>
 					</div>
 					<div class="hd-search-right-keyword">
 						<a href="#">包装用品</a>

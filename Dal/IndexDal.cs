@@ -36,11 +36,21 @@ namespace Dal
 				.ToList();
 		}
 
-		public bool Login(string uname, string upwd)
+		public CMS_User Login(string uname, string upwd)
 		{
 			try
 			{
-				return db.CMS_User.Any(c => c.uname == uname && c.upwd == upwd);
+				if (db.CMS_User.FirstOrDefault(c => c.uname == uname && c.upwd == upwd)!=null)
+				{
+					return db.CMS_User.FirstOrDefault(c => c.uname == uname && c.upwd == upwd);
+				}
+				else
+				{
+					return null;
+				}
+				  
+
+				
 			}
 			catch (Exception)
 			{
@@ -48,6 +58,13 @@ namespace Dal
 				throw;
 			}
 			
+		}
+
+
+		public int Regiest(CMS_User u)
+		{
+			db.CMS_User.Add(u);
+			return db.SaveChanges();
 		}
 
 		/// <summary>

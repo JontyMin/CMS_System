@@ -12,6 +12,58 @@
 	<meta name="renderer" content="webkit">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 	<link rel="stylesheet" href="../css/default.css" />
+	<link href="~/css/layui.css" rel="stylesheet" />
+	<link href="~/css/style.css" rel="stylesheet" />
+	<link href="~/css/xtiper.css" rel="stylesheet" />
+	<link href="~/css/xui.css" rel="stylesheet" />
+	<script src="~/Script/jquery-3.3.1.js"></script>
+	<script src="~/Script/xtiper.min.js"></script>
+	<script>
+		$(function () {
+			$(":button").eq(0).click(function () {
+				
+				if ($("#uname").val() == null || $("#uname").val() == "") {
+					xtip.msg('请输入用户名');
+				} else if ($("#upwd").val() == null || $("#upwd").val() == "") {
+					xtip.msg('请输入密码');
+				}else if ($("#upwd").val().length<6||$("#ckpwd").val().length<6) {
+					xtip.msg('密码长度小于6位');
+				} else if($("#ckpwd").val() == null || $("#ckpwd").val() == "") {
+					xtip.msg('请输入二次密码');
+				} else if ($("#upwd").val()!=$("#ckpwd").val()) {
+					xtip.msg('密码不一致');
+				} else if ($("#mobile").val() == null || $("#mobile").val() == "") {
+					xtip.msg('请输入电话号码');
+				} else if($("#mobile").val()<6) {
+					xtip.msg('请输入正确电话号码');
+				}else
+				if (!$("input[type='checkbox']").is(':checked')) {
+					xtip.msg('请先勾选协议');
+				} else {
+
+					var ls = {
+						"uname": $("#uname").val(),
+						"upwd": $("#upwd").val(),
+						"mobile": $("#mobile").val()
+
+					};
+					$.post("/Index/Regiest", { "u": ls }, function (d) {
+						loadid = xtip.load();
+						if (d.state == true) {
+							xtip.close(loadid);
+							xtip.msg(d.message);
+							setTimeout(function () { window.location.href = "/Index/index";},1000)	
+						} else {
+							xtip.msg(d.message);
+						}
+					});
+					
+				}
+				
+			})
+
+		})
+	</script>
 </head>
 <body>
 	﻿<header class="hd1">
@@ -32,14 +84,14 @@
 			<div class="am-u-sm-12 am-u-md-7">
 				<div class="user-div">
 					<h1>用户注册</h1>
-					<ul>
-						<li><i>&#xe681;</i><input type="text" name="username" value="" placeholder="请输入用户名" /></li>
-						<li><i>&#xe680;</i><input type="text" name="password" value="" placeholder="请输入密码" /></li>
-						<li><i>&#xe680;</i><input type="text" name="confirm_pwd" value="" placeholder="请输入确认密码" /></li>
-						<li><i>&#xe6ed;</i><input type="text" name="mobile" value="" placeholder="请输入手机号" /></li>
-					</ul>
-					<span><input type="checkbox" name="name" value="" />我已阅读并接受<a href="#">版权说明和隐私保护条款</a></span>
-					<button>注册</button>
+						<ul>
+							<li><i>&#xe681;</i><input type="text" id="uname" name="username" value="" placeholder="请输入用户名" /></li>
+							<li><i>&#xe680;</i><input type="password" id="upwd" name="password" value="" placeholder="请输入密码" /></li>
+							<li><i>&#xe680;</i><input type="password" id="ckpwd" name="confirm_pwd" value="" placeholder="请输入确认密码" /></li>
+							<li><i>&#xe6ed;</i><input type="number" id="mobile" name="mobile" value="" placeholder="请输入手机号" /></li>
+						</ul>
+						<span><input type="checkbox" name="name" value="" />我已阅读并接受<a href="#">版权说明和隐私保护条款</a></span>
+						<button>注册</button>
 				</div>
 			</div>
 			<div class="am-hide-sm am-u-md-5">
