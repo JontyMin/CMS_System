@@ -27,7 +27,7 @@ namespace Dal
 		/// <param name="cid">栏目id</param>
 		/// <param name="top">条数</param>
 		/// <returns></returns>
-		public List<CMS_Article> GetCMS_ArticlesByCidTopN(int cid, int top)
+		public List<CMS_Article> GetCMS_ArticlesByCidTopN(int  cid, int top)
 		{
 
 			return db.CMS_Article.OrderByDescending(c => c.hits)//根据点击率倒序查询
@@ -35,7 +35,14 @@ namespace Dal
 				.Take(top)//提取
 				.ToList();
 		}
+		
 
+		/// <summary>
+		/// 登录
+		/// </summary>
+		/// <param name="uname"></param>
+		/// <param name="upwd"></param>
+		/// <returns></returns>
 		public CMS_User Login(string uname, string upwd)
 		{
 			try
@@ -61,11 +68,54 @@ namespace Dal
 		}
 
 
+		/// <summary>
+		/// 注册
+		/// </summary>
+		/// <param name="u"></param>
+		/// <returns></returns>
 		public int Regiest(CMS_User u)
 		{
-			db.CMS_User.Add(u);
-			return db.SaveChanges();
+			try
+			{
+				db.CMS_User.Add(u);
+				return db.SaveChanges();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+			
 		}
+
+		/// <summary>
+		/// 文章行数
+		/// </summary>
+		/// <param name="cid">栏目id</param>
+		/// <returns></returns>
+		public int GetCount(int ? cid)
+		{
+			return db.CMS_Article.Where(c => c.cid == cid).Count();
+		}
+
+		/// <summary>
+		/// 文章分页
+		/// </summary>
+		/// <param name="cid"></param>
+		/// <param name="page"></param>
+		/// <param name="rows"></param>
+		/// <returns></returns>
+		public List<V_CMS_Article> GetCMS_Articles(int? cid, int page, int rows)
+		{
+			var ls = db.V_CMS_Article.OrderByDescending(c => c.hits)
+				.Where(c=>c.cid==cid&& c.state == 2)
+				.Skip((page - 1) * rows)
+				.Take(rows)
+				.ToList();
+			return ls;
+		}
+
+
 
 		/// <summary>
 		/// 添加错误日志

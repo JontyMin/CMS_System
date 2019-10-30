@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Model;
 using Dal;
 using System.Threading;
+using System.Net;
 
 namespace CMS_System.Controllers
 {
@@ -32,18 +33,43 @@ namespace CMS_System.Controllers
 			Session.Clear();
 			return Redirect("/Index/index");
 		}
-
-		public ActionResult Page(int aid)
+		[HttpGet]
+		public ActionResult Page()
+		{
+			return View();
+		}
+		[HttpGet]
+		public ActionResult Page(int ? aid)
 		{
 			return View();
 		}
 
-		public ActionResult List(int? cid)
+		[HttpGet]
+		public ActionResult List(int ? cid)
 		{
-
-			return View();
+			if (cid == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			else
+			{
+				return View();
+			}
+			
 		}
 
+		[HttpPost]
+		public ActionResult List( int ? cid,int page, int rows)
+		{
+			
+				int total = db.GetCount(cid);
+				var ls = db.GetCMS_Articles(cid, page, rows);
+				Dictionary<string, object> dc = new Dictionary<string, object>();
+				dc.Add("total", total);
+				dc.Add("rows", ls);
+				return Json(dc);
+			
+		}
 		/// <summary>
 		/// 请求登录界面
 		/// </summary>
@@ -93,7 +119,10 @@ namespace CMS_System.Controllers
 			
 		}
 
-
+		/// <summary>
+		/// 注册
+		/// </summary>
+		/// <returns></returns>
 		[HttpGet]
 		public ActionResult Regiest()
 		{
