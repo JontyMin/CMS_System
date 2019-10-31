@@ -34,14 +34,32 @@ namespace CMS_System.Controllers
 			return Redirect("/Index/index");
 		}
 		[HttpGet]
-		public ActionResult Page()
-		{
-			return View();
-		}
-		[HttpGet]
 		public ActionResult Page(int ? aid)
 		{
-			return View();
+			if (aid==null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			else if (aid<1)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+			}
+			else
+			{
+				var Article = db.GetV_CMS_ArticleByAid(aid);
+				return View(Article);
+			}
+			
+		}
+		[HttpPost]
+		public ActionResult Page(int ? aid,int page,int rows)
+		{
+			int total = db.GetCount(null, aid);
+			var Comments = db.GetCMS_Comments(aid,page,rows);
+			Dictionary<string, object> dc = new Dictionary<string, object>();
+			dc.Add("total",total);
+			dc.Add("Comments", Comments);
+			return Json(dc);
 		}
 
 		[HttpGet]
@@ -62,7 +80,7 @@ namespace CMS_System.Controllers
 		public ActionResult List( int ? cid,int page, int rows)
 		{
 			
-				int total = db.GetCount(cid);
+				int total = db.GetCount(cid,null);
 				var ls = db.GetCMS_Articles(cid, page, rows);
 				Dictionary<string, object> dc = new Dictionary<string, object>();
 				dc.Add("total", total);

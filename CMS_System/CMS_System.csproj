@@ -227,6 +227,28 @@
     <Content Include="layui-v2.5.5\layui\lay\modules\upload.js" />
     <Content Include="layui-v2.5.5\layui\lay\modules\util.js" />
     <Content Include="Script\jquery-3.3.1.js" />
+    <Content Include="Script\lang\en\en.js" />
+    <Content Include="Script\lang\en\images\addimage.png" />
+    <Content Include="Script\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="Script\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="Script\lang\en\images\background.png" />
+    <Content Include="Script\lang\en\images\button.png" />
+    <Content Include="Script\lang\en\images\copy.png" />
+    <Content Include="Script\lang\en\images\deletedisable.png" />
+    <Content Include="Script\lang\en\images\deleteenable.png" />
+    <Content Include="Script\lang\en\images\listbackground.png" />
+    <Content Include="Script\lang\en\images\localimage.png" />
+    <Content Include="Script\lang\en\images\music.png" />
+    <Content Include="Script\lang\en\images\rotateleftdisable.png" />
+    <Content Include="Script\lang\en\images\rotateleftenable.png" />
+    <Content Include="Script\lang\en\images\rotaterightdisable.png" />
+    <Content Include="Script\lang\en\images\rotaterightenable.png" />
+    <Content Include="Script\lang\en\images\upload.png" />
+    <Content Include="Script\lang\zh-cn\images\copy.png" />
+    <Content Include="Script\lang\zh-cn\images\localimage.png" />
+    <Content Include="Script\lang\zh-cn\images\music.png" />
+    <Content Include="Script\lang\zh-cn\images\upload.png" />
+    <Content Include="Script\lang\zh-cn\zh-cn.js" />
     <Content Include="Script\layui.js" />
     <Content Include="Script\modules\carousel.js" />
     <Content Include="Script\modules\code.js" />
@@ -248,6 +270,8 @@
     <Content Include="Script\modules\tree.js" />
     <Content Include="Script\modules\upload.js" />
     <Content Include="Script\modules\util.js" />
+    <Content Include="Script\ueditor.all.min.js" />
+    <Content Include="Script\ueditor.config.js" />
     <Content Include="Script\xtiper.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>

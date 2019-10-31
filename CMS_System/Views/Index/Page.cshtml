@@ -14,59 +14,17 @@
 			<div class="comarticle-right info-container">
 				<article class="am-article">
 					<div class="am-article-hd">
-						<h1 class="am-article-title">永远的蝴蝶</h1>
+						<h1 class="am-article-title" id="title"></h1>
 						<p class="am-article-meta">
-							作者：陈启佑（台湾） &nbsp;&nbsp;
-							发布人：admin &nbsp;&nbsp;
-							时间：2010-01-01 &nbsp;&nbsp;
+							作者：<span id="author">@Model.author</span> &nbsp;&nbsp;
+							发布人：<span id="uname">@Model.nname</span> &nbsp;&nbsp;
+							时间：<span id="ptime">@Model.ptime</span> &nbsp;&nbsp;
 						</p>
 					</div>
-					<div class="am-article-bd">
-						<p>
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-						</p>
-						<p>
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-						</p>
-						<p>
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-						</p>
-						<p>
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-						</p>
-						<p>
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-						</p>
-						<p>
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-						</p>
-						<p>
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-						</p>
-						<p>
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-						</p>
-						<p>
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-							永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶永远的蝴蝶
-						</p>
+					<div class="am-article-bd" id="Article">
+						
+							@Model.ahtml
+						
 					</div>
 				</article>
 			</div>
@@ -76,161 +34,135 @@
 		<!-- 评论列表 -->
 		<div class="am-u-sm-12 am-comments-list">
 			<h2 class="am-text-right am-padding-top-lg">
-				评论 <span class="am-badge am-round am-badge-success">56</span>
+				评论 <span class="am-badge am-round am-badge-success" id="total">56</span>
 			</h2>
 			<hr />
-			<article class="am-comment">
-				<!-- 评论容器 -->
-				<a href="">
-					<!-- 评论者头像 -->
-					<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
-				</a>
+			<div id="comments">
 
-				<div class="am-comment-main">
-					<!-- 评论内容容器 -->
-					<header class="am-comment-hd">
-						<!--<h3 class="am-comment-title">评论标题</h3>-->
-						<div class="am-comment-meta">
-							<!-- 评论元数据 -->
-							<a class="am-comment-author">张三</a> <!-- 评论者 -->
-							评论于 <time datetime="">2017-08-09</time>
+
+				<article class="am-comment">
+					<!-- 评论容器 -->
+					<a href="">
+						<!-- 评论者头像 -->
+						<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
+					</a>
+
+					<div class="am-comment-main">
+						<!-- 评论内容容器 -->
+						<header class="am-comment-hd">
+							<!--<h3 class="am-comment-title">评论标题</h3>-->
+							<div class="am-comment-meta">
+								<!-- 评论元数据 -->
+								<a class="am-comment-author">张三</a> <!-- 评论者 -->
+								评论于 <time datetime="">2017-08-09</time>
+							</div>
+						</header>
+						<!-- 评论内容 -->
+						<div class="am-comment-bd">
+							好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 						</div>
-					</header>
-					<!-- 评论内容 -->
-					<div class="am-comment-bd">
-						好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 					</div>
-				</div>
-			</article>
+				</article>
 
-			<article class="am-comment">
-				<!-- 评论容器 -->
-				<a href="">
-					<!-- 评论者头像 -->
-					<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
-				</a>
+				<article class="am-comment">
+					<!-- 评论容器 -->
+					<a href="">
+						<!-- 评论者头像 -->
+						<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
+					</a>
 
-				<div class="am-comment-main">
-					<!-- 评论内容容器 -->
-					<header class="am-comment-hd">
-						<!--<h3 class="am-comment-title">评论标题</h3>-->
-						<div class="am-comment-meta">
-							<!-- 评论元数据 -->
-							<a class="am-comment-author">张三</a> <!-- 评论者 -->
-							评论于 <time datetime="">2017-08-09</time>
+					<div class="am-comment-main">
+						<!-- 评论内容容器 -->
+						<header class="am-comment-hd">
+							<!--<h3 class="am-comment-title">评论标题</h3>-->
+							<div class="am-comment-meta">
+								<!-- 评论元数据 -->
+								<a class="am-comment-author">张三</a> <!-- 评论者 -->
+								评论于 <time datetime="">2017-08-09</time>
+							</div>
+						</header>
+						<!-- 评论内容 -->
+						<div class="am-comment-bd">
+							好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 						</div>
-					</header>
-					<!-- 评论内容 -->
-					<div class="am-comment-bd">
-						好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 					</div>
-				</div>
-			</article>
+				</article>
 
-			<article class="am-comment">
-				<!-- 评论容器 -->
-				<a href="">
-					<!-- 评论者头像 -->
-					<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
-				</a>
+				<article class="am-comment">
+					<!-- 评论容器 -->
+					<a href="">
+						<!-- 评论者头像 -->
+						<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
+					</a>
 
-				<div class="am-comment-main">
-					<!-- 评论内容容器 -->
-					<header class="am-comment-hd">
-						<!--<h3 class="am-comment-title">评论标题</h3>-->
-						<div class="am-comment-meta">
-							<!-- 评论元数据 -->
-							<a class="am-comment-author">张三</a> <!-- 评论者 -->
-							评论于 <time datetime="">2017-08-09</time>
+					<div class="am-comment-main">
+						<!-- 评论内容容器 -->
+						<header class="am-comment-hd">
+							<!--<h3 class="am-comment-title">评论标题</h3>-->
+							<div class="am-comment-meta">
+								<!-- 评论元数据 -->
+								<a class="am-comment-author">张三</a> <!-- 评论者 -->
+								评论于 <time datetime="">2017-08-09</time>
+							</div>
+						</header>
+						<!-- 评论内容 -->
+						<div class="am-comment-bd">
+							好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 						</div>
-					</header>
-					<!-- 评论内容 -->
-					<div class="am-comment-bd">
-						好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 					</div>
-				</div>
-			</article>
+				</article>
 
-			<article class="am-comment">
-				<!-- 评论容器 -->
-				<a href="">
-					<!-- 评论者头像 -->
-					<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
-				</a>
+				<article class="am-comment">
+					<!-- 评论容器 -->
+					<a href="">
+						<!-- 评论者头像 -->
+						<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
+					</a>
 
-				<div class="am-comment-main">
-					<!-- 评论内容容器 -->
-					<header class="am-comment-hd">
-						<!--<h3 class="am-comment-title">评论标题</h3>-->
-						<div class="am-comment-meta">
-							<!-- 评论元数据 -->
-							<a class="am-comment-author">张三</a> <!-- 评论者 -->
-							评论于 <time datetime="">2017-08-09</time>
+					<div class="am-comment-main">
+						<!-- 评论内容容器 -->
+						<header class="am-comment-hd">
+							<!--<h3 class="am-comment-title">评论标题</h3>-->
+							<div class="am-comment-meta">
+								<!-- 评论元数据 -->
+								<a class="am-comment-author">张三</a> <!-- 评论者 -->
+								评论于 <time datetime="">2017-08-09</time>
+							</div>
+						</header>
+						<!-- 评论内容 -->
+						<div class="am-comment-bd">
+							好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 						</div>
-					</header>
-					<!-- 评论内容 -->
-					<div class="am-comment-bd">
-						好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 					</div>
-				</div>
-			</article>
+				</article>
 
-			<article class="am-comment">
-				<!-- 评论容器 -->
-				<a href="">
-					<!-- 评论者头像 -->
-					<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
-				</a>
+				<article class="am-comment" >
+					<!-- 评论容器 -->
+					<a href="">
+						<!-- 评论者头像 -->
+						<img src="../images/face.jpg" class="am-comment-avatar" alt="" />
+					</a>
 
-				<div class="am-comment-main">
-					<!-- 评论内容容器 -->
-					<header class="am-comment-hd">
-						<!--<h3 class="am-comment-title">评论标题</h3>-->
-						<div class="am-comment-meta">
-							<!-- 评论元数据 -->
-							<a class="am-comment-author">张三</a> <!-- 评论者 -->
-							评论于 <time datetime="">2017-08-09</time>
+					<div class="am-comment-main">
+						<!-- 评论内容容器 -->
+						<header class="am-comment-hd">
+							<!--<h3 class="am-comment-title">评论标题</h3>-->
+							<div class="am-comment-meta">
+								<!-- 评论元数据 -->
+								<a class="am-comment-author">张三</a> <!-- 评论者 -->
+								评论于 <time datetime="">2017-08-09</time>
+							</div>
+						</header>
+						<!-- 评论内容 -->
+						<div class="am-comment-bd">
+							好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 						</div>
-					</header>
-					<!-- 评论内容 -->
-					<div class="am-comment-bd">
-						好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害，好厉害。
 					</div>
-				</div>
-			</article>
+				</article>
+			</div>
 		</div>
-
 		<!-- 评论翻页 -->
-		<ul class="am-pagination am-pagination-default">
-			<li class="am-pagination-first ">
-				<a href="#" class="">第一页</a>
-			</li>
-			<li class="am-pagination-prev ">
-				<a href="#" class="">上一页</a>
-			</li>
-			<li class="">
-				<a href="#" class="">1</a>
-			</li>
-			<li class="am-active">
-				<a href="#" class="am-active">2</a>
-			</li>
-			<li class="">
-				<a href="#" class="">3</a>
-			</li>
-			<li class="">
-				<a href="#" class="">4</a>
-			</li>
-			<li class="">
-				<a href="#" class="">5</a>
-			</li>
-			<li class="am-pagination-next ">
-				<a href="#" class="">下一页</a>
-			</li>
-
-			<li class="am-pagination-last ">
-				<a href="#" class="">最末页</a>
-			</li>
-		</ul>
+		<div id="demo7"></div>
 
 		<!-- 我要说两句 -->
 		<div class="am-u-sm-12 am-comments-list">
@@ -239,15 +171,9 @@
 			</h2>
 			<hr />
 
+
 			<!-- 富编辑器-Begin -->
-			<script src="../ueditor/ueditor.config.js"></script>
-			<script src="../ueditor/ueditor.all.min.js"></script>
-			<script src="../ueditor/lang/zh-cn/zh-cn.js"></script>
-			<script id="editor" type="text/plain" style="width:100%;height:200px;">
-			</script>
-			<script>
-                    var ue = UE.getEditor('editor');
-			</script>
+			<textarea id="demo" style="display: none;"></textarea>
 			<!-- 富编辑器-End -->
 			<p class="am-align-right">
 				<button class="am-btn am-btn-success">提交</button>
@@ -255,3 +181,89 @@
 		</div>
 	</div>
 </div>
+@section js{
+	<script>
+		function Todate(v) {
+			var str = parseFloat(v.substr(6));
+			var t = new Date(str);
+			return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours()+ ":" + t.getMinutes();
+		}
+		$(function () {
+			var pageval = 1;//页码
+			var curr = 1;//跳页
+			GetDate(pageval);
+			function GetDate(pageval) {
+				$.post("/Index/Page", { "aid":@Request.QueryString["aid"], "page": pageval, "rows": 5 }, function (d) {
+					if (d != null) {
+						//评论容器
+						$("#total").text(d.total);//评论条数
+						var comments = $("#comments");
+						$("#comments").empty();
+						$.each(d.Comments, function (k, v) {
+							var d1 = $("<article class='am-comment'></article>");
+							var a1 = $("<a href='#'>").appendTo(d1);
+							$("<img src='../" + v.face + "' class='am-comment-avatar' alt='' />").appendTo(a1);
+							var d2 = $("<div class='am-comment-main'></div>").appendTo(d1);
+							var h1 = $("<header class='am-comment-hd'></header>").appendTo(d2);
+							var d3 = $("<div class='am-comment-meta'></div>").appendTo(h1);
+							$("<a class='am-comment-author'>" + v.nname + "</a>").appendTo(d3);
+							$("<p></p>").text("评论于:" + Todate(v.cmtime)).appendTo(d3);
+							$("<div class='am-comment-bd'></div>").html(v.cmhtml).appendTo(d2);
+							$(comments).append(d1);
+						});
+
+						layui.use(['laypage', 'layer'], function () {
+							var laypage = layui.laypage,
+								layer = layui.layer;
+							//完整功能
+							laypage.render({
+								elem: 'demo7'
+								, count: d.total
+								, curr: curr
+								, layout: ['prev', 'page', 'next', 'skip']
+								, jump: function (obj, first) {
+									//alert(obj.curr)
+									curr = obj.curr;
+									if (!first) {
+										GetDate(obj.curr);
+
+									}
+								}
+							});
+						})
+					}
+
+
+				});
+			}
+			//富文本框
+				layui.use('layedit', function () {
+					var layedit = layui.layedit;
+					var index = layedit.build('demo', {
+						height: 180,
+						hideTool: ['strong', , 'italic'
+							, 'underline'
+							, 'del'
+							, '|'
+							, 'left'
+							, 'center'
+							, 'right'
+							, 'link'
+							, 'unlink'
+							, 'image'
+							, 'help']
+					}); //建立编辑器
+					
+					  
+					$(":button").click(function () {
+						alert(layedit.getText(index));
+					});
+				});
+			
+
+
+
+
+		})
+	</script>
+	}

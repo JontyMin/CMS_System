@@ -93,10 +93,24 @@ namespace Dal
 		/// </summary>
 		/// <param name="cid">栏目id</param>
 		/// <returns></returns>
-		public int GetCount(int ? cid)
+		public int GetCount(int ? cid,int ? aid)
 		{
-			return db.CMS_Article.Where(c => c.cid == cid).Count();
+			if (cid!=null)
+			{
+				return db.CMS_Article.Where(c => c.cid == cid).Count();
+			}
+			else if (aid!=null)
+			{
+				return db.CMS_Comment.Where(c => c.aid == aid).Count();
+			}
+			else
+			{
+				return 0;
+			}
+			
 		}
+
+		
 
 		/// <summary>
 		/// 文章分页
@@ -115,7 +129,26 @@ namespace Dal
 			return ls;
 		}
 
+		public List<V_CMS_Comment> GetCMS_Comments(int ? aid,int page,int rows)
+		{
+			var ls = db.V_CMS_Comment.OrderByDescending(c => c.cmtime)
+				.Where(c => c.aid == aid)
+				.Skip((page - 1) * rows)
+				.Take(rows)
+				.ToList();
+			return ls;
 
+		}
+
+		/// <summary>
+		/// 根据文章id查询详细信息
+		/// </summary>
+		/// <param name="aid"></param>
+		/// <returns></returns>
+		public V_CMS_Article GetV_CMS_ArticleByAid(int? aid)
+		{
+			return db.V_CMS_Article.Find(aid);
+		}
 
 		/// <summary>
 		/// 添加错误日志
