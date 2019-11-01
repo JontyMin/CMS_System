@@ -17,7 +17,9 @@ namespace CMS_System.Controllers
 		// GET: Index
 		public ActionResult Index()
 		{
+
 			var ls = db.GetCMS_ArticlesByCidTopN(1, 7);//网站公告
+			ViewBag.Keyword = db.GetCMS_Keywords();
 			ViewBag.Center = db.GetCMS_ArticlesByCidTopN(2, 6);//产品中心
 			ViewBag.service = db.GetCMS_ArticlesByCidTopN(3, 6);//定制服务
 			ViewBag.Case = db.GetCMS_ArticlesByCidTopN(4, 6);//成功案例
@@ -46,12 +48,14 @@ namespace CMS_System.Controllers
 			}
 			else
 			{
+
 				var Article = db.GetV_CMS_ArticleByAid(aid);
 				return View(Article);
 			}
 			
 		}
 		[HttpPost]
+	
 		public ActionResult Page(int ? aid,int page,int rows)
 		{
 			int total = db.GetCount(null, aid);
@@ -62,6 +66,72 @@ namespace CMS_System.Controllers
 			return Json(dc);
 		}
 
+
+		[HttpGet]
+		public ActionResult Search(string title)
+		{
+			if (title==null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			else
+			{
+				return View();
+			}
+		}
+
+		[HttpPost]
+		public ActionResult Search(string title,int page,int rows)
+		{
+			int total = db.GetCount(title);
+			var ls = db.GetCMS_ArticlesBytitle(title, page, rows);
+			Dictionary<string, object> dc = new Dictionary<string, object>();
+			dc.Add("total", total);
+			dc.Add("rows", ls);
+			return Json(dc);
+		}
+		[ValidateInput(false)]
+		public ActionResult AddComment(int aid, string cmhtml)
+		{
+			if (Session["user"] == null)
+			{
+				return Json(new
+				{
+					state = false,
+					message = "请先登录"
+				});
+			}
+			else
+			{
+
+
+				CMS_Comment c = new CMS_Comment()
+				{
+					aid = aid,
+					uid = (Session["user"] as CMS_User).uid,
+					cmtime = DateTime.Now,
+					cmhtml = cmhtml
+				};
+				if (db.AddComment(c)!=1)
+				{
+					return Json(new
+					{
+						state = false,
+						message = "网络貌似出问题了..."
+					});
+				}
+				else
+				{
+					return Json(new
+					{
+						state = true,
+						message = "评论成功"
+					});
+				}
+				
+			}
+		
+		}
 		[HttpGet]
 		public ActionResult List(int ? cid)
 		{
@@ -95,7 +165,10 @@ namespace CMS_System.Controllers
 		[HttpGet]
 		public ActionResult Login()
 		{
-			return View();
+			
+				return View();
+			
+
 		}
 
 

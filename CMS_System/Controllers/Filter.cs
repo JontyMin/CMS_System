@@ -30,5 +30,18 @@ namespace CMS_System.Controllers
 			//throw new NotImplementedException();
 			filterContext.ExceptionHandled = true;
 		}
+
+
+		public override void OnActionExecuting(ActionExecutingContext filterContext)
+		{
+			
+		}
+		public override void OnResultExecuting(ResultExecutingContext filterContext)
+		{
+			//if (filterContext.HttpContext.Session["user"] != null)
+			//{
+			//	filterContext.HttpContext.Response.Write("<script>xtip.msg('请勿重复登录')</script>");
+			//}
+		}
 	}
 }

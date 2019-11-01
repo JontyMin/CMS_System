@@ -1,0 +1,130 @@
+﻿   <!-- 广告 -->
+<div class="ads">
+	<div class="cg">
+		<img src="../images/demo3.jpg" />
+	</div>
+</div>
+
+<div class="comarticle">
+	<div class="cg">
+		<div class="am-u-sm-12">
+			<div class="comarticle-right">
+				<h1 id="title1"></h1>
+				<ul id="u">
+
+					@*<li>
+							<a href="page.html">
+								<strong>【adobe dreamweaver cs6 中文破解下载】DW破解版64位 / 32位下载</strong>
+								<span>adobe dreamweaver cs6破解版是由Adobe公司推出的一款网页设计软件，他可以实现所见即所得的效果。新版的dreamweaver cs6改善了FTP的性能，能高效传输大体积文件，同时也支持HTML5代码。并且还使用了自适应网格版面创建页面...</span>
+								<h1><em>更新时间：2013/9/11</em><em>人气：13958</em><em>软件大小：146 MB</em></h1>
+							</a>
+						</li>
+
+						<li>
+							<a href="page.html">
+								<strong>【adobe dreamweaver cs6 中文破解下载】DW破解版64位 / 32位下载</strong>
+								<span>adobe dreamweaver cs6破解版是由Adobe公司推出的一款网页设计软件，他可以实现所见即所得的效果。新版的dreamweaver cs6改善了FTP的性能，能高效传输大体积文件，同时也支持HTML5代码。并且还使用了自适应网格版面创建页面...</span>
+								<h1><em>更新时间：2013/9/11</em><em>人气：13958</em><em>软件大小：146 MB</em></h1>
+							</a>
+						</li>
+
+						<li>
+							<a href="page.html">
+								<strong>【adobe dreamweaver cs6 中文破解下载】DW破解版64位 / 32位下载</strong>
+								<span>adobe dreamweaver cs6破解版是由Adobe公司推出的一款网页设计软件，他可以实现所见即所得的效果。新版的dreamweaver cs6改善了FTP的性能，能高效传输大体积文件，同时也支持HTML5代码。并且还使用了自适应网格版面创建页面...</span>
+								<h1><em>更新时间：2013/9/11</em><em>人气：13958</em><em>软件大小：146 MB</em></h1>
+							</a>
+						</li>
+
+
+						<li>
+							<a href="page.html">
+								<strong>【adobe dreamweaver cs6 中文破解下载】DW破解版64位 / 32位下载</strong>
+								<span>adobe dreamweaver cs6破解版是由Adobe公司推出的一款网页设计软件，他可以实现所见即所得的效果。新版的dreamweaver cs6改善了FTP的性能，能高效传输大体积文件，同时也支持HTML5代码。并且还使用了自适应网格版面创建页面...</span>
+								<h1><em>更新时间：2013/9/11</em><em>人气：13958</em><em>软件大小：146 MB</em></h1>
+							</a>
+						</li>
+
+						<li>
+							<a href="page.html">
+								<strong>【adobe dreamweaver cs6 中文破解下载】DW破解版64位 / 32位下载</strong>
+								<span>adobe dreamweaver cs6破解版是由Adobe公司推出的一款网页设计软件，他可以实现所见即所得的效果。新版的dreamweaver cs6改善了FTP的性能，能高效传输大体积文件，同时也支持HTML5代码。并且还使用了自适应网格版面创建页面...</span>
+								<h1><em>更新时间：2013/9/11</em><em>人气：13958</em><em>软件大小：146 MB</em></h1>
+							</a>
+						</li>*@
+
+				</ul>
+
+
+			</div>
+
+
+
+
+			<div id="demo7"></div>
+		</div>
+	</div>
+</div>
+@section js{
+	<script>
+
+		function Todate(v) {
+			var str = parseFloat(v.substr(6));
+			var t = new Date(str);
+			return t.getFullYear() + "." + (t.getMonth() + 1) + "." + t.getDate();
+		}
+		$(function () {
+
+
+			var pageval = 1;//页码
+
+			var curr = 1;//跳页
+
+			GetDate(pageval);
+			function GetDate(pageval) {
+
+				$.post("/Index/Search", { "title": "@Request.QueryString["title"]", "page": pageval, "rows": 5 }, function (d) {
+					if (d != null) {
+
+						$("#u").empty();
+						var ul = $("#u");
+						$.each(d.rows, function (i, j) {
+							var li = $("<li>");
+							$("<a href='/Index/Page?aid=" + j.aid + "'><strong>【" + j.title + "】</strong><span>"+j.ahtml+"...</span><h1><em>更新时间："+Todate(j.ctime)+"</em><em>人气："+j.hits+"</em><em>评论数："+j.comments+"</em></h1></a>").appendTo(li);
+							ul.append(li);
+						});
+						layui.use(['laypage', 'layer'], function () {
+							var laypage = layui.laypage,
+								layer = layui.layer;
+							//完整功能
+							laypage.render({
+								elem: 'demo7'
+								, count: d.total
+								, curr: curr
+								, layout: ['prev', 'page', 'next', 'skip']
+								, jump: function (obj, first) {
+									//alert(obj.curr)
+									curr = obj.curr;
+									if (!first) {
+										GetDate(obj.curr);
+
+									}
+								}
+							});
+						})
+
+					} else {
+
+					}
+				})
+			}
+
+
+
+		})
+
+
+
+	</script>
+}
+

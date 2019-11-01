@@ -1,4 +1,14 @@
-﻿<!-- 广告 -->
+﻿@helper ExitesSession()
+{
+	if (@Session["user"] == null)
+	{
+		<h2 class="am-text-right am-padding-top-lg">
+			我要说两句，<a href="#" style="color:sandybrown;" id="alogin" class="am-text-warning">请先登陆</a>
+		</h2>
+	}
+}
+
+<!-- 广告 -->
 <div class="ads">
 	<div class="cg">
 		<img src="../images/demo3.jpg" />
@@ -22,9 +32,9 @@
 						</p>
 					</div>
 					<div class="am-article-bd" id="Article">
-						
+						<p>
 							@Model.ahtml
-						
+						</p>
 					</div>
 				</article>
 			</div>
@@ -136,7 +146,7 @@
 					</div>
 				</article>
 
-				<article class="am-comment" >
+				<article class="am-comment">
 					<!-- 评论容器 -->
 					<a href="">
 						<!-- 评论者头像 -->
@@ -166,9 +176,10 @@
 
 		<!-- 我要说两句 -->
 		<div class="am-u-sm-12 am-comments-list">
-			<h2 class="am-text-right am-padding-top-lg">
+			@*<h2 class="am-text-right am-padding-top-lg">
 				我要说两句，<a href="login.html" class="am-text-warning">请先登陆</a>
-			</h2>
+			</h2>*@
+			@ExitesSession()
 			<hr />
 
 
@@ -179,6 +190,12 @@
 				<button class="am-btn am-btn-success">提交</button>
 			</p>
 		</div>
+		<div class="user-div" id="d1">
+			<ul>
+				<li><i>&#xe681;</i><input type="text" title="用户名" name="uname" id="uname1" value="" placeholder="请输入用户名" /></li>
+				<li><i>&#xe680;</i><input type="password" title="用户密码" name="upwd" id="upwd" value="" placeholder="请输入密码" /></li>
+			</ul>
+		</div>
 	</div>
 </div>
 @section js{
@@ -188,7 +205,11 @@
 			var t = new Date(str);
 			return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours()+ ":" + t.getMinutes();
 		}
+	
 		$(function () {
+
+
+			//评论分页
 			var pageval = 1;//页码
 			var curr = 1;//跳页
 			GetDate(pageval);
@@ -218,7 +239,7 @@
 							//完整功能
 							laypage.render({
 								elem: 'demo7'
-								, count: d.total
+								, count:d.total
 								, curr: curr
 								, layout: ['prev', 'page', 'next', 'skip']
 								, jump: function (obj, first) {
@@ -241,29 +262,62 @@
 					var layedit = layui.layedit;
 					var index = layedit.build('demo', {
 						height: 180,
-						hideTool: ['strong', , 'italic'
-							, 'underline'
-							, 'del'
-							, '|'
-							, 'left'
-							, 'center'
-							, 'right'
-							, 'link'
-							, 'unlink'
-							, 'image'
-							, 'help']
+						hideTool: ['image']
 					}); //建立编辑器
-					
-					  
+
+
 					$(":button").click(function () {
-						alert(layedit.getText(index));
+						//alert(layedit.getText(index));
+						if (layedit.getContent(index) == null || layedit.getContent(index) == "") {
+							layer.msg("您还未输入评论哦");
+						} else {
+							$.post("/Index/AddComment", { "aid":@Request.QueryString["aid"], "cmhtml": layedit.getContent(index) }, function (d) {
+
+								if (d.state == true) {
+									GetDate(pageval);
+								} else {
+									layer.msg(d.message);
+								}
+
+							});
+						}
 					});
+
 				});
-			
+			$("#alogin").click(function () {
 
+				layui.use('layer', function () {
+					var layer = layui.layer;
+					layer.open({
+						type: 1,
+						content: $('#d1'),
+						anim: 6,
+						area: ['300px', '250px'],
+						title: "登录",
+						btnAlign: 'c',
+						btn: ['确认', '取消'],
+						yes: function (index, layero) {
+							//alert($("#uname1").val()+""+$("#upwd").val());
+							$.post("/Index/login", { "uname": $("#uname1").val(), "upwd": $("#upwd").val() }, function (d) {
+								
+								if (d.state == true) {
+									
+									layer.msg(d.message);
+									window.location.reload();
+									
+									//history.back();
+								} else {
+									layer.msg(d.message);
 
+								}
+							});
+						 }
+					})
 
+				});
+			});
 
 		})
+	
 	</script>
-	}
+}

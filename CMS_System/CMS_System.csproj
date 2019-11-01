@@ -313,6 +313,7 @@
     <Content Include="Views\Index\Login.cshtml" />
     <Content Include="Views\Index\Regiest.cshtml" />
     <Content Include="Views\Index\UserInfo.cshtml" />
+    <Content Include="Views\Index\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

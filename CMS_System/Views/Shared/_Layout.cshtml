@@ -2,8 +2,8 @@
 @{
 	Dal.IndexDal db = new Dal.IndexDal();
 	var list = db.GetCMS_Categories();
-	
 
+	var ls2 = db.GetCMS_Keywords();
 }
 
 @helper ExistsSession()
@@ -35,9 +35,24 @@
 	<script src="~/Script/jquery-3.3.1.js"></script>
 	<link href="~/css/default.css" rel="stylesheet" />
 	<link href="~/layui-v2.5.5/layui/css/layui.css" rel="stylesheet" />
-
 	<script src="~/layui-v2.5.5/layui/layui.js"></script>
-	@RenderSection("js", false)
+	<script src="~/Script/xtiper.min.js"></script>
+	<link href="~/css/style.css" rel="stylesheet" />
+	<link href="~/css/xtiper.css" rel="stylesheet" />
+
+		@RenderSection("js", false)
+
+	<script>
+		$(function () {
+			$("#bt1").click(function () {
+					window.location.href = "/index/Search?title=" + $("#title").val() + "";
+			});
+			//$("#title").keyup(function () {
+
+			//	window.location.href = "/index/Search?title=" + $("#title").val() + "";
+			//});
+		})
+	</script>
 	<style>
 		#img1 {
 			width: 30px;
@@ -71,15 +86,19 @@
 				</div>
 				<div class="hd-search-right">
 					<div class="hd-search-right-input">
-						<input type="text" name="name" value="" placeholder="搜索" />
-						<button class="font" onclick="alert(1)">&#xe634;</button>
+						<input type="text" name="name" id="title" value=""  placeholder="搜索" />
+						<button class="font" id="bt1">&#xe634;</button>
 					</div>
 					<div class="hd-search-right-keyword">
-						<a href="#">包装用品</a>
-						<a href="#">母婴</a>
-						<a href="#">教育</a>
-						<a href="#">招聘</a>
-						<a href="#">绿化</a>
+						@foreach (var item in ls2)
+						{
+							<a href="/index/Search?title='@item.keyword'">@item.keyword</a>
+						}
+						@*<a href="/index/Search?title='包装用品'">包装用品</a>
+						<a href="/index/Search?title='母婴'">母婴</a>
+						<a href="/index/Search?title='教育'">教育</a>
+						<a href="/index/Search?title='招聘'">招聘</a>
+						<a href="/index/Search?title='绿化'">绿化</a>*@
 					</div>
 				</div>
 			</div>

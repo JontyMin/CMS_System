@@ -110,6 +110,11 @@ namespace Dal
 			
 		}
 
+		public int GetCount(string title)
+		{
+			return db.CMS_Article.Where(c => c.title.Contains(title)).Count();
+		}
+
 		
 
 		/// <summary>
@@ -129,6 +134,22 @@ namespace Dal
 			return ls;
 		}
 
+		public List<V_CMS_Article> GetCMS_ArticlesBytitle(string title, int page, int rows)
+		{
+			var ls = db.V_CMS_Article.OrderByDescending(c => c.hits)
+				.Where(c => c.title.Contains(title) && c.state == 2)
+				.Skip((page - 1) * rows)
+				.Take(rows)
+				.ToList();
+			return ls;
+		}
+		/// <summary>
+		/// 评论分页
+		/// </summary>
+		/// <param name="aid">文章id</param>
+		/// <param name="page">页码</param>
+		/// <param name="rows">页大小</param>
+		/// <returns></returns>
 		public List<V_CMS_Comment> GetCMS_Comments(int ? aid,int page,int rows)
 		{
 			var ls = db.V_CMS_Comment.OrderByDescending(c => c.cmtime)
@@ -147,9 +168,31 @@ namespace Dal
 		/// <returns></returns>
 		public V_CMS_Article GetV_CMS_ArticleByAid(int? aid)
 		{
+			string sql = "update CMS_Article set hits=(hits+1) where aid=" + aid + "";
+			db.Database.SqlQuery<CMS_Article>(sql);
+			db.SaveChanges();
 			return db.V_CMS_Article.Find(aid);
 		}
 
+
+		public List<CMS_Keyword> GetCMS_Keywords()
+		{
+			return db.CMS_Keyword.OrderByDescending(c => c.stimes)
+				.Take(5)
+				.ToList();
+				
+				
+		}
+		/// <summary>
+		/// 添加评论
+		/// </summary>
+		/// <param name="c"></param>
+		/// <returns></returns>
+		public int AddComment(CMS_Comment c)
+		{
+			db.CMS_Comment.Add(c);
+			return db.SaveChanges();
+		}
 		/// <summary>
 		/// 添加错误日志
 		/// </summary>
