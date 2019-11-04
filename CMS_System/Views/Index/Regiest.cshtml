@@ -26,7 +26,7 @@
 					xtip.msg('请输入用户名');
 				} else if ($("#upwd").val() == null || $("#upwd").val() == "") {
 					xtip.msg('请输入密码');
-				}else if ($("#upwd").val().length<6||$("#ckpwd").val().length<6) {
+				}else if ($("#upwd").val().length<7||$("#ckpwd").val().length<7) {
 					xtip.msg('密码长度小于6位');
 				} else if($("#ckpwd").val() == null || $("#ckpwd").val() == "") {
 					xtip.msg('请输入二次密码');
@@ -34,7 +34,7 @@
 					xtip.msg('密码不一致');
 				} else if ($("#mobile").val() == null || $("#mobile").val() == "") {
 					xtip.msg('请输入电话号码');
-				} else if($("#mobile").val()<6) {
+				} else if(!(/^1[34578]\d{9}$/.test($("#mobile").val()))) {
 					xtip.msg('请输入正确电话号码');
 				}else
 				if (!$("input[type='checkbox']").is(':checked')) {
@@ -54,6 +54,7 @@
 							xtip.msg(d.message);
 							setTimeout(function () { window.location.href = "/Index/index";},1000)	
 						} else {
+							xtip.close(loadid);
 							xtip.msg(d.message);
 						}
 					});
@@ -69,8 +70,8 @@
 	﻿<header class="hd1">
 		<div class="cg">
 			<div class="hd1-left">
-				<a href="index.html"><img class="am-hide-md-down" src="../images/logo.jpg" /></a>
-				<a href="index.html"><img class="am-show-md-down" src="../images/logo-sm.jpg" /></a>
+				<a href="/index/index"><img class="am-hide-md-down" src="../images/logo.jpg" /></a>
+				<a href="/index/index"><img class="am-show-md-down" src="../images/logo-sm.jpg" /></a>
 			</div>
 			<div class="hd1-right">
 				<a href="/Index/login">登录</a>

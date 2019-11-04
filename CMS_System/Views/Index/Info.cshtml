@@ -1,0 +1,144 @@
+﻿@model Model.CMS_User
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>个人信息</title>
+	<link rel="stylesheet" href="../css/default.css" />
+	<link href="~/css/layui.css" rel="stylesheet" />
+	<link href="~/css/style.css" rel="stylesheet" />
+	<link href="~/css/xtiper.css" rel="stylesheet" />
+	<link href="~/css/xui.css" rel="stylesheet" />
+	<script src="~/Script/jquery-3.3.1.js"></script>
+	<script src="~/Script/xtiper.min.js"></script>
+	<script src="~/layui-v2.5.5/layui/layui.js"></script>
+	<script>
+		layui.use('upload', function () {
+			var $ = layui.jquery
+				, upload = layui.upload;
+
+			//普通图片上传
+			var uploadInst = upload.render({
+				elem: '#test1'
+				, url: '/index/Upload'
+				, acceptMime: 'image/*'
+				,size:1024
+				, before: function (obj) {
+
+                //this.data={'test1':$("#test1").val()};
+
+					//预读本地文件示例，不支持ie8
+					obj.preview(function (index, file, result) {
+						$('#demo1').attr('src', result); //图片链接（base64）
+					});
+
+				}
+				, done: function (res) {
+
+					//如果上传失败
+					if (res.code == 0) {
+						$("#src").attr('value',res.data.src);
+						return layer.msg(res.data.src);
+					} else {
+						return layer.msg(res.msg);
+					}
+					//上传成功
+				}
+				, error: function () {
+					//演示失败状态，并实现重传
+					var demoText = $('#demoText');
+					demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+					demoText.find('.demo-reload').on('click', function () {
+						uploadInst.upload();
+					});
+				}
+			});
+		})
+
+		$(function () {
+			$(":button").click(function () {
+				if ($("#uname").val() == null || $("#uname").val() == "") {
+					xtip.msg('请输入用户名');
+				} else if ($("#nname").val() == null || $("#nname").val() == "") {
+					xtip.msg('请输入昵称');
+				} else if ($("#mobile").val() == null || $("#mobile").val() == "") {
+					xtip.msg('请输入电话号码');
+				} else if (!(/^1[34578]\d{9}$/.test($("#mobile").val()))) {
+					xtip.msg('请输入正确电话号码');
+				} else {
+					var ls = {
+						"uname": $("#uname").val(),
+						"nname": $("#nname").val(),
+						"mobile": $("#mobile").val(),
+						"face": $("#src").val()
+					};
+
+					$.post("/Index/UpdInfo", { "u": ls }, function (d) {
+						loadid = xtip.load();
+						if (d.state == 1) {
+							xtip.msg(d.message);
+							xtip.close(loadid);
+							window.location.reload();
+						} else {
+							xtip.msg(d.message);
+							xtip.close(loadid);
+						}
+					});
+				}
+			});
+		
+		})
+	</script>
+	<style>
+		#demo1 {
+			height: 80px;
+			width: 80px;
+			border-radius: 50px;
+		}
+	</style>
+</head>
+<body>
+	﻿<header class="hd1">
+		<div class="cg">
+			<div class="hd1-left">
+				<a href="/index/index"><img class="am-hide-md-down" src="../images/logo.jpg" /></a>
+				<a href="/index/index"><img class="am-show-md-down" src="../images/logo-sm.jpg" /></a>
+			</div>
+		</div>
+	</header>
+	<main>
+
+		<div class="user">
+			<div class="cgs" align="center">
+				<div class="am-u-sm-12 am-u-md-7">
+					<div class="user-div">
+						<ul>
+							<li align="center">
+								<div class="layui-upload">
+									@*<button type="button" class="layui-btn" id="test1">上传图片</button>*@
+									<div class="layui-upload-list">
+										<input style="display:none" value="@Model.face" id="src" />
+										<a id="test1"><img class="layui-upload-img" src="../@Model.face" id="demo1"></a>
+										<p id="demoText"></p>
+									</div>
+								</div>
+							</li>
+							<li><i>&#xe681;</i><input type="text" title="用户名" name="uname" id="uname" value="@Model.uname" placeholder="请输入用户名" /></li>
+							<li><i>&#xe681;</i><input type="text" title="昵称" name="nname" id="nname" value="@Model.nname" placeholder="请输入昵称" /></li>
+							<li><i>&#xe681;</i><input type="text" title="电话号码" name="mobile" id="mobile" value="@Model.mobile" placeholder="请输入电话号码" /></li>
+
+						</ul>
+						<button title="点击修改个人信息">确认修改</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</main>
+</body>
+</html>

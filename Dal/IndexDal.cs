@@ -180,8 +180,6 @@ namespace Dal
 			return db.CMS_Keyword.OrderByDescending(c => c.stimes)
 				.Take(5)
 				.ToList();
-				
-				
 		}
 		/// <summary>
 		/// 添加评论
@@ -191,6 +189,13 @@ namespace Dal
 		public int AddComment(CMS_Comment c)
 		{
 			db.CMS_Comment.Add(c);
+			return db.SaveChanges();
+		}
+
+
+		public int UpdInfo(CMS_User u)
+		{
+			db.Entry<CMS_User>(u).State = System.Data.Entity.EntityState.Modified;
 			return db.SaveChanges();
 		}
 		/// <summary>

@@ -15,7 +15,7 @@
 	}
 	else
 	{
-<a title="查看个人资料" href="/Index/UserInfo">
+<a title="查看个人资料" href="/Index/Info">
 	<img id="img1" src="../@((Session["user"] as CMS_User).face)" />
 	@((Session["user"]as CMS_User).uname)
 </a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -52,6 +52,9 @@
 			//	window.location.href = "/index/Search?title=" + $("#title").val() + "";
 			//});
 		})
+		function alert(message) {
+			xtip.msg(message);
+		}
 	</script>
 	<style>
 		#img1 {
@@ -68,9 +71,9 @@
 		<div class="hd-top am-hide-sm-down">
 			<div class="cg">
 				<div class="hd-top-left">
-					<a href="#">设为首页</a>
-					<a href="#">收藏</a>
-					<a href="#">RSS订阅</a>
+					<a href="#" onclick="alert('也改变我们的发量')">代码改变世界</a>
+					<a href="#" onclick="alert('我们是码农')">关于我们</a>
+					<a href="#" onclick="alert('教育改变生活，华瑞成就梦想')">加入我们</a>
 				</div>
 				<div class="hd-top-right">
 					@*<a href="register.html">注册</a>

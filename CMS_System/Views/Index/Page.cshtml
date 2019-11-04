@@ -24,7 +24,7 @@
 			<div class="comarticle-right info-container">
 				<article class="am-article">
 					<div class="am-article-hd">
-						<h1 class="am-article-title" id="title"></h1>
+						<h1 class="am-article-title" id="title">@Model.title</h1>
 						<p class="am-article-meta">
 							作者：<span id="author">@Model.author</span> &nbsp;&nbsp;
 							发布人：<span id="uname">@Model.nname</span> &nbsp;&nbsp;
@@ -33,7 +33,7 @@
 					</div>
 					<div class="am-article-bd" id="Article">
 						<p>
-							@Model.ahtml
+							@Html.Raw(@Model.ahtml)
 						</p>
 					</div>
 				</article>
@@ -190,9 +190,11 @@
 				<button class="am-btn am-btn-success">提交</button>
 			</p>
 		</div>
-		<div class="user-div" id="d1">
+		<div class="user-div" id="d1" style="display:none">
 			<ul>
+				<li></li>
 				<li><i>&#xe681;</i><input type="text" title="用户名" name="uname" id="uname1" value="" placeholder="请输入用户名" /></li>
+				<li></li>
 				<li><i>&#xe680;</i><input type="password" title="用户密码" name="upwd" id="upwd" value="" placeholder="请输入密码" /></li>
 			</ul>
 		</div>
@@ -220,18 +222,23 @@
 						$("#total").text(d.total);//评论条数
 						var comments = $("#comments");
 						$("#comments").empty();
-						$.each(d.Comments, function (k, v) {
-							var d1 = $("<article class='am-comment'></article>");
-							var a1 = $("<a href='#'>").appendTo(d1);
-							$("<img src='../" + v.face + "' class='am-comment-avatar' alt='' />").appendTo(a1);
-							var d2 = $("<div class='am-comment-main'></div>").appendTo(d1);
-							var h1 = $("<header class='am-comment-hd'></header>").appendTo(d2);
-							var d3 = $("<div class='am-comment-meta'></div>").appendTo(h1);
-							$("<a class='am-comment-author'>" + v.nname + "</a>").appendTo(d3);
-							$("<p></p>").text("评论于:" + Todate(v.cmtime)).appendTo(d3);
-							$("<div class='am-comment-bd'></div>").html(v.cmhtml).appendTo(d2);
-							$(comments).append(d1);
-						});
+						if (d.Comments != null) {
+
+							$.each(d.Comments, function (k, v) {
+								var d1 = $("<article class='am-comment'></article>");
+								var a1 = $("<a href='#'>").appendTo(d1);
+								$("<img src='../" + v.face + "' class='am-comment-avatar' alt='' />").appendTo(a1);
+								var d2 = $("<div class='am-comment-main'></div>").appendTo(d1);
+								var h1 = $("<header class='am-comment-hd'></header>").appendTo(d2);
+								var d3 = $("<div class='am-comment-meta'></div>").appendTo(h1);
+								$("<a class='am-comment-author'>" + v.nname + "</a>").appendTo(d3);
+								$("<p></p>").text("评论于:" + Todate(v.cmtime)).appendTo(d3);
+								$("<div class='am-comment-bd'></div>").html(v.cmhtml).appendTo(d2);
+								$(comments).append(d1);
+							});
+						} else {
+							$("<p>都让让，神评都是你的</p>").appendTo(comments);
+						}
 
 						layui.use(['laypage', 'layer'], function () {
 							var laypage = layui.laypage,
@@ -291,8 +298,8 @@
 					layer.open({
 						type: 1,
 						content: $('#d1'),
-						anim: 6,
-						area: ['300px', '250px'],
+						anim: 2,
+						area: ['400px', '300px'],
 						title: "登录",
 						btnAlign: 'c',
 						btn: ['确认', '取消'],

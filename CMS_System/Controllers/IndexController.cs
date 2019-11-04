@@ -14,6 +14,11 @@ namespace CMS_System.Controllers
 	public class IndexController : Controller, IDisposable
 	{
 		IndexDal db = new IndexDal();
+
+		/// <summary>
+		/// 首页数据
+		/// </summary>
+		/// <returns></returns>
 		// GET: Index
 		public ActionResult Index()
 		{
@@ -35,6 +40,13 @@ namespace CMS_System.Controllers
 			Session.Clear();
 			return Redirect("/Index/index");
 		}
+
+
+		/// <summary>
+		/// 文章页
+		/// </summary>
+		/// <param name="aid">文章id</param>
+		/// <returns></returns>
 		[HttpGet]
 		public ActionResult Page(int ? aid)
 		{
@@ -54,6 +66,15 @@ namespace CMS_System.Controllers
 			}
 			
 		}
+
+	
+		/// <summary>
+		/// 评论分页
+		/// </summary>
+		/// <param name="aid">文章id</param>
+		/// <param name="page"></param>
+		/// <param name="rows"></param>
+		/// <returns></returns>
 		[HttpPost]
 	
 		public ActionResult Page(int ? aid,int page,int rows)
@@ -67,6 +88,11 @@ namespace CMS_System.Controllers
 		}
 
 
+		/// <summary>
+		/// 搜索
+		/// </summary>
+		/// <param name="title">标题内容</param>
+		/// <returns></returns>
 		[HttpGet]
 		public ActionResult Search(string title)
 		{
@@ -80,6 +106,13 @@ namespace CMS_System.Controllers
 			}
 		}
 
+		/// <summary>
+		/// 模糊查询内容分页
+		/// </summary>
+		/// <param name="title"></param>
+		/// <param name="page"></param>
+		/// <param name="rows"></param>
+		/// <returns></returns>
 		[HttpPost]
 		public ActionResult Search(string title,int page,int rows)
 		{
@@ -90,6 +123,13 @@ namespace CMS_System.Controllers
 			dc.Add("rows", ls);
 			return Json(dc);
 		}
+
+		/// <summary>
+		/// 评论
+		/// </summary>
+		/// <param name="aid">文章id</param>
+		/// <param name="cmhtml">评论内容</param>
+		/// <returns></returns>
 		[ValidateInput(false)]
 		public ActionResult AddComment(int aid, string cmhtml)
 		{
@@ -132,6 +172,12 @@ namespace CMS_System.Controllers
 			}
 		
 		}
+
+		/// <summary>
+		/// 文章列表
+		/// </summary>
+		/// <param name="cid">栏目id</param>
+		/// <returns></returns>
 		[HttpGet]
 		public ActionResult List(int ? cid)
 		{
@@ -146,6 +192,14 @@ namespace CMS_System.Controllers
 			
 		}
 
+
+		/// <summary>
+		/// 文章列表分页
+		/// </summary>
+		/// <param name="cid"></param>
+		/// <param name="page"></param>
+		/// <param name="rows"></param>
+		/// <returns></returns>
 		[HttpPost]
 		public ActionResult List( int ? cid,int page, int rows)
 		{
@@ -247,11 +301,89 @@ namespace CMS_System.Controllers
 			}
 			
 		}
-		public ActionResult UserInfo()
+
+
+
+		/// <summary>
+		/// 用户信息
+		/// </summary>
+		/// <returns></returns>
+
+		public ActionResult Info()
 		{
-			return View();
+
+			CMS_User u = Session["user"] as CMS_User;
+			
+			return View(u);
 		}
 
+		[HttpPost]
+		public JsonResult Upload()
+		{
+			if (Request.Files.Count > 0)
+			{
+				HttpPostedFileBase f = Request.Files["file"];//最简单的获取方法
+				string name = f.FileName;
+				int index = name.LastIndexOf('.');
+				string str = name.Substring(index);
+				string newName = "face" + new Random().Next().ToString() + str;
+				f.SaveAs(AppDomain.CurrentDomain.BaseDirectory + "/images/" + newName);//保存图片
+
+				//这下面是返回json给前端 
+				var data1 = new
+				{
+					src = "images/" + newName,//服务器储存路径
+				};
+				var Person = new
+				{
+					code = 0,//0表示成功
+					msg = "上传成功",//这个是失败返回的错误
+					data = data1
+				};
+				return Json(Person);//格式化为json
+			}
+			else
+			{
+				var Person = new
+				{
+					code = 1,//0表示成功
+					msg = "上传失败",//这个是失败返回的错误
+					
+				};
+				return Json(Person);//格式化为json
+				
+			}
+
+		}
+
+		public ActionResult UpdInfo(CMS_User u)
+		{
+			u.uid = (Session["user"] as CMS_User).uid;
+			u.upwd= (Session["user"] as CMS_User).upwd;
+			if (db.UpdInfo(u)>0)
+			{
+				Session.Clear();
+				Session["user"] = u;
+				return Json(new
+				{
+					state = 1,
+					message="修改成功"
+				}) ;
+			}
+			else
+			{
+				return Json(new
+				{
+					state = 0,
+					message = "修改失败"
+				});
+			}
+		}
+
+		/// <summary>
+		/// 资源释放
+		/// </summary>
+		/// <param name="disposing"></param>
 		protected override void Dispose(bool disposing)
 		{
 			db.Dispose();
