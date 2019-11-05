@@ -60,9 +60,16 @@ namespace CMS_System.Controllers
 			}
 			else
 			{
-
-				var Article = db.GetV_CMS_ArticleByAid(aid);
-				return View(Article);
+				if (db.Addhit(aid)>0)
+				{
+					var Article = db.GetV_CMS_ArticleByAid(aid);
+					return View(Article);
+				}
+				else
+				{
+					return null;
+				}
+				
 			}
 			
 		}
@@ -102,6 +109,22 @@ namespace CMS_System.Controllers
 			}
 			else
 			{
+				if (db.cktitle(title))
+				{
+					db.UpdKeyWord(title);
+				}
+				else
+				{
+					CMS_Keyword k = new CMS_Keyword()
+					{
+						keyword = title,
+						ltimes = DateTime.Now,
+						stimes=1,
+						show=true
+					};
+					db.AddKeyWord(k);
+				}
+
 				return View();
 			}
 		}
@@ -152,20 +175,25 @@ namespace CMS_System.Controllers
 					cmtime = DateTime.Now,
 					cmhtml = cmhtml
 				};
-				if (db.AddComment(c)!=1)
+				if (db.AddCommentCount(aid)>0)
 				{
+
+				}
+				if (db.AddComment(c)>0)
+				{
+					
 					return Json(new
 					{
-						state = false,
-						message = "网络貌似出问题了..."
+						state = true,
+						message = "评论成功"
 					});
 				}
 				else
 				{
 					return Json(new
 					{
-						state = true,
-						message = "评论成功"
+						state = false,
+						message = "网络貌似出问题了..."
 					});
 				}
 				
@@ -279,15 +307,25 @@ namespace CMS_System.Controllers
 		{
 			//Thread.Sleep(3000);
 			u.upwd = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(u.upwd, "MD5");//密码MD5加密
-			u.admin = false;
-			u.face = "images/face.jpg";
-			if (db.Regiest(u)>0)
+			u.admin = false;//默认非管理
+			u.face = "images/face.jpg";//默认头像
+			if (db.ckuser(u.uname))//验证用户名是否存在
+			{
+				return Json(new
+				{
+					state = false,
+					message = "用户名已存在",
+
+				});
+			}
+			else
+			if (db.Regiest(u) > 0)
 			{
 				Session["user"] = u;
 				return Json(new
 				{
-					state=true,
-					message="注册成功,正在跳转首页",
+					state = true,
+					message = "注册成功,正在跳转首页",
 
 				});
 			}
@@ -299,7 +337,7 @@ namespace CMS_System.Controllers
 					message = "服务器开小差了..."
 				});
 			}
-			
+
 		}
 
 
@@ -359,7 +397,7 @@ namespace CMS_System.Controllers
 		public ActionResult UpdInfo(CMS_User u)
 		{
 			u.uid = (Session["user"] as CMS_User).uid;
-			u.upwd= (Session["user"] as CMS_User).upwd;
+			
 			if (db.UpdInfo(u)>0)
 			{
 				Session.Clear();

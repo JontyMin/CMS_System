@@ -27,7 +27,7 @@
 				elem: '#test1'
 				, url: '/index/Upload'
 				, acceptMime: 'image/*'
-				,size:1024
+				,size:10240
 				, before: function (obj) {
 
                 //this.data={'test1':$("#test1").val()};
@@ -42,8 +42,8 @@
 
 					//如果上传失败
 					if (res.code == 0) {
-						$("#src").attr('value',res.data.src);
-						return layer.msg(res.data.src);
+						$("#src").attr('value', res.data.src);//替换隐藏域value
+						return layer.msg(res.msg);
 					} else {
 						return layer.msg(res.msg);
 					}
@@ -115,7 +115,7 @@
 
 		<div class="user">
 			<div class="cgs" align="center">
-				<div class="am-u-sm-12 am-u-md-7">
+				<div class="am-u-sm-12 am-u-md-7" align="center">
 					<div class="user-div">
 						<ul>
 							<li align="center">
@@ -123,7 +123,7 @@
 									@*<button type="button" class="layui-btn" id="test1">上传图片</button>*@
 									<div class="layui-upload-list">
 										<input style="display:none" value="@Model.face" id="src" />
-										<a id="test1"><img class="layui-upload-img" src="../@Model.face" id="demo1"></a>
+										<a id="test1"><img title="点击更换头像" class="layui-upload-img" src="../@Model.face" id="demo1"></a>
 										<p id="demoText"></p>
 									</div>
 								</div>
