@@ -1,0 +1,249 @@
+﻿
+@{
+    Layout = null;
+}
+
+	<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<link href="~/Areas/Admin/easyui/1.5.2/themes/default/easyui.css" rel="stylesheet" />
+		<link href="~/Areas/Admin/css/wu.css" rel="stylesheet" />
+		<link href="~/Areas/Admin/css/icon.css" rel="stylesheet" />
+		<script src="~/Areas/Admin/js/jquery-1.10.2.js"></script>
+		<script src="~/Areas/Admin/js/common.js"></script>
+		<script src="~/Areas/Admin/easyui/1.5.2/jquery.easyui.min.js"></script>
+		<script src="~/Areas/Admin/easyui/1.5.2/locale/easyui-lang-zh_CN.js"></script>
+	</head>
+	<body>
+		<div class="easyui-layout" data-options="fit:true">
+			<div data-options="region:'west',border:true,split:true" title="栏目选择" style="width:150px; padding:5px;">
+				<ul id="wu-category-tree" class="easyui-tree"></ul>
+			</div>
+			<div data-options="region:'center',border:false">
+				<!-- Begin of toolbar -->
+				<div id="wu-toolbar">
+					<div class="wu-toolbar-button">
+						<a href="#" class="easyui-linkbutton" iconcls="icon-refresh" onclick="reload()" plain="true">刷新</a>
+						|
+						<a href="#" class="easyui-linkbutton" iconcls="icon-add" onclick="openAdd()" plain="true">添加</a>
+						<a href="#" class="easyui-linkbutton" iconcls="icon-edit" onclick="openEdit()" plain="true">修改</a>
+						<a href="#" class="easyui-linkbutton" iconcls="icon-delete3" onclick="remove()" plain="true">删除</a>
+						|
+						<a href="#" class="easyui-linkbutton" iconcls="icon-book-go" onclick="setcategory()" plain="true">移动栏目</a>
+						<a href="#" class="easyui-linkbutton" iconcls="icon-section-expanded" onclick="settop(true)" plain="true">置顶</a>
+						<a href="#" class="easyui-linkbutton" iconcls="icon-section-collapsed" onclick="settop(false)" plain="true">取消置顶</a>
+					</div>
+					<div class="wu-toolbar-search">
+						<label>起始时间：</label><input class="easyui-datebox" style="width:120px">
+						<label>结束时间：</label><input class="easyui-datebox" style="width:120px">
+						<label>文章状态：</label>
+						<select class="easyui-combobox" panelheight="auto" style="width:100px" data-options="editable:false">
+							<option value="-1">任意</option>
+							<option value="1">草稿</option>
+							<option value="2">发布</option>
+						</select>
+						<label>关键词：</label><input class="wu-text" style="width:100px">
+						<a href="#" class="easyui-linkbutton" iconcls="icon-search">开始检索</a>
+					</div>
+				</div>
+				<!-- End of toolbar -->
+				<table id="wu-datagrid" toolbar="#wu-toolbar"></table>
+			</div>
+		</div>
+		<!-- Begin of easyui-dialog -->
+		<div id="wu-dialog" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:400px; padding:10px;">
+			<form id="wu-form" method="post">
+				<p>
+					请选择要移动到哪个栏目:
+				</p>
+				<ul id="wu-datalist" class="easyui-datalist" style="height:200px;">
+					<li>网站公告</li>
+					<li>产品中心</li>
+					<li>定制服务</li>
+					<li>成功案例</li>
+					<li>关于我们</li>
+				</ul>
+			</form>
+		</div>
+		<!-- End of easyui-dialog -->
+		<script type="text/javascript">
+
+        /**
+        * Name 删除记录
+        */
+        function remove() {
+            var items = $('#wu-datagrid').datagrid('getSelections');
+            if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要删除的文章"); return; }
+            $.messager.confirm('信息提示', '确定要删除这些文章？', function (result) {
+                if (result) {
+                    var ids = [];
+                    $(items).each(function () {
+                        ids.push(this.productid);
+                    });
+                    //alert(ids);return;
+                    $.ajax({
+                        url: '',
+                        data: '',
+                        success: function (data) {
+                            if (data) {
+                                $.messager.alert('信息提示', '删除成功！', 'info');
+                                reload();
+                            }
+                            else {
+                                $.messager.alert('信息提示', '删除失败！', 'info');
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        /**
+        * Name 打开添加窗口
+        */
+        function openAdd() {
+            window.top.addTab("添加文章", "page/article-add.html", "icon-book-add");
+        }
+
+        /**
+        * Name 打开修改窗口
+        */
+        function openEdit(id) {
+            if (!id) {
+                var items = $('#wu-datagrid').datagrid('getSelections');
+                if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要修改的文章"); return; }
+                if (items.length > 1) { $.messager.alert("提示", "请只选择一篇文章"); return; }
+                id = items[0].productid;
+            }
+            window.top.addTab("修改文章"+id, "page/article-edit.html?"+id, "icon-book-edit");
+        }
+
+        /**
+        * Name 分页过滤器
+        */
+        function pagerFilter(data) {
+            if (typeof data.length == 'number' && typeof data.splice == 'function') {// is array
+                data = {
+                    total: data.length,
+                    rows: data
+                }
+            }
+            var dg = $(this);
+            var opts = dg.datagrid('options');
+            var pager = dg.datagrid('getPager');
+            pager.pagination({
+                onSelectPage: function (pageNum, pageSize) {
+                    opts.pageNumber = pageNum;
+                    opts.pageSize = pageSize;
+                    pager.pagination('refresh', { pageNumber: pageNum, pageSize: pageSize });
+                    dg.datagrid('loadData', data);
+                }
+            });
+            if (!data.originalRows) {
+                data.originalRows = (data.rows);
+            }
+            var start = (opts.pageNumber - 1) * parseInt(opts.pageSize);
+            var end = start + parseInt(opts.pageSize);
+            data.rows = (data.originalRows.slice(start, end));
+            return data;
+        }
+
+        //刷新
+        function reload() {
+
+        }
+
+        //置顶
+        function settop(istop) {
+            var op = istop ? "置顶" : "取消置顶";
+            var items = $('#wu-datagrid').datagrid('getSelections');
+            if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要" + op + "的文章"); return; }
+            $.messager.confirm('信息提示', '确定要' + op + '这些文章？', function (result) {
+            });
+        }
+
+        //移动栏目
+        function setcategory() {
+            var items = $('#wu-datagrid').datagrid('getSelections');
+            if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要移动栏目的文章"); return; }
+            //弹出对话框
+            $('#wu-dialog').dialog({
+                closed: false,
+                modal: true,
+                title: "移动栏目",
+                buttons: [{
+                    text: '取消',
+                    iconCls: 'icon-cancel',
+                    handler: function () {
+                        $('#wu-dialog').dialog('close');
+                    }
+                }, {
+                    text: '确定',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //获取选择项
+                        var sel = $("#wu-datalist").datalist("getSelections");
+                        if (sel.length == 0) return;
+                        console.log(sel);
+                        //提交移动栏目
+                        //...
+                        $.messager.alert('信息提示', '移动栏目成功！', 'info');
+                        $('#wu-dialog').dialog('close');
+                    }
+                }]
+            });
+        }
+
+        $(function () {
+            /**
+            * Name 载入数据
+            */
+            $('#wu-datagrid').datagrid({
+                method: 'get',
+                url: '../data/datagrid.json',
+                loadFilter: pagerFilter,
+                rownumbers: true,
+                singleSelect: false,
+                pageSize: 20,
+                pagination: true,
+                multiSort: true,
+                fitColumns: true,
+                fit: true,
+                columns: [[
+                    { field: 'ck', checkbox: true },
+                    { field: 'productid', title: '编号', width: 100, sortable: true },
+                    {
+                        field: 'productname', title: '标题', width: 180, sortable: true,
+                        formatter: function (value, row, index) {
+                            return '<a style="color:blue" href="javascript:void(0);" onclick="openEdit(\''+ row.productid +'\')">' + row.productname + '</a> [<a style="color:blue" target="_blank" href="/1前台/page.html?' + row.productid + '">浏览</a>]';
+                        }
+                    },
+                    { field: 'unitcost', title: '所属栏目', width: 100 },
+                    { field: 'listprice', title: '作者', width: 100 },
+                    { field: 'attr1', title: '发布人', width: 100 },
+                    { field: 'itemid', title: '创建时间', width: 100 },
+                    { field: 'itemid', title: '发布时间', width: 100 },
+                    { field: 'itemid', title: '置顶', width: 100 },
+                    { field: 'itemid', title: '点击率', width: 100 },
+                    { field: 'itemid', title: '评论数', width: 100 }
+                ]]
+            });
+
+
+            /**
+            * Name 载入菜单树
+            */
+            $('#wu-category-tree').tree({
+                method: "get",
+                url: '../data/category.json',
+                onClick: function (node) {
+                    console.log(node.id, node.text);
+                }
+            });
+        });
+
+
+		</script>
+	</body>
+	</html>

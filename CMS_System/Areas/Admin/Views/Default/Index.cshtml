@@ -1,0 +1,159 @@
+﻿
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="copyright" content="All Rights Reserved, Copyright (C) 2013, Wuyeguo, Ltd." />
+	<title>云阿拉丁企业网站管理后台</title>
+
+	<link href="~/Areas/Admin/easyui/1.5.2/themes/default/easyui.css" rel="stylesheet" />
+	<link href="~/Areas/Admin/css/wu.css" rel="stylesheet" />
+	<link href="~/Areas/Admin/css/icon.css" rel="stylesheet" />
+	<script src="~/Areas/Admin/js/jquery-1.10.2.js"></script>
+	<script src="~/Areas/Admin/js/common.js"></script>
+	<script src="~/Areas/Admin/easyui/1.5.2/jquery.easyui.min.js"></script>
+	<script src="~/Areas/Admin/easyui/1.5.2/locale/easyui-lang-zh_CN.js"></script>
+
+</head>
+<body class="easyui-layout">
+	<!-- begin of header -->
+	<div class="wu-header" data-options="region:'north',border:false,split:true">
+		<div class="wu-header-left">
+			<h1>云阿拉丁企业网站管理后台</h1>
+		</div>
+		<div class="wu-header-right">
+			<p><strong>admin</strong>，欢迎您！</p>
+			<p><a href="#">网站首页</a>|<a href="#">支持论坛</a>|<a href="#">帮助中心</a>|<a href="#">安全退出</a></p>
+		</div>
+	</div>
+	<!-- end of header -->
+	<!-- begin of sidebar -->
+	<div class="wu-sidebar" data-options="region:'west',split:true,border:true,title:'导航菜单'">
+		<div class="easyui-accordion" data-options="border:false,fit:true">
+			<div title="文章管理" data-options="iconCls:'icon-creditcards'" style="padding:5px;">
+				<ul class="easyui-tree wu-side-tree">
+					<li iconcls="icon-book-add"><a href="javascript:void(0)" data-icon="icon-book-add" data-link="addarticle" iframe="0">添加文章</a></li>
+					<li iconcls="icon-book"><a href="javascript:void(0)" data-icon="icon-book" data-link="listarticle" iframe="0">文章管理</a></li>
+				</ul>
+			</div>
+
+			<div title="栏目管理" data-options="iconCls:'icon-application-form-edit'" style="padding:5px;">
+				<ul class="easyui-tree wu-side-tree">
+					<li iconcls="icon-chart-organisation-add"><a href="javascript:void(0)" data-icon="icon-chart-organisation-add" data-link="layout-3.html" iframe="0">添加栏目</a></li>
+					<li iconcls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="layout-3.html" iframe="0">栏目管理</a></li>
+				</ul>
+			</div>
+
+			<div title="评论管理" data-options="iconCls:'icon-bricks'" style="padding:5px;">
+				<ul class="easyui-tree wu-side-tree">
+					<li iconcls="icon-application-osx"><a href="javascript:void(0)" data-icon="icon-application-osx" data-link="page/layout-3.html" iframe="0">评论管理</a></li>
+					<li iconcls="icon-application-key"><a href="javascript:void(0)" data-icon="icon-application-key" data-link="page/layout-3.html" iframe="0">热门关键字管理</a></li>
+				</ul>
+			</div>
+
+			<div title="用户管理" data-options="iconCls:'icon-application-cascade'" style="padding:5px;">
+				<ul class="easyui-tree wu-side-tree">
+					<li iconcls="icon-user-add"><a href="javascript:void(0)" data-icon="icon-user-add" data-link="page/layout-2.html" iframe="0">添加用户</a></li>
+					<li iconcls="icon-user"><a href="javascript:void(0)" data-icon="icon-user" data-link="UserManager" iframe="0">用户管理</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- end of sidebar -->
+	<!-- begin of main -->
+	<div class="wu-main" data-options="region:'center'">
+		<div id="wu-tabs" class="easyui-tabs" data-options="border:false,fit:true">
+		</div>
+	</div>
+	<!-- end of main -->
+	<!-- begin of footer -->
+	<div class="wu-footer" data-options="region:'south',border:true,split:true">
+		&copy; 2013 Wu All Rights Reserved
+	</div>
+	<!-- end of footer -->
+	<script type="text/javascript">
+        $(function () {
+            $('.wu-side-tree a').on("click", function () {
+                var title = $(this).text();
+                var url = $(this).attr('data-link');
+                var iconCls = $(this).attr('data-icon');
+                var iframe = $(this).attr('iframe') == 1 ? true : false;
+                addTab(title, url, iconCls, iframe);
+            });
+        })
+
+        /**
+		* Name 选项卡初始化
+		*/
+        $('#wu-tabs').tabs();
+
+        //显示首页
+        (function () {
+            var href = "main";
+            var content = '<iframe scrolling="no" frameborder="0"  src="' + href + '" style="width:100%;height:100%;"></iframe>';
+            $('#wu-tabs').tabs('add', {
+                title: "首页",
+                content: content,
+                iconCls: "icon-tip",
+                fit: true,
+                cls: 'pd3',
+                closable: false
+            });
+        })();
+
+        /**
+		* Name 添加菜单选项
+		* Param title 名称
+		* Param href 链接
+		* Param iconCls 图标样式
+		* Param iframe 链接跳转方式（true为iframe，false为href）
+		*/
+        function addTab(title, href, iconCls, iframe) {
+            iframe = true;
+            var tabPanel = $('#wu-tabs');
+            if (!tabPanel.tabs('exists', title)) {
+                var content = '<iframe scrolling="auto" frameborder="0"  src="' + href + '" style="width:100%;height:100%;"></iframe>';
+                if (iframe) {
+                    tabPanel.tabs('add', {
+                        title: title,
+                        content: content,
+                        iconCls: iconCls,
+                        fit: true,
+                        cls: 'pd3',
+                        closable: true
+                    });
+                }
+                else {
+                    tabPanel.tabs('add', {
+                        title: title,
+                        href: href,
+                        iconCls: iconCls,
+                        fit: true,
+                        cls: 'pd3',
+                        closable: true
+                    });
+                }
+            }
+            else {
+                tabPanel.tabs('select', title);
+            }
+        }
+        /**
+		* Name 移除菜单选项
+		*/
+        function removeTab() {
+            var tabPanel = $('#wu-tabs');
+            var tab = tabPanel.tabs('getSelected');
+            if (tab) {
+                var index = tabPanel.tabs('getTabIndex', tab);
+                tabPanel.tabs('close', index);
+            }
+        }
+	</script>
+</body>
+</html>

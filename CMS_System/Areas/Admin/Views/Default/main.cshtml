@@ -1,0 +1,88 @@
+﻿
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+
+	<link href="~/Areas/Admin/easyui/1.5.2/themes/default/easyui.css" rel="stylesheet" />
+	<link href="~/Areas/Admin/css/wu.css" rel="stylesheet" />
+	<link href="~/Areas/Admin/css/icon.css" rel="stylesheet" />
+	<script src="~/Areas/Admin/js/jquery-1.10.2.js"></script>
+	<script src="~/Areas/Admin/js/common.js"></script>
+	<script src="~/Areas/Admin/easyui/1.5.2/jquery.easyui.min.js"></script>
+	<script src="~/Areas/Admin/easyui/1.5.2/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+	<div class="easyui-layout" data-options="fit:true">
+		<table id="wu-datagrid-comment" class="easyui-datagrid"
+			   title="最新评论"></table>
+		<br />
+		<br />
+		<table id="wu-datagrid-user" class="easyui-datagrid"
+			   title="最新注册的用户"></table>
+
+		<br />
+		<br />
+		<table id="wu-datagrid-article" class="easyui-datagrid"
+			   title="最新被访问的文章"></table>
+	</div>
+
+	<script type="text/javascript">
+        $(function () {
+            /**
+        * 载入数据
+        */
+            $('#wu-datagrid-comment').datagrid({
+                method: 'get',
+                url: '../data/data2.json',
+                collapsible: true,
+                singleSelect: true,
+                fitColumns: true,
+                columns: [[
+                    { field: 'productid', title: 'productid', width: 100 },
+                    { field: 'productname', title: 'productname', width: 180 },
+                    { field: 'unitcost', title: 'unitcost', width: 100 },
+                ]]
+            });
+
+            /**
+            * 载入数据
+            */
+            $('#wu-datagrid-user').datagrid({
+                method: 'get',
+                url: '../data/data2.json',
+                collapsible: true,
+                singleSelect: true,
+                fitColumns: true,
+                columns: [[
+                    { field: 'productid', title: 'productid', width: 100 },
+                    { field: 'productname', title: 'productname', width: 180 },
+                    { field: 'unitcost', title: 'unitcost', width: 100 },
+                ]]
+            });
+
+            /**
+            * 载入数据
+            */
+            $('#wu-datagrid-article').datagrid({
+                method: 'get',
+                url: '../data/data2.json',
+                collapsible: true,
+                singleSelect: true,
+                fitColumns: true,
+                columns: [[
+                    { field: 'productid', title: 'productid', width: 100 },
+                    { field: 'productname', title: 'productname', width: 180 },
+                    { field: 'unitcost', title: 'unitcost', width: 100 },
+                ]]
+            });
+        });
+	</script>
+</body>
+</html>

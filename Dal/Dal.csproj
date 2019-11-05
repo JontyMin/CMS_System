@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminDal.cs" />
     <Compile Include="IndexDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

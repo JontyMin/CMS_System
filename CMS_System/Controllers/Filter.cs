@@ -19,13 +19,13 @@ namespace CMS_System.Controllers
 				Errip= filterContext.HttpContext.Request.UserHostAddress,
 				Logsite= filterContext.HttpContext.Request.Path
 			};
-			filterContext.Controller.ViewData["error"] = l.Logtext;
-			filterContext.Result = new ViewResult()
-			{
-				ViewData = filterContext.Controller.ViewData,
-				ViewName = "error"
+			//filterContext.Controller.ViewData["error"] = l.Logtext;
+			//filterContext.Result = new ViewResult()
+			//{
+			//	ViewData = filterContext.Controller.ViewData,
+			//	ViewName = "error"
 
-			};
+			//};
 			db.ErrorLog(l);
 			//throw new NotImplementedException();
 			filterContext.ExceptionHandled = true;
