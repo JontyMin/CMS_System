@@ -30,19 +30,70 @@ namespace CMS_System.Areas.Admin.Controllers
 		{
 			return View();
 		}
+
+		/// <summary>
+		/// 栏目
+		/// </summary>
+		/// <returns></returns>
+		public ActionResult GetCategory()
+		{
+			return Json(d1.CMS_Category.ToList());
+		}
+		#region 用户管理
+
+
 		public ActionResult UserManager()
 		{
 			return View();
 		}
 
+		/// <summary>
+		/// 用户表分页
+		/// </summary>
+		/// <param name="page"></param>
+		/// <param name="rows"></param>
+		/// <returns></returns>
 		[HttpPost]
-		public ActionResult GetPage(int page,int rows)
+		public ActionResult GetPage(bool ? admin, string uname, int page,int rows)
 		{
-			int total = d1.CMS_User.Count();
-			var ls = db.GetCMS_Users(page,rows);
+			if (admin == null && uname == "")
+			{
+				int total = d1.CMS_User.Count();
+				var ls = db.GetCMS_Users(page, rows);
+				Dictionary<string, object> dc = new Dictionary<string, object>();
+				dc.Add("total", total);
+				dc.Add("rows", ls);
+				return Json(dc);
+			}
+			else
+			{
+				var total = d1.CMS_User.Where(c => c.admin == admin && c.uname.Contains(uname)).Count();
+				var ls = d1.CMS_User.Where(c => c.admin == admin && c.uname.Contains(uname))
+					.OrderBy(c => c.uid)
+					.Skip((page - 1) * rows)
+					.Take(rows)
+					.ToList();
+				Dictionary<string, object> dc = new Dictionary<string, object>();
+				dc.Add("total", total);
+				dc.Add("rows", ls);
+				return Json(dc);
+			}
+
+
+
+
+		}
+
+		public ActionResult GetArticlePage(int page, int rows)
+		{
+			var total = d1.V_CMS_Article.Count();
+			var ls = d1.V_CMS_Article.OrderBy(c => c.ptime)
+				.Skip((page - 1) * rows)
+				.Take(rows)
+				.ToList();
 			Dictionary<string, object> dc = new Dictionary<string, object>();
-			dc.Add("total",total); 
-			dc.Add("rows", ls);
+			dc.Add("total",total);
+			dc.Add("rows",ls);
 			return Json(dc);
 		}
 
@@ -74,8 +125,39 @@ namespace CMS_System.Areas.Admin.Controllers
 			}
 		}
 
+		/// <summary>
+		/// 修改用户
+		/// </summary>
+		/// <param name="u"></param>
+		/// <returns></returns>
+		public int UpdInfo(CMS_User u)
+		{
+			
 
-		
+			if (db.UpdInfo(u) > 0)
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
+		}
+
+
+		/// <summary>
+		/// 添加用户
+		/// </summary>
+		/// <param name="u"></param>
+		/// <returns></returns>
+		[Obsolete]
+		public int AddUser(CMS_User u)
+		{
+			u.face = "images/face.jpg";
+			u.upwd = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(u.upwd, "MD5");
+			return db.AddUser(u); 
+		}
+		#endregion
 
 	}
 }

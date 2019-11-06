@@ -159,7 +159,8 @@
             var op = istop ? "置顶" : "取消置顶";
             var items = $('#wu-datagrid').datagrid('getSelections');
             if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要" + op + "的文章"); return; }
-            $.messager.confirm('信息提示', '确定要' + op + '这些文章？', function (result) {
+			$.messager.confirm('信息提示', '确定要' + op + '这些文章？', function (result) {
+
             });
         }
 
@@ -200,33 +201,35 @@
             * Name 载入数据
             */
             $('#wu-datagrid').datagrid({
-                method: 'get',
-                url: '../data/datagrid.json',
+				url: 'GetArticlePage',
+				striped: true,
                 loadFilter: pagerFilter,
                 rownumbers: true,
-                singleSelect: false,
-                pageSize: 20,
+				singleSelect: false,
+				pageNumber:1,
+				pageSize: 20,
+				pageList: [20, 30, 40],
                 pagination: true,
                 multiSort: true,
-                fitColumns: true,
+				fitColumns: true,
+				loadMsg: "数据正在赶来的路上...",
+				checkOnSelect: true,
                 fit: true,
                 columns: [[
-                    { field: 'ck', checkbox: true },
-                    { field: 'productid', title: '编号', width: 100, sortable: true },
+                    //{ field: 'ck', checkbox: true },
+                    { field: 'aid', title: '编号', width: 100, sortable: true ,align: 'center'},
                     {
-                        field: 'productname', title: '标题', width: 180, sortable: true,
-                        formatter: function (value, row, index) {
-                            return '<a style="color:blue" href="javascript:void(0);" onclick="openEdit(\''+ row.productid +'\')">' + row.productname + '</a> [<a style="color:blue" target="_blank" href="/1前台/page.html?' + row.productid + '">浏览</a>]';
-                        }
+                        field: 'title', title: '标题', width: 180, sortable: true,align: 'center'
+                      
                     },
-                    { field: 'unitcost', title: '所属栏目', width: 100 },
-                    { field: 'listprice', title: '作者', width: 100 },
-                    { field: 'attr1', title: '发布人', width: 100 },
-                    { field: 'itemid', title: '创建时间', width: 100 },
-                    { field: 'itemid', title: '发布时间', width: 100 },
-                    { field: 'itemid', title: '置顶', width: 100 },
-                    { field: 'itemid', title: '点击率', width: 100 },
-                    { field: 'itemid', title: '评论数', width: 100 }
+                    { field: 'ctitle', title: '所属栏目', width: 100,align: 'center' },
+                    { field: 'author', title: '作者', width: 100,align: 'center' },
+                    { field: 'nname', title: '发布人', width: 100,align: 'center' },
+                    { field: 'ctime', title: '创建时间', width: 100,align: 'center'},
+                    { field: 'ptime', title: '发布时间', width: 100,align: 'center' },
+                    { field: 'istop', title: '置顶', width: 100,align: 'center' },
+                    { field: 'hits', title: '点击率', width: 100,align: 'center' },
+                    { field: 'comments', title: '评论数', width: 100,align: 'center' }
                 ]]
             });
 

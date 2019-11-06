@@ -24,7 +24,7 @@ namespace Model
         public string mobile { get; set; }
 
         [StringLength(50)]
-        public string face { get; set; }
+        public string face { get; set; }	
 
         public bool? admin { get; set; }
     }
