@@ -73,50 +73,48 @@
         * Name 删除记录
         */
         function remove() {
-            var items = $('#wu-datagrid').datagrid('getSelections');
-            if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要删除的文章"); return; }
-            $.messager.confirm('信息提示', '确定要删除这些文章？', function (result) {
-                if (result) {
-                    var ids = [];
-                    $(items).each(function () {
-                        ids.push(this.productid);
-                    });
-                    //alert(ids);return;
-                    $.ajax({
-                        url: '',
-                        data: '',
-                        success: function (data) {
-                            if (data) {
-                                $.messager.alert('信息提示', '删除成功！', 'info');
-                                reload();
-                            }
-                            else {
-                                $.messager.alert('信息提示', '删除失败！', 'info');
-                            }
-                        }
-                    });
-                }
-            });
+			//var items = $('#wu-datagrid').datagrid('getSelections');
+			var items = $("#wu-datagrid").datagrid("getSelected");
+			
+			if (items != null) {
+				$.messager.confirm('信息提示', '确定要删除这些文章？', function (result) {
+					if (result) {
+						$.post("DelArt", { "aid": items.aid }, function (d) {
+							if (d>0) {
+								$.messager.alert("提示", "删除成功");
+								$("#wu-datagrid").datagrid("reload");
+							} else {
+								$.messager.alert("提示", "请稍后重试");
+							}
+						});
+					}
+								
+					
+				});
+			} else {
+				$.messager.alert("提示", "请先选择您要删除的文章");
+			}
+           
         }
 
         /**
         * Name 打开添加窗口
         */
-        function openAdd() {
-            window.top.addTab("添加文章", "page/article-add.html", "icon-book-add");
+			function openAdd() {
+				window.location.href = "addarticle";
         }
 
         /**
         * Name 打开修改窗口
         */
-        function openEdit(id) {
-            if (!id) {
-                var items = $('#wu-datagrid').datagrid('getSelections');
-                if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要修改的文章"); return; }
-                if (items.length > 1) { $.messager.alert("提示", "请只选择一篇文章"); return; }
-                id = items[0].productid;
-            }
-            window.top.addTab("修改文章"+id, "page/article-edit.html?"+id, "icon-book-edit");
+			function openEdit() {
+				var items = $("#wu-datagrid").datagrid("getSelected");
+				if (items != null) {
+					window.location.href = "editarticle?aid=" + items.aid;
+				} else {
+					$.messager.alert("提示", "请先选择您要修改的文章");
+				}
+
         }
 
         /**
@@ -150,7 +148,8 @@
         }
 
         //刷新
-        function reload() {
+			function reload() {
+				window.location.reload();
 
         }
 
@@ -202,19 +201,19 @@
             */
             $('#wu-datagrid').datagrid({
 				url: 'GetArticlePage',
-				striped: true,
-                loadFilter: pagerFilter,
-                rownumbers: true,
-				singleSelect: false,
-				pageNumber:1,
-				pageSize: 20,
-				pageList: [20, 30, 40],
-                pagination: true,
-                multiSort: true,
 				fitColumns: true,
+				striped: true,
+				rownumbers: true,
+				singleSelect: true,
+				pagination: true,
 				loadMsg: "数据正在赶来的路上...",
+				//pagePosition: "both",
+				striped: true,
+				idField: "aid",
 				checkOnSelect: true,
-                fit: true,
+				pageNumber: 1,
+				pageSize: 29,
+				pageList: [20, 25,29],
                 columns: [[
                     //{ field: 'ck', checkbox: true },
                     { field: 'aid', title: '编号', width: 100, sortable: true ,align: 'center'},
@@ -225,25 +224,28 @@
                     { field: 'ctitle', title: '所属栏目', width: 100,align: 'center' },
                     { field: 'author', title: '作者', width: 100,align: 'center' },
                     { field: 'nname', title: '发布人', width: 100,align: 'center' },
-                    { field: 'ctime', title: '创建时间', width: 100,align: 'center'},
-                    { field: 'ptime', title: '发布时间', width: 100,align: 'center' },
-                    { field: 'istop', title: '置顶', width: 100,align: 'center' },
+                    { field: 'ctime', title: '创建时间', width: 100,align: 'center', formatter: function (value, row, index) {
+
+							var str = parseFloat(value.substr(6));
+						var t = new Date(str);
+						return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+						}},
+                    { field: 'ptime', title: '发布时间', width: 100,align: 'center', formatter: function (value, row, index) {
+
+						var str = parseFloat(value.substr(6));
+						var t = new Date(str);
+						return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+						} },
+                    { field: 'istop', title: '置顶', width: 100,align: 'center', formatter: function (value, row, index) {
+
+                            return value == true ? "已置顶" :"未置顶"
+                        } },
                     { field: 'hits', title: '点击率', width: 100,align: 'center' },
                     { field: 'comments', title: '评论数', width: 100,align: 'center' }
                 ]]
             });
 
 
-            /**
-            * Name 载入菜单树
-            */
-            $('#wu-category-tree').tree({
-                method: "get",
-                url: '../data/category.json',
-                onClick: function (node) {
-                    console.log(node.id, node.text);
-                }
-            });
         });
 
 

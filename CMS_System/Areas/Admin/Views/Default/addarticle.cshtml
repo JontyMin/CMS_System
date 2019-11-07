@@ -4,6 +4,7 @@
 }
 
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,18 +25,23 @@
 	<div title="添加文章" style="width:98%;padding:30px 60px;" class="easyui-panel">
 		<form id="ff" class="easyui-form" method="post" data-options="novalidate:true">
 			<div style="margin-bottom:20px">
-				<input id="title" name="title" data-options="label:'标题:',required:true" class="easyui-textbox" style="width:100%;max-width:400px;">
+				<input name="title" id="title" data-options="label:'标题:',required:true" required="required" class="easyui-textbox" style="width:100%;max-width:400px;">
 			</div>
 			<div style="margin-bottom:20px">
-				<select id="cid" name="cid" data-options="label:'所属栏目:',editable:false,required:true" class="easyui-combobox" style="width:100%;max-width:400px;">
-
+				<select name="cid" id="cid" data-options="label:'所属栏目:',editable:false,required:true" class="easyui-combobox" style="width:100%;max-width:400px;">
+					@*<option value="1">网站公告</option>
+					<option value="2">产品中心</option>
+					<option value="3">定制服务</option>
+					<option value="4">成功案例</option>
+					<option value="5">关于我们</option>*@
 				</select>
 			</div>
 			<div style="margin-bottom:20px">
-				<input id="author" name="author" data-options="label:'作者:'" class="easyui-textbox" style="width:100%;max-width:400px;">
+				<input name="author" id="author"  data-options="label:'作者:'" required="required" class="easyui-textbox" style="width:100%;max-width:400px;">
 			</div>
 			<div style="margin-bottom:20px">
-				<input name="uid" id="uid" data-options="label:'发布人:'" value="admin" readonly class="easyui-textbox" style="width:100%;max-width:400px;">
+				<input type="text" value="2" name="uid"  style="display:none" />
+				<input name="nname" data-options="label:'发布人:'" value="admin" readonly class="easyui-textbox" style="width:100%;max-width:400px;">
 			</div>
 			<div style="margin-bottom:20px">
 				<input type="checkbox" name="istop" id="istop" data-options="label:'置顶:'" class="easyui-textbox" style="width:120px">
@@ -43,25 +49,28 @@
 			<div style="margin-bottom:20px">
 				文章内容: <span id="editor_error" style="color:red;display:none;">文章内容为必填项！</span>
 			</div>
-			<div style="margin-bottom:20px" id="demo">
+				<textarea style="margin-bottom:20px" name="ahtml" id="ahtml"  class="layui-textarea"  lay-verify="content">
 				
-			</div>
+			</textarea>
 		</form>
 		<div style="text-align:center;padding:5px 0">
-			<a  class="easyui-linkbutton" id="bt1" style="width:120px" data-options="iconCls:'icon-save'">存为草稿</a>
-			<a  class="easyui-linkbutton" id="bt2" style="width:120px" data-options="iconCls:'icon-save'">发布</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm(1)" style="width:120px" data-options="iconCls:'icon-save'">存为草稿</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm(2)" style="width:120px" data-options="iconCls:'icon-save'">发布</a>
 		</div>
 	</div>
 	<script>
+
 		$(function () {
 			$("#cid").combobox({
 				url: "GetCategory",
 				valueField: 'cid',
 				textField: 'ctitle'
 			});
-			layui.use('layedit', function () {
+
+			layui.use( 'layedit', function () {
+				//var form = layui.form;
 				var layedit = layui.layedit;
-				var index=layedit.build('demo', { //建立编辑器
+				var index = layedit.build('ahtml', { //建立编辑器
 					tool: [
 						'strong' //加粗
 						, 'italic' //斜体
@@ -74,20 +83,64 @@
 						, 'face'//表情
 					]
 				});
-				$("#bt1").click(function () {
-					if ($("#title").val() == "" || $("#title").val() == null) {
-						layer.msg("文章标题不能为空");
-					} else if($("#cid option:selected").val()=="") {
-						layer.msg("请选择文章所属栏目");
-					}else if (layedit.getContent(index) =="") {
-						layer.msg("文章内容不能为空");
+				//form.verify({
+				//	content: function () {
+				//		return layedit.sync(index);
+				//	}
+				//});
+				$("a").eq(0).click(function () {
+					var ls = {
+						"title": $("#title").val(),
+						"cid": $("#cid option:selected").val(),
+						"author": $("#author").val(),
+						"istop": $('#istop').is(':checked'),
+						"ahtml": layedit.getContent(index),
+						"state":1
+					};
+					//alert(JSON.stringify(ls));
+					$.post("AddArt", { "u": ls, }, function (d) {
+							if (d > 0) {
+						$.messager.alert('信息提示', '文章已保存草稿', 'info');
+					} else {
+						$.messager.alert('信息提示', '请稍后重试', 'info');
 					}
-				
-
+					})
 				});
-			});
-
+					$("a").eq(1).click(function () {
+					var ls = {
+						"title": $("#title").val(),
+						"cid": $("#cid option:selected").val(),
+						"author": $("#author").val(),
+						"istop": $('#istop').is(':checked'),
+						"ahtml": layedit.getContent(index),
+						"state":2
+					};
+					//alert(JSON.stringify(ls));
+					$.post("AddArt", { "u": ls, }, function (d) {
+							if (d > 0) {
+						$.messager.alert('信息提示', '文章已发布', 'info');
+					} else {
+						$.messager.alert('信息提示', '请稍后重试', 'info');
+					}
+					})
+				});
+			})
 		})
+		//function submitForm(state) {
+		//	$('#ff').form('submit', {
+		//		url: "AddArt",
+		//		onSubmit: function (ps) {
+		//			ps.state = state
+		//		},
+		//		success: function (d) {
+				
+				
+		//		}
+		//	});
+		//}
+		function clearForm() {
+			$('#ff').form('clear');
+		}
 	</script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Dal;
@@ -30,6 +31,66 @@ namespace CMS_System.Areas.Admin.Controllers
 		{
 			return View();
 		}
+		public ActionResult editarticle(int aid)
+		{
+			if (aid<0)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+			}
+			else if(aid.ToString()=="")
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			else
+			{
+				return View();
+			}
+		
+		}
+
+		public ActionResult GetArtByAid(int aid)
+		{
+			var ls = d1.V_CMS_Article.Find(aid);
+			return Json(ls);
+		}
+		[ValidateInput(false)]
+		public int UpdArtByAid(CMS_Article a)
+		{
+			var ls=d1.CMS_Article.Find(a.aid);
+			ls.title = a.title;
+			ls.cid = a.cid;
+			ls.hits = a.hits;
+			ls.comments = a.comments;
+			ls.state = a.state;
+			ls.ahtml = a.ahtml;
+			return d1.SaveChanges();
+			
+		}
+
+		[ValidateInput(false)]
+		public int AddArt(CMS_Article u)
+		{
+			if (u.state==1)
+			{
+				u.ctime = DateTime.Now;
+				u.ptime = null;
+			}
+			else if(u.state==2)
+			{
+				u.ctime = DateTime.Now;
+				u.ptime = DateTime.Now;
+			}
+			d1.CMS_Article.Add(u);
+			if (d1.SaveChanges()>0)
+			{
+				return 1;
+			}
+			else
+			{
+				return 0;
+			}
+			
+		}
 
 		/// <summary>
 		/// 栏目
@@ -38,6 +99,13 @@ namespace CMS_System.Areas.Admin.Controllers
 		public ActionResult GetCategory()
 		{
 			return Json(d1.CMS_Category.ToList());
+		}
+
+		public int DelArt(int aid)
+		{
+			var ls=d1.CMS_Article.Find(aid);
+			d1.CMS_Article.Remove(ls);
+			return d1.SaveChanges();
 		}
 		#region 用户管理
 
@@ -87,7 +155,7 @@ namespace CMS_System.Areas.Admin.Controllers
 		public ActionResult GetArticlePage(int page, int rows)
 		{
 			var total = d1.V_CMS_Article.Count();
-			var ls = d1.V_CMS_Article.OrderBy(c => c.ptime)
+			var ls = d1.V_CMS_Article.OrderBy(c => c.aid)
 				.Skip((page - 1) * rows)
 				.Take(rows)
 				.ToList();

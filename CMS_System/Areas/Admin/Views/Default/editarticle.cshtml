@@ -1,0 +1,148 @@
+﻿
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<link href="~/Areas/Admin/easyui/1.5.2/themes/default/easyui.css" rel="stylesheet" />
+	<link href="~/Areas/Admin/css/wu.css" rel="stylesheet" />
+	<link href="~/Areas/Admin/css/icon.css" rel="stylesheet" />
+	<script src="~/Areas/Admin/js/jquery-1.10.2.js"></script>
+	<script src="~/Areas/Admin/js/common.js"></script>
+	<script src="~/Areas/Admin/easyui/1.5.2/jquery.easyui.min.js"></script>
+	<script src="~/Areas/Admin/easyui/1.5.2/locale/easyui-lang-zh_CN.js"></script>
+	<link href="~/Areas/Admin/layui/css/layui.css" rel="stylesheet" />
+	<script src="~/Areas/Admin/layui/layui.js"></script>
+</head>
+<body>
+	<div style="margin:20px 0;"></div>
+	<div title="修改文章" style="width:98%;padding:30px 60px;" class="easyui-panel">
+		<form id="ff" class="easyui-form" method="post" data-options="novalidate:true">
+			<div style="margin-bottom:20px">
+				<input type="text" value="" name="aid" id="aid" style="display:none"/>
+				<input name="title" id="title" data-options="label:'标题:',required:true" value="" class="easyui-textbox" style="width:100%;max-width:400px;">
+			</div>
+			<div style="margin-bottom:20px">
+				<select id="cid" name="cid"  data-options="label:'所属栏目:',editable:false,required:true" class="easyui-combobox" style="width:100%;max-width:400px;">
+				</select>
+			</div>
+			<div style="margin-bottom:20px">
+				<input name="author" data-options="label:'作者:'" value="" readonly="readonly" class="easyui-textbox" style="width:100%;max-width:400px;">
+			</div>
+			<div style="margin-bottom:20px">
+				<input type="text" value="" name="uid" id="uid" style="display:none" />
+				<input name="nname" id="nname" data-options="label:'发布人:'" value="" readonly="readonly" class="easyui-textbox" style="width:100%;max-width:400px;background-color:#d9d9d9;">
+			</div>
+			<div style="margin-bottom:20px">
+				<input name="ctime" id="ctime" data-options="label:'创建时间:'" value="" readonly="readonly" class="easyui-textbox" style="width:100%;max-width:400px;" >
+			</div>
+			<div style="margin-bottom:20px">
+				<input name="ptime" id="ptime" data-options="label:'发布时间:'" value="" readonly="readonly" class="easyui-textbox" style="width:100%;max-width:400px;">
+			</div>
+			<div style="margin-bottom:20px">
+				<input type="checkbox" name="istop" id="istop" data-options="label:'置顶:'"  checked="" class="easyui-textbox" style="width:120px">
+			</div>
+			<div style="margin-bottom:20px">
+				<input name="hits" id="hits" data-options="label:'点击率:'" value="" class="easyui-textbox" style="width:100%;max-width:400px;">
+			</div>
+			<div style="margin-bottom:20px">
+				<input name="comments" id="comments" data-options="label:'评论数:'" value="" class="easyui-textbox" style="width:100%;max-width:400px;">
+			</div>
+			<div style="margin-bottom:20px">
+				文章内容: <span id="editor_error" style="color:red;display:none;">文章内容为必填项！</span>
+			</div>
+			<textarea style="margin-bottom:20px" name="ahtml" id="ahtml">
+				
+			</textarea>
+		</form>
+		<div style="text-align:center;padding:5px 0">
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm(1)" style="width:120px" data-options="iconCls:'icon-save'">存为草稿</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm(2)" style="width:120px" data-options="iconCls:'icon-save'">发布</a>
+		</div>
+	</div>
+	<script>
+		function submitForm(state) {
+			$("#ff").form("submit", {
+				url: "UpdArtByAid",
+				onSubmit: function (ps) {
+					ps.state = state
+				},
+				success: function (d) {
+				
+					if (d > 0) {
+						   $.messager.alert('信息提示', '文章修改成功', 'info');
+					}
+				}
+			});
+
+		}
+		function clearForm() {
+			$('#ff').form('clear');
+		}
+
+		function To(value) {
+			var str = parseFloat(value.substr(6));
+			var t = new Date(str);
+			return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+		}
+
+		$(function () {
+
+			$("#cid").combobox({
+				url: "GetCategory",
+				valueField: 'cid',
+				textField: 'ctitle'
+			});
+			$.post("GetArtByAid", { "aid":@Request.QueryString["aid"]}, function (d) {
+				if (d != null) {
+					$("#ff").form("load", {
+						"aid": d.aid,
+						"title": d.title,
+						"cid": d.cid,
+						"author": d.author,
+						"uid": d.uid,
+						"nname": d.nname,
+						"ctime": To(d.ctime),
+						"ptime": To(d.ptime),
+						"istop": d.istop,
+						"hits": d.hits,
+						"comments": d.comments,
+						"ahtml": d.ahtml
+
+					});
+					
+					
+					
+					//$("#ahtml").html(d.ahtml);
+					layui.use('layedit', function () {
+						var layedit = layui.layedit;
+						
+						var index = layedit.build('ahtml', { //建立编辑器
+							tool: [
+								'strong' //加粗
+								, 'italic' //斜体
+								, 'underline' //下划线
+								, 'del' //删除线
+								, '|' //分割线
+								, 'left' //左对齐
+								, 'center' //居中对齐
+								, 'right' //右对齐
+								, 'face'//表情
+							]
+						});
+
+					})
+				}
+			});
+
+
+		})
+	</script>
+</body>
+</html>

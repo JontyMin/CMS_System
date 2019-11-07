@@ -2925,6 +2925,7 @@
     <Content Include="Areas\Admin\layui\font\iconfont.ttf" />
     <Content Include="Areas\Admin\layui\font\iconfont.woff" />
     <Content Include="Areas\Admin\layui\font\iconfont.woff2" />
+    <Content Include="Areas\Admin\Views\Default\editarticle.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
