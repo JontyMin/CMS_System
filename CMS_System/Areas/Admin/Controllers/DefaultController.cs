@@ -23,14 +23,30 @@ namespace CMS_System.Areas.Admin.Controllers
 			return View();
 		}
 
+		/// <summary>
+		/// 添加文章视图
+		/// </summary>
+		/// <returns></returns>
 		public ActionResult addarticle()
 		{
-			return View();
+			var ls = d1.CMS_Category.ToList();
+			return View(ls);
 		}
+
+		/// <summary>
+		///文章管理视图
+		/// </summary>
+		/// <returns></returns>
 		public ActionResult listarticle()
 		{
 			return View();
 		}
+
+		/// <summary>
+		/// 修改文章视图
+		/// </summary>
+		/// <param name="aid"></param>
+		/// <returns></returns>
 		public ActionResult editarticle(int aid)
 		{
 			if (aid<0)
@@ -43,16 +59,28 @@ namespace CMS_System.Areas.Admin.Controllers
 			}
 			else
 			{
-				return View();
+				var ls = d1.CMS_Category.ToList();
+				return View(ls);
 			}
 		
 		}
 
+		/// <summary>
+		/// 根据id查找文章
+		/// </summary>
+		/// <param name="aid"></param>
+		/// <returns></returns>
 		public ActionResult GetArtByAid(int aid)
 		{
 			var ls = d1.V_CMS_Article.Find(aid);
 			return Json(ls);
 		}
+
+		/// <summary>
+		/// 修改文章
+		/// </summary>
+		/// <param name="a"></param>
+		/// <returns></returns>
 		[ValidateInput(false)]
 		public int UpdArtByAid(CMS_Article a)
 		{
@@ -67,6 +95,11 @@ namespace CMS_System.Areas.Admin.Controllers
 			
 		}
 
+		/// <summary>
+		/// 添加文章
+		/// </summary>
+		/// <param name="u"></param>
+		/// <returns></returns>
 		[ValidateInput(false)]
 		public int AddArt(CMS_Article u)
 		{
@@ -92,15 +125,47 @@ namespace CMS_System.Areas.Admin.Controllers
 			
 		}
 
+
+
+		/// <summary>
+		/// 根据文章id修改栏目
+		/// </summary>
+		/// <param name="aid">文章id</param>
+		/// <param name="cid">栏目id</param>
+		/// <returns></returns>
+		public int UpdArtCidByAid(int aid,int cid)
+		{
+			var ls = d1.CMS_Article.Find(aid);
+			ls.cid = cid;
+			return d1.SaveChanges();
+		}
+
+
+		public int IstopByAid(int aid, int istop)
+		{
+			var ls = d1.CMS_Article.Find(aid);
+			ls.istop =Convert.ToBoolean(istop);
+			return d1.SaveChanges();
+		}
+
 		/// <summary>
 		/// 栏目
 		/// </summary>
 		/// <returns></returns>
 		public ActionResult GetCategory()
 		{
-			return Json(d1.CMS_Category.ToList());
+
+			var ls = d1.CMS_Category.ToList()
+				.Select(c => new { id=c.cid,text=c.ctitle });
+			return Json(ls);
 		}
 
+
+		/// <summary>
+		/// 删除文章
+		/// </summary>
+		/// <param name="aid">文章id</param>
+		/// <returns></returns>
 		public int DelArt(int aid)
 		{
 			var ls=d1.CMS_Article.Find(aid);
@@ -152,17 +217,45 @@ namespace CMS_System.Areas.Admin.Controllers
 
 		}
 
-		public ActionResult GetArticlePage(int page, int rows)
+		public ActionResult GetArticlePage(string stime, string etime, int? state, string title,int ? cid)
 		{
-			var total = d1.V_CMS_Article.Count();
-			var ls = d1.V_CMS_Article.OrderBy(c => c.aid)
-				.Skip((page - 1) * rows)
-				.Take(rows)
-				.ToList();
-			Dictionary<string, object> dc = new Dictionary<string, object>();
-			dc.Add("total",total);
-			dc.Add("rows",ls);
-			return Json(dc);
+
+
+			var ls = d1.V_CMS_Article.OrderBy(c => c.aid) as IEnumerable<Model.V_CMS_Article>;
+			//.ToList();
+			if (stime!=null && stime!="")
+			{
+				ls = ls.Where(x => x.ctime >= DateTime.Parse(stime));
+			}
+			if (etime!=null && etime!="")
+			{
+				ls = ls.Where(x => x.ptime <= DateTime.Parse(etime));
+			}
+			if (state!=null && state>0)
+			{
+				ls = ls.Where(x=>x.state==state);
+			}
+			if (title!=null && title!="")
+			{
+				ls = ls.Where(x=>x.title.Contains(title));
+			}
+			if (cid!=null && cid>0)
+			{
+				ls = ls.Where(c => c.cid == cid);
+			}
+			return new JsonResult()
+			{
+				Data=ls.ToList(),
+				JsonRequestBehavior= JsonRequestBehavior.AllowGet,
+				MaxJsonLength=10240000
+			};
+
+
+
+
+
+
+
 		}
 
 

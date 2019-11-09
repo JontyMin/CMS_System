@@ -18,7 +18,10 @@
 	<body>
 		<div class="easyui-layout" data-options="fit:true">
 			<div data-options="region:'west',border:true,split:true" title="栏目选择" style="width:150px; padding:5px;">
-				<ul id="wu-category-tree" class="easyui-tree"></ul>
+				<ul id="wu-category-tree" class="easyui-tree">
+
+
+				</ul>
 			</div>
 			<div data-options="region:'center',border:false">
 				<!-- Begin of toolbar -->
@@ -31,20 +34,20 @@
 						<a href="#" class="easyui-linkbutton" iconcls="icon-delete3" onclick="remove()" plain="true">删除</a>
 						|
 						<a href="#" class="easyui-linkbutton" iconcls="icon-book-go" onclick="setcategory()" plain="true">移动栏目</a>
-						<a href="#" class="easyui-linkbutton" iconcls="icon-section-expanded" onclick="settop(true)" plain="true">置顶</a>
-						<a href="#" class="easyui-linkbutton" iconcls="icon-section-collapsed" onclick="settop(false)" plain="true">取消置顶</a>
+						<a href="#" class="easyui-linkbutton" iconcls="icon-section-expanded" onclick="settop(1)" plain="true">置顶</a>
+						<a href="#" class="easyui-linkbutton" iconcls="icon-section-collapsed" onclick="settop(0)" plain="true">取消置顶</a>
 					</div>
 					<div class="wu-toolbar-search">
-						<label>起始时间：</label><input class="easyui-datebox" style="width:120px">
-						<label>结束时间：</label><input class="easyui-datebox" style="width:120px">
+						<label>起始时间：</label><input class="easyui-datebox" id="stime" style="width:120px">
+						<label>结束时间：</label><input class="easyui-datebox" id="etime" style="width:120px">
 						<label>文章状态：</label>
-						<select class="easyui-combobox" panelheight="auto" style="width:100px" data-options="editable:false">
-							<option value="-1">任意</option>
+						<select class="easyui-combobox" panelheight="auto" style="width:100px" id="state" data-options="editable:false">
+							<option value="">任意</option>
 							<option value="1">草稿</option>
 							<option value="2">发布</option>
 						</select>
-						<label>关键词：</label><input class="wu-text" style="width:100px">
-						<a href="#" class="easyui-linkbutton" iconcls="icon-search">开始检索</a>
+						<label>关键词：</label><input class="wu-text" id="title" style="width:100px">
+						<a href="#" class="easyui-linkbutton" id="bt1" iconcls="icon-search">开始检索</a>
 					</div>
 				</div>
 				<!-- End of toolbar -->
@@ -58,11 +61,7 @@
 					请选择要移动到哪个栏目:
 				</p>
 				<ul id="wu-datalist" class="easyui-datalist" style="height:200px;">
-					<li>网站公告</li>
-					<li>产品中心</li>
-					<li>定制服务</li>
-					<li>成功案例</li>
-					<li>关于我们</li>
+					
 				</ul>
 			</form>
 		</div>
@@ -155,17 +154,30 @@
 
         //置顶
         function settop(istop) {
-            var op = istop ? "置顶" : "取消置顶";
-            var items = $('#wu-datagrid').datagrid('getSelections');
-            if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要" + op + "的文章"); return; }
-			$.messager.confirm('信息提示', '确定要' + op + '这些文章？', function (result) {
+            var op = istop==1 ? "置顶" : "取消置顶";
+            var items = $('#wu-datagrid').datagrid('getSelected');
+			if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要" + op + "的文章"); return; }
+
+			$.messager.confirm('信息提示', '确定要' + op + '此文章？', function (result) {
+				if (result) {
+					$.messager.alert("提示", "文章已" + op);
+					$.post("IstopByAid", { "aid": items.aid, "istop": istop }, function (d) {
+						if (d > 0) {
+							$.messager.alert("提示", "文章已" + op);
+							$("#wu-datagrid").datagrid("reload");
+						} else {
+							$.messager.alert("提示", "请稍后重试");
+						}
+					})
+				}
 
             });
         }
 
         //移动栏目
         function setcategory() {
-            var items = $('#wu-datagrid').datagrid('getSelections');
+			var items = $('#wu-datagrid').datagrid('getSelected');
+		
             if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要移动栏目的文章"); return; }
             //弹出对话框
             $('#wu-dialog').dialog({
@@ -181,70 +193,132 @@
                 }, {
                     text: '确定',
                     iconCls: 'icon-ok',
-                    handler: function () {
-                        //获取选择项
-                        var sel = $("#wu-datalist").datalist("getSelections");
-                        if (sel.length == 0) return;
-                        console.log(sel);
+						handler: function () {
+							//获取选择项
+							var sel = $("#wu-datalist").datalist("getSelections");
+							if (sel.length == 0) {
+								$.messager.alert("提示", "请先选择移动目标栏目");
+							return;
+							}
+							//for (var i = 0; i < sel.length; i++) {
+							//	console.log(sel[i]);
+							//}
+							//console.log(items.aid + "" + sel[0].aid);
+							$.post("UpdArtCidByAid", { "aid": items.aid, "cid": sel[0].cid }, function (d) {
+								if (d > 0) {
+									$.messager.alert('信息提示', '移动栏目成功！', 'info');
+									$("#wu-datagrid").datagrid("reload");
+									$('#wu-dialog').dialog('close');
+								} else {
+									$.messager.alert('信息提示', '请稍后重试', 'info');
+									$('#wu-dialog').dialog('close');
+								}
+
+							});
+						
                         //提交移动栏目
-                        //...
-                        $.messager.alert('信息提示', '移动栏目成功！', 'info');
-                        $('#wu-dialog').dialog('close');
+						//...
+						
+                       
                     }
                 }]
             });
         }
 
-        $(function () {
-            /**
-            * Name 载入数据
-            */
-            $('#wu-datagrid').datagrid({
-				url: 'GetArticlePage',
-				fitColumns: true,
-				striped: true,
-				rownumbers: true,
-				singleSelect: true,
-				pagination: true,
-				loadMsg: "数据正在赶来的路上...",
-				//pagePosition: "both",
-				striped: true,
-				idField: "aid",
-				checkOnSelect: true,
-				pageNumber: 1,
-				pageSize: 29,
-				pageList: [20, 25,29],
-                columns: [[
-                    //{ field: 'ck', checkbox: true },
-                    { field: 'aid', title: '编号', width: 100, sortable: true ,align: 'center'},
-                    {
-                        field: 'title', title: '标题', width: 180, sortable: true,align: 'center'
-                      
-                    },
-                    { field: 'ctitle', title: '所属栏目', width: 100,align: 'center' },
-                    { field: 'author', title: '作者', width: 100,align: 'center' },
-                    { field: 'nname', title: '发布人', width: 100,align: 'center' },
-                    { field: 'ctime', title: '创建时间', width: 100,align: 'center', formatter: function (value, row, index) {
+			$(function () {
 
-							var str = parseFloat(value.substr(6));
-						var t = new Date(str);
-						return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
-						}},
-                    { field: 'ptime', title: '发布时间', width: 100,align: 'center', formatter: function (value, row, index) {
+				//数据列表，移动栏目
+				$('#wu-datalist').datalist({
+					url: 'GetCategory',
+					valueField: 'cid',
+					textField:'ctitle',
+				});
 
-						var str = parseFloat(value.substr(6));
-						var t = new Date(str);
-						return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
-						} },
-                    { field: 'istop', title: '置顶', width: 100,align: 'center', formatter: function (value, row, index) {
+				var cid;
+				$('#wu-category-tree').tree({
+					url:'GetCategory',
+					onClick: function (node) {
+						//alert(node.id);  // 在用户点击的时候提示
+						cid = node.id;
+						GetDate("", "", "", "", cid);
+					}
 
-                            return value == true ? "已置顶" :"未置顶"
-                        } },
-                    { field: 'hits', title: '点击率', width: 100,align: 'center' },
-                    { field: 'comments', title: '评论数', width: 100,align: 'center' }
-                ]]
-            });
+					
+				});
 
+				$("#bt1").click(function () {
+					var stime = $("#stime").val();
+					var etime = $("#etime").val();
+					var state = $("#state option:selected").val();
+					var title = $("#title").val();
+					GetDate(stime, etime, state, title, cid);
+				});
+				GetDate("","","","","");//页面加载
+
+				function GetDate(stime,etime,state,title,cid) {
+					/**
+					* 载入数据
+					*/
+					$('#wu-datagrid').datagrid({
+						url: 'GetArticlePage',
+						loadFilter: pagerFilter,
+						fitColumns: true,
+						striped: true,
+						rownumbers: true,
+						singleSelect: true,
+						pagination: true,
+						loadMsg: "数据正在赶来的路上...",
+						//pagePosition: "both",
+						striped: true,
+						idField: "aid",
+						checkOnSelect: true,
+						pageNumber: 1,
+						pageSize: 24,
+						pageList: [18, 20, 24],
+						queryParams: {
+							stime: stime,
+							etime: etime,
+							state: state,
+							title: title,
+							cid: cid
+						},
+						columns: [[
+							//{ field: 'ck', checkbox: true },
+							{ field: 'aid', title: '编号', width: 100, sortable: true, align: 'center' },
+							{
+								field: 'title', title: '标题', width: 180, sortable: true, align: 'center'
+
+							},
+							{ field: 'ctitle', title: '所属栏目', width: 100, align: 'center' },
+							{ field: 'author', title: '作者', width: 100, align: 'center' },
+							{ field: 'nname', title: '发布人', width: 100, align: 'center' },
+							{
+								field: 'ctime', title: '创建时间', width: 100, align: 'center', formatter: function (value, row, index) {
+
+									var str = parseFloat(value.substr(6));
+									var t = new Date(str);
+									return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+								}
+							},
+							{
+								field: 'ptime', title: '发布时间', width: 100, align: 'center', formatter: function (value, row, index) {
+
+									var str = parseFloat(value.substr(6));
+									var t = new Date(str);
+									return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+								}
+							},
+							{
+								field: 'istop', title: '置顶', width: 100, align: 'center', formatter: function (value, row, index) {
+
+									return value == true ? "已置顶" : "未置顶"
+								}
+							},
+							{ field: 'hits', title: '点击率', width: 100, align: 'center' },
+							{ field: 'comments', title: '评论数', width: 100, align: 'center' }
+						]]
+					});
+				}
 
         });
 

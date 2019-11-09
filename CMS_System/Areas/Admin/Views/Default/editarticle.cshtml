@@ -29,7 +29,11 @@
 				<input name="title" id="title" data-options="label:'标题:',required:true" value="" class="easyui-textbox" style="width:100%;max-width:400px;">
 			</div>
 			<div style="margin-bottom:20px">
-				<select id="cid" name="cid"  data-options="label:'所属栏目:',editable:false,required:true" class="easyui-combobox" style="width:100%;max-width:400px;">
+				<select id="cid" name="cid" data-options="label:'所属栏目:',editable:false,required:true" class="easyui-combobox" style="width:100%;max-width:400px;">
+					@foreach (var item in Model)
+					{
+						<option value="@item.cid">@item.ctitle</option>
+					}
 				</select>
 			</div>
 			<div style="margin-bottom:20px">
@@ -46,7 +50,7 @@
 				<input name="ptime" id="ptime" data-options="label:'发布时间:'" value="" readonly="readonly" class="easyui-textbox" style="width:100%;max-width:400px;">
 			</div>
 			<div style="margin-bottom:20px">
-				<input type="checkbox" name="istop" id="istop" data-options="label:'置顶:'"  checked="" class="easyui-textbox" style="width:120px">
+				置顶:<input type="checkbox" name="istop" id="istop"  style="width:120px">
 			</div>
 			<div style="margin-bottom:20px">
 				<input name="hits" id="hits" data-options="label:'点击率:'" value="" class="easyui-textbox" style="width:100%;max-width:400px;">
@@ -57,31 +61,33 @@
 			<div style="margin-bottom:20px">
 				文章内容: <span id="editor_error" style="color:red;display:none;">文章内容为必填项！</span>
 			</div>
-			<textarea style="margin-bottom:20px" name="ahtml" id="ahtml">
+			<textarea style="margin-bottom:20px" name="ahtml" id="ahtml" >
 				
 			</textarea>
 		</form>
 		<div style="text-align:center;padding:5px 0">
-			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm(1)" style="width:120px" data-options="iconCls:'icon-save'">存为草稿</a>
-			<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm(2)" style="width:120px" data-options="iconCls:'icon-save'">发布</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton"  style="width:120px" data-options="iconCls:'icon-save'">存为草稿</a>
+			<a href="javascript:void(0)" class="easyui-linkbutton"  style="width:120px" data-options="iconCls:'icon-save'">发布</a>
 		</div>
 	</div>
 	<script>
-		function submitForm(state) {
-			$("#ff").form("submit", {
-				url: "UpdArtByAid",
-				onSubmit: function (ps) {
-					ps.state = state
-				},
-				success: function (d) {
+		//function submitForm(state) {
+		//	var obj = $("#ahtml").html();
+		//	alert(obj);
+			//$("#ff").form("submit", {
+			//	url: "UpdArtByAid",
+			//	onSubmit: function (ps) {
+			//		ps.state = state
+			//	},
+			//	success: function (d) {
 				
-					if (d > 0) {
-						   $.messager.alert('信息提示', '文章修改成功', 'info');
-					}
-				}
-			});
+			//		if (d > 0) {
+			//			   $.messager.alert('信息提示', '文章修改成功', 'info');
+			//		}
+			//	}
+			//});
 
-		}
+		//}
 		function clearForm() {
 			$('#ff').form('clear');
 		}
@@ -94,11 +100,6 @@
 
 		$(function () {
 
-			$("#cid").combobox({
-				url: "GetCategory",
-				valueField: 'cid',
-				textField: 'ctitle'
-			});
 			$.post("GetArtByAid", { "aid":@Request.QueryString["aid"]}, function (d) {
 				if (d != null) {
 					$("#ff").form("load", {
@@ -137,6 +138,57 @@
 							]
 						});
 
+						$("a").eq(1).click(function () {
+
+							layer.confirm('您确认修改文章吗？', {
+								btn: ['确认', '取消'] //按钮
+							}, function () {
+								if ($("#title").val() == "") {
+									layer.msg("请输入文章标题");
+								} else {
+									var ls = {
+										"aid": $("#aid").val(),
+										"title": $("#title").val(),
+										"cid": $("#cid option:selected").val(),
+										"hits": $("#hits").val(),
+										"comments": $("#comments").val(),
+										"state": 1,
+										"ahtml":layedit.getContent(index)
+									};
+									$.post("UpdArtByAid", { "a": ls }, function (d) {
+										if (d > 0) {
+											layer.msg("文章已保存草稿");
+										}
+									});
+								}
+							});
+
+
+						});
+						$("a").eq(2).click(function () {
+									layer.confirm('您确认修改文章吗？', {
+								btn: ['确认', '取消'] //按钮
+							}, function () {
+								if ($("#title").val() == "") {
+									layer.msg("请输入文章标题");
+								} else {
+									var ls = {
+										"aid": $("#aid").val(),
+										"title": $("#title").val(),
+										"cid": $("#cid option:selected").val(),
+										"hits": $("#hits").val(),
+										"comments": $("#comments").val(),
+										"state": 2,
+										"ahtml":layedit.getContent(index)
+									};
+									$.post("UpdArtByAid", { "a": ls }, function (d) {
+										if (d > 0) {
+											layer.msg("文章已发布");
+										}
+									});
+								}
+							});
+						});
 					})
 				}
 			});

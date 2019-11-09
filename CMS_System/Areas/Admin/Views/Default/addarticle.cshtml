@@ -29,18 +29,17 @@
 			</div>
 			<div style="margin-bottom:20px">
 				<select name="cid" id="cid" data-options="label:'所属栏目:',editable:false,required:true" class="easyui-combobox" style="width:100%;max-width:400px;">
-					@*<option value="1">网站公告</option>
-					<option value="2">产品中心</option>
-					<option value="3">定制服务</option>
-					<option value="4">成功案例</option>
-					<option value="5">关于我们</option>*@
+					@foreach (var item in Model)
+					{
+						<option value="@item.cid">@item.ctitle</option>
+					}
 				</select>
 			</div>
 			<div style="margin-bottom:20px">
 				<input name="author" id="author"  data-options="label:'作者:'" required="required" class="easyui-textbox" style="width:100%;max-width:400px;">
 			</div>
 			<div style="margin-bottom:20px">
-				<input type="text" value="2" name="uid"  style="display:none" />
+				<input type="text" value="2" name="uid" id="uid" style="display:none" />
 				<input name="nname" data-options="label:'发布人:'" value="admin" readonly class="easyui-textbox" style="width:100%;max-width:400px;">
 			</div>
 			<div style="margin-bottom:20px">
@@ -61,11 +60,12 @@
 	<script>
 
 		$(function () {
-			$("#cid").combobox({
-				url: "GetCategory",
-				valueField: 'cid',
-				textField: 'ctitle'
-			});
+			//$("#cid").combobox({
+			//	url: "GetCategory",
+			//	valueField: 'cid',
+			//	textField: 'ctitle'
+			//});
+			clearForm();
 
 			layui.use( 'layedit', function () {
 				//var form = layui.form;
@@ -83,21 +83,39 @@
 						, 'face'//表情
 					]
 				});
-				//form.verify({
+				//form.verify({layui富文本框、文本域内容同步
 				//	content: function () {
 				//		return layedit.sync(index);
 				//	}
 				//});
-				$("a").eq(0).click(function () {
+				$("a").eq(1).click(function () {
+					if ($("#title").val()=="") {
+						layer.msg("请输入文章标题");
+						return;
+					}
+
+					if ($("#cid option:selected").text()=="") {
+						layer.msg("请选择文章栏目");
+						return;
+					}
+					if ($("#author").val()=="") {
+						layer.msg("请输入文章作者");
+						return;
+					}
+					if (layedit.getContent(index)=="") {
+						layer.msg("请输入文章内容");
+						return;
+					}
 					var ls = {
 						"title": $("#title").val(),
 						"cid": $("#cid option:selected").val(),
 						"author": $("#author").val(),
-						"istop": $('#istop').is(':checked'),
+						"istop": $('#istop').is(':checked')?1:0,
+						"uid": $("#uid").val(),
 						"ahtml": layedit.getContent(index),
 						"state":1
 					};
-					//alert(JSON.stringify(ls));
+
 					$.post("AddArt", { "u": ls, }, function (d) {
 							if (d > 0) {
 						$.messager.alert('信息提示', '文章已保存草稿', 'info');
@@ -106,12 +124,13 @@
 					}
 					})
 				});
-					$("a").eq(1).click(function () {
+					$("a").eq(2).click(function () {
 					var ls = {
 						"title": $("#title").val(),
 						"cid": $("#cid option:selected").val(),
 						"author": $("#author").val(),
-						"istop": $('#istop').is(':checked'),
+						"uid": $("#uid").val(),
+						"istop": $('#istop').is(':checked')?1:0,
 						"ahtml": layedit.getContent(index),
 						"state":2
 					};
