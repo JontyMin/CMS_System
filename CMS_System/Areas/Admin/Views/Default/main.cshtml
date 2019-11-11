@@ -30,59 +30,80 @@
 		<br />
 		<br />
 		<table id="wu-datagrid-article" class="easyui-datagrid"
-			   title="最新被访问的文章"></table>
+			   title="最新发布的文章"></table>
 	</div>
 
 	<script type="text/javascript">
-        $(function () {
-            /**
-        * 载入数据
-        */
-            $('#wu-datagrid-comment').datagrid({
-                method: 'get',
-                url: '../data/data2.json',
-                collapsible: true,
-                singleSelect: true,
-                fitColumns: true,
-                columns: [[
-                    { field: 'productid', title: 'productid', width: 100 },
-                    { field: 'productname', title: 'productname', width: 180 },
-                    { field: 'unitcost', title: 'unitcost', width: 100 },
-                ]]
-            });
+		function To(v) {
+			var str = parseFloat(v.substr(6));
+			var t = new Date(str);
+			return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+		}
+		$(function () {
+			/**
+		* 载入数据
+		*/
+			$('#wu-datagrid-comment').datagrid({
+				url: 'GetNewCom',
+				collapsible: true,
+				singleSelect: true,
+				fitColumns: true,
+				loadMsg: "数据正在赶来的路上...",
+				columns: [[
+					{ field: 'cmid', title: '编号', width: 100, align: 'center' },
+					{ field: 'title', title: '文章标题', width: 180 , align: 'center'},
+					{ field: 'nname', title: '评论人', width: 100, align: 'center' },
+					{ field: 'cmhtml', title: '评论内容', width: 100, align: 'center' },
+					{
+						field: 'cmtime', title: '评论时间', width: 100, align: 'center',formatter: function (value, row, index) {
 
-            /**
-            * 载入数据
-            */
-            $('#wu-datagrid-user').datagrid({
-                method: 'get',
-                url: '../data/data2.json',
-                collapsible: true,
-                singleSelect: true,
-                fitColumns: true,
-                columns: [[
-                    { field: 'productid', title: 'productid', width: 100 },
-                    { field: 'productname', title: 'productname', width: 180 },
-                    { field: 'unitcost', title: 'unitcost', width: 100 },
-                ]]
-            });
+							return To(value);
+						}
+					}
+				]]
+			});
 
-            /**
-            * 载入数据
-            */
-            $('#wu-datagrid-article').datagrid({
-                method: 'get',
-                url: '../data/data2.json',
-                collapsible: true,
-                singleSelect: true,
-                fitColumns: true,
-                columns: [[
-                    { field: 'productid', title: 'productid', width: 100 },
-                    { field: 'productname', title: 'productname', width: 180 },
-                    { field: 'unitcost', title: 'unitcost', width: 100 },
-                ]]
-            });
-        });
+			/**
+			* 载入数据
+			*/
+			$('#wu-datagrid-user').datagrid({
+				url: 'NewUser',
+				collapsible: true,
+				singleSelect: true,
+				fitColumns: true,
+				columns: [[
+					{ field: 'uid', title: '编号', width: 100, align: 'center' },
+					{ field: 'uname', title: '用户名', width: 180, align: 'center' },
+					{ field: 'nname', title: '昵称', width: 100, align: 'center',formatter: function (value, row, index) {
+						return value == null ? "未设置昵称" : value;
+						} },
+					{ field: 'mobile', title: '电话号码', width: 100, align: 'center' },
+				]]
+			});
+
+			/**
+			* 载入数据
+			*/
+			$('#wu-datagrid-article').datagrid({
+				url: 'NewArt',
+				collapsible: true,
+				singleSelect: true,
+				fitColumns: true,
+				columns: [[
+					{ field: 'cid', title: '编号', width: 100, align: 'center' },
+					{ field: 'title', title: '文章标题', width: 180, align: 'center' },
+					{ field: 'ctitle', title: '文章栏目', width: 180, align: 'center' },
+					{ field: 'author', title: '作者', width: 100, align: 'center' },
+					{ field: 'nname', title: '发布', width: 180, align: 'center' },
+					{
+						field: 'ptime', title: '发布时间', width: 100, align: 'center', formatter: function (value, row, index) {
+
+							//return To(value);
+						}
+					},
+				]]
+			});
+		});
 	</script>
 </body>
 </html>

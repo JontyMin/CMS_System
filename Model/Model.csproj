@@ -58,6 +58,7 @@
     <Compile Include="db_CMS.cs" />
     <Compile Include="LogFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V_ArtCom.cs" />
     <Compile Include="V_CMS_Article.cs" />
     <Compile Include="V_CMS_Comment.cs" />
   </ItemGroup>

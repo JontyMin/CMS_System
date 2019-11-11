@@ -65,6 +65,11 @@ namespace CMS_System.Areas.Admin.Controllers
 		
 		}
 
+		public ActionResult ListColumn()
+		{
+			return View();
+		}
+
 		/// <summary>
 		/// 根据id查找文章
 		/// </summary>
@@ -125,6 +130,52 @@ namespace CMS_System.Areas.Admin.Controllers
 			
 		}
 
+		/// <summary>
+		/// 最新评论
+		/// </summary>
+		/// <returns></returns>
+		public ActionResult GetNewCom()
+		{
+			var ls = d1.V_CMS_Comment.Join(d1.V_CMS_Article,
+				c => c.cmid,
+				a => a.aid,
+				(c, a) => new V_ArtCom
+				{
+					cmid=c.cmid,
+					aid=c.aid,
+					uid=c.uid,
+					nname=a.nname,
+					cmtime=c.cmtime,
+					title=a.title,
+					cmhtml=c.cmhtml
+				}
+				).OrderByDescending(c=>c.cmid).Take(10).ToList() ;
+
+			//var ls = d1.CMS_Comment.OrderByDescending(c => c.cmid).Take(10).ToList();
+			return Json(ls);
+		}
+
+
+		/// <summary>
+		/// 最新注册用户
+		/// </summary>
+		/// <returns></returns>
+		public ActionResult NewUser()
+		{
+			var ls = d1.CMS_User.OrderByDescending(c => c.uid).Take(10).ToList();
+			return Json(ls);
+		}
+
+
+		/// <summary>
+		/// 最新发布文章
+		/// </summary>
+		/// <returns></returns>
+		public ActionResult NewArt()
+		{
+			var ls = d1.V_CMS_Article.OrderByDescending(c => c.aid).Take(10).ToList();
+			return Json(ls);
+		}
 
 
 		/// <summary>
@@ -141,6 +192,12 @@ namespace CMS_System.Areas.Admin.Controllers
 		}
 
 
+		/// <summary>
+		/// 根据id修改置顶
+		/// </summary>
+		/// <param name="aid"></param>
+		/// <param name="istop"></param>
+		/// <returns></returns>
 		public int IstopByAid(int aid, int istop)
 		{
 			var ls = d1.CMS_Article.Find(aid);
@@ -149,7 +206,7 @@ namespace CMS_System.Areas.Admin.Controllers
 		}
 
 		/// <summary>
-		/// 栏目
+		/// tree栏目
 		/// </summary>
 		/// <returns></returns>
 		public ActionResult GetCategory()
@@ -159,7 +216,16 @@ namespace CMS_System.Areas.Admin.Controllers
 				.Select(c => new { id=c.cid,text=c.ctitle });
 			return Json(ls);
 		}
+		/// <summary>
+		/// 栏目
+		/// </summary>
+		/// <returns></returns>
+		public ActionResult GetCategory1()
+		{
 
+			var ls = d1.CMS_Category.ToList();
+			return Json(ls);
+		}
 
 		/// <summary>
 		/// 删除文章
@@ -217,6 +283,56 @@ namespace CMS_System.Areas.Admin.Controllers
 
 		}
 
+		/// <summary>
+		/// 栏目表分页
+		/// </summary>
+		/// <param name="page"></param>
+		/// <param name="rows"></param>
+		/// <returns></returns>
+		public ActionResult GetPageCol(int page,int rows)
+		{
+			int total = d1.CMS_Category.Count();
+			var ls = d1.CMS_Category.OrderBy(c => c.cid)
+				.Skip((page - 1) * rows)
+				.Take(rows)
+				.ToList();
+			Dictionary<string, object> dc = new Dictionary<string, object>();
+			dc.Add("total", total);
+			dc.Add("rows", ls);
+			return Json(dc);
+		}
+
+		public ActionResult delCol(int cid)
+		{
+			var ls = d1.CMS_Category.Find(cid);
+			d1.CMS_Category.Remove(ls);
+			if (d1.SaveChanges() > 0)
+			{
+				return Json(new
+				{
+					state = true,
+					msg = "删除成功",
+				});
+			}
+			else
+			{
+				return Json(new
+				{
+					state = false,
+					msg = "貌似出错了。。。",
+				});
+			}
+		}
+
+		/// <summary>
+		/// 文章列表
+		/// </summary>
+		/// <param name="stime"></param>
+		/// <param name="etime"></param>
+		/// <param name="state"></param>
+		/// <param name="title"></param>
+		/// <param name="cid"></param>
+		/// <returns></returns>
 		public ActionResult GetArticlePage(string stime, string etime, int? state, string title,int ? cid)
 		{
 
@@ -305,6 +421,25 @@ namespace CMS_System.Areas.Admin.Controllers
 			}
 		}
 
+		public int UpdInfoByCid(CMS_Category u)
+		{
+
+			var ls=d1.CMS_Category.Find(u.cid);
+			ls.ctitle = u.ctitle;
+			ls.cname = u.cname;
+			ls.nav = u.nav;
+			ls.search = u.search;
+			return d1.SaveChanges();
+			
+		}
+
+		public int AddCol(CMS_Category c)
+		{
+			var ls = d1.CMS_Category.Max(a => a.navorder);
+			c.navorder = ls + 1;
+			d1.CMS_Category.Add(c);
+			return d1.SaveChanges();
+		}
 
 		/// <summary>
 		/// 添加用户
@@ -320,5 +455,11 @@ namespace CMS_System.Areas.Admin.Controllers
 		}
 		#endregion
 
+
+		protected override void Dispose(bool disposing)
+		{
+			d1.Dispose();
+			db.Dispose();
+		}
 	}
 }

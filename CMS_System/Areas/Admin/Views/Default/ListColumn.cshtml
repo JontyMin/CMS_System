@@ -20,16 +20,7 @@
 
 </head>
 <body>
-	<div class="wu-toolbar-search">
-		<label>用户组：</label>
-		<select class="easyui-combobox" panelheight="auto" style="width:100px" id="a1">
-			<option value="">选择用户组</option>
-			<option value="true">管理员</option>
-			<option value="false">用户</option>
-		</select>
-		<label>关键词：</label><input class="wu-text" id="d1" style="width:100px">
-		<a href="#" class="easyui-linkbutton" id="bt1" iconcls="icon-search">开始检索</a>
-	</div>
+
 	<div class="easyui-layout" data-options="fit:true">
 
 		<!-- End of toolbar -->
@@ -44,47 +35,55 @@
 
 			<table>
 				<tr>
-					<td width="60" align="right">用户名:</td>
-					<td><input type="text" name="uname" id="uname" class="wu-text" readonly="readonly" /></td>
+					<td width="60" align="right">栏目名称:</td>
+					<td><input type="text" name="ctitle" id="ctitle" class="wu-text" required="required"/></td>
 				</tr>
-
 				<tr>
-					<td valign="top" align="right">管 理:</td>
+					<td width="60" align="right">栏目英文名称:</td>
+					<td><input type="text" name="cname" id="cname" class="wu-text" required="required"/></td>
+				</tr>
+				<tr>
+					<td valign="top" align="right">显示导航:</td>
 					<td>
-						<input type="radio" id="admin" name="admin" value="true" />是
-						<input type="radio" id="admin" name="admin" value="false" />否
+						<input type="radio" id="nav" name="nav" value="true" />是
+						<input type="radio" id="nav" name="nav" value="false" />否
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" align="right">是否被搜索:</td>
+					<td>
+						<input type="radio" id="search" name="search" value="true" />是
+						<input type="radio" id="search" name="search" value="false" />否
 					</td>
 				</tr>
 			</table>
 		</form>
 	</div>
 
-	<div id="dlg" class="easyui-dialog" title="添加用户信息" style="width:400px;height:300px;padding:10px" closed="true">
+	<div id="dlg" class="easyui-dialog" title="添加用户信息" style="width:550px;height:250px;padding:10px" closed="true">
 		<div class="easyui-panel" title="" style="width:100%;padding:30px 60px;">
 			<form id="ff" method="post">
 				<table>
 					<tr>
-						<td>用 户 名：</td>
-						<td><input class="easyui-validatebox" type="text" name="uname" placeholder="请输入用户名" /></td>
-					</tr>
-
-					<tr>
-						<td>昵    称：</td>
-						<td><input id="dd" type="text" required="required" name="nname" placeholder="请输入昵称"></td>
+						<td width="60" align="right">栏目名称:</td>
+						<td><input type="text" name="ctitle" id="ctitle" class="wu-text" required="required"/></td>
 					</tr>
 					<tr>
-						<td>密    码：</td>
-						<td><input id="dd" type="password" required="required" name="upwd" placeholder="请输入密码"></td>
+						<td width="60" align="right">英文名称:</td>
+						<td><input type="text" name="cname" id="cname" class="wu-text" required="required"/></td>
 					</tr>
 					<tr>
-						<td>电话号码：</td>
-						<td><input class="easyui-validatebox" type="number" name="mobile" placeholder="请输入电话号码" /></td>
-					</tr>
-					<tr>
-						<td>权    限：</td>
+						<td valign="top" align="right">显示导航:</td>
 						<td>
-							<input type="radio" value="true" name="admin" />管理员
-							<input type="radio" value="false" name="admin" />用户
+							<input type="radio" id="nav" name="nav" value="true" />是
+							<input type="radio" id="nav" name="nav" value="false" />否
+						</td>
+					</tr>
+					<tr>
+						<td valign="top" align="right">搜索:</td>
+						<td>
+							<input type="radio" id="search" name="search" value="true" />是
+							<input type="radio" id="search" name="search" value="false" />否
 						</td>
 					</tr>
 				</table>
@@ -100,46 +99,10 @@
 
 		$(function () {
 
-			/**
-			* Name 打开修改窗口
-			*/
-			function openEdit() {
-				$('#wu-form-2').form('clear');
-				var items = $("#wu-datagrid-2").datagrid("getSelected");
-				if (items != null) {
+	
 
-				}
 
-				$('#wu-dialog-2').dialog({
-					closed: false,
-					modal: true,
-					title: "修改信息",
-					buttons: [{
-						text: '确定',
-						iconCls: 'icon-ok',
-						handler: function () {
-							alert($("#admin").val());
-						}
-					}, {
-						text: '取消',
-						iconCls: 'icon-cancel',
-						handler: function () {
-							$('#wu-dialog-2').dialog('close');
-						}
-					}]
-				});
-			}
-			/**
-			* Name 载入数据w
-			*/
 
-			$("#bt1").click(function () {
-				var a = $("#a1").val();
-				var b = $("#d1").val();
-				GetDate(a, b);
-			});
-
-			GetDate("","")
 
 			$("#dlg").dialog({
 				buttons: [{
@@ -148,7 +111,7 @@
 					handler: function () {
 
 						$("#ff").form("submit", {
-							url: "AddUser",
+							url: "AddCol",
 							success: function (d) {
 								if (d > 0) {
 									$.messager.alert('提示', '添加成功', 'info');
@@ -156,9 +119,7 @@
 										closed: true,
 									});
 									$("#wu-datagrid-2").datagrid("reload");
-								} else if (d == -1) {
-									$.messager.alert('提示', '用户名已存在', 'info');
-								} else {
+								}  else {
 									$.messager.alert('提示', '请稍后重试', 'info');
 								}
 							}
@@ -175,9 +136,9 @@
 			});
 		});
 
-		function GetDate(admin,uname) {
+
 				$('#wu-datagrid-2').datagrid({
-				url: "GetPage",
+				url: "GetPageCol",
 				fitColumns: true,
 				striped: true,
 				rownumbers: true,
@@ -191,21 +152,22 @@
 				pageNumber: 1,
 				pageSize: 10,
 				pageList: [10, 15, 20],
-					queryParams: {
-						admin: admin,
-						uname: uname
-				},
 				columns: [[
 					//{ field: 'ck', checkbox: true },
-					{ field: 'uid', title: '编号', width: 100, sortable: true, align: 'center' },
-					{ field: 'uname', title: '用户名', width: 180, sortable: true, align: 'center' },
-					{ field: 'nname', title: '昵称', width: 100, align: 'center' },
-					{ field: 'mobile', title: '电话号码', width: 100, align: 'center' },
-					{ field: 'face', title: '头像', width: 100, align: 'center' },
+					{ field: 'cid', title: '编号', width: 100, sortable: true, align: 'center' },
+					{ field: 'ctitle', title: '栏目名称', width: 180, sortable: true, align: 'center' },
+					{ field: 'cname', title: '栏目英文名', width: 100, align: 'center' },
 					{
-						field: 'admin', title: '是否管理员', width: 100, align: 'center', formatter: function (a, b, c) {
+						field: 'nav', title: '显示导航', width: 100, align: 'center', formatter: function (a, b, c) {
 
-							return a == true ? "管理员" : "用户"
+							return a == true ? "是" : "否"
+						}
+					},
+					{ field: 'navorder', title: '显示导航顺序', width: 100, align: 'center' },
+					{
+						field: 'search', title: '是否被搜索', width: 100, align: 'center', formatter: function (a, b, c) {
+
+							return a == true ? "是" : "否"
 						}
 					}
 				]],
@@ -236,9 +198,9 @@
 									iconCls: 'icon-ok',
 									handler: function () {
 										$("#wu-form-2").form("submit", {
-											url: "UpdInfo",
+											url: "UpdInfoByCid",
 											onSubmit: function (ps) {
-												ps.uid = items.uid
+												ps.cid = items.cid
 											},
 											success: function (d) {
 
@@ -275,7 +237,7 @@
 							$.messager.confirm('信息提示', '确定要删除该记录？', function (result) {
 								if (result) {
 
-									$.post("delUser", { "uid": items.uid }, function (d) {
+									$.post("delCol", { "cid": items.cid }, function (d) {
 										if (d.state) {
 											$("#wu-datagrid-2").datagrid("reload");
 											$.messager.alert('信息提示', d.msg, 'info');
@@ -302,11 +264,11 @@
 					text: '打印',
 						handler: function () {
 							window.print();
-							
+
 					}
 				}]
 			});
-		}
+		
 	</script>
 </body>
 </html>
