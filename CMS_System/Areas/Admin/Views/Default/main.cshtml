@@ -4,7 +4,7 @@
 }
 
 <!DOCTYPE html>
-
+@using Model
 <html>
 <head>
 	<title></title>
@@ -17,6 +17,8 @@
 	<script src="~/Areas/Admin/js/common.js"></script>
 	<script src="~/Areas/Admin/easyui/1.5.2/jquery.easyui.min.js"></script>
 	<script src="~/Areas/Admin/easyui/1.5.2/locale/easyui-lang-zh_CN.js"></script>
+	<script src="~/Areas/Admin/layui/layui.js"></script>
+	<link href="~/Areas/Admin/layui/css/layui.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="easyui-layout" data-options="fit:true">
@@ -40,6 +42,11 @@
 			return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
 		}
 		$(function () {
+
+			layui.use('layer', function () {
+				var layer = layui.layer;
+			layer.alert("欢迎@((Session["admin"] as CMS_User).uname)登录", {title: '系统信息',icon: 6,offset: 'rb',shade: 0,btnAlign: 'c'}); 
+			});         
 			/**
 		* 载入数据
 		*/
@@ -51,11 +58,11 @@
 				loadMsg: "数据正在赶来的路上...",
 				columns: [[
 					{ field: 'cmid', title: '编号', width: 100, align: 'center' },
-					{ field: 'title', title: '文章标题', width: 180 , align: 'center'},
+					{ field: 'title', title: '文章标题', width: 180, align: 'center' },
 					{ field: 'nname', title: '评论人', width: 100, align: 'center' },
 					{ field: 'cmhtml', title: '评论内容', width: 100, align: 'center' },
 					{
-						field: 'cmtime', title: '评论时间', width: 100, align: 'center',formatter: function (value, row, index) {
+						field: 'cmtime', title: '评论时间', width: 100, align: 'center', formatter: function (value, row, index) {
 
 							return To(value);
 						}
@@ -74,9 +81,11 @@
 				columns: [[
 					{ field: 'uid', title: '编号', width: 100, align: 'center' },
 					{ field: 'uname', title: '用户名', width: 180, align: 'center' },
-					{ field: 'nname', title: '昵称', width: 100, align: 'center',formatter: function (value, row, index) {
-						return value == null ? "未设置昵称" : value;
-						} },
+					{
+						field: 'nname', title: '昵称', width: 100, align: 'center', formatter: function (value, row, index) {
+							return value == null ? "未设置昵称" : value;
+						}
+					},
 					{ field: 'mobile', title: '电话号码', width: 100, align: 'center' },
 				]]
 			});

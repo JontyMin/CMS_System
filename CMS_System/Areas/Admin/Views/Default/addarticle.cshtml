@@ -1,4 +1,4 @@
-﻿
+﻿@using Model
 @{
 	Layout = null;
 }
@@ -36,11 +36,11 @@
 				</select>
 			</div>
 			<div style="margin-bottom:20px">
-				<input name="author" id="author"  data-options="label:'作者:'" required="required" class="easyui-textbox" style="width:100%;max-width:400px;">
+				<input name="author" id="author" data-options="label:'作者:'" required="required" class="easyui-textbox" style="width:100%;max-width:400px;">
 			</div>
 			<div style="margin-bottom:20px">
-				<input type="text" value="2" name="uid" id="uid" style="display:none" />
-				<input name="nname" data-options="label:'发布人:'" value="admin" readonly class="easyui-textbox" style="width:100%;max-width:400px;">
+				<input type="text" value="" name="uid" id="uid" style="display:none" />
+				<input name="nname" data-options="label:'发布人:'" value="@((Session["admin"] as CMS_User).nname)" readonly class="easyui-textbox" style="width:100%;max-width:400px;">
 			</div>
 			<div style="margin-bottom:20px">
 				<input type="checkbox" name="istop" id="istop" data-options="label:'置顶:'" class="easyui-textbox" style="width:120px">
@@ -48,7 +48,7 @@
 			<div style="margin-bottom:20px">
 				文章内容: <span id="editor_error" style="color:red;display:none;">文章内容为必填项！</span>
 			</div>
-				<textarea style="margin-bottom:20px" name="ahtml" id="ahtml"  class="layui-textarea"  lay-verify="content">
+			<textarea style="margin-bottom:20px" name="ahtml" id="ahtml" class="layui-textarea" lay-verify="content">
 				
 			</textarea>
 		</form>
@@ -67,7 +67,7 @@
 			//});
 			clearForm();
 
-			layui.use( 'layedit', function () {
+			layui.use('layedit', function () {
 				//var form = layui.form;
 				var layedit = layui.layedit;
 				var index = layedit.build('ahtml', { //建立编辑器
@@ -89,20 +89,20 @@
 				//	}
 				//});
 				$("a").eq(1).click(function () {
-					if ($("#title").val()=="") {
+					if ($("#title").val() == "") {
 						layer.msg("请输入文章标题");
 						return;
 					}
 
-					if ($("#cid option:selected").text()=="") {
+					if ($("#cid option:selected").text() == "") {
 						layer.msg("请选择文章栏目");
 						return;
 					}
-					if ($("#author").val()=="") {
+					if ($("#author").val() == "") {
 						layer.msg("请输入文章作者");
 						return;
 					}
-					if (layedit.getContent(index)=="") {
+					if (layedit.getContent(index) == "") {
 						layer.msg("请输入文章内容");
 						return;
 					}
@@ -110,37 +110,37 @@
 						"title": $("#title").val(),
 						"cid": $("#cid option:selected").val(),
 						"author": $("#author").val(),
-						"istop": $('#istop').is(':checked')?1:0,
-						"uid": $("#uid").val(),
+						"istop": $('#istop').is(':checked') ? 1 : 0,
+						"uid": @((Session["admin"] as CMS_User).uid),
 						"ahtml": layedit.getContent(index),
-						"state":1
+						"state": 1
 					};
-
-					$.post("AddArt", { "u": ls, }, function (d) {
-							if (d > 0) {
-						$.messager.alert('信息提示', '文章已保存草稿', 'info');
-					} else {
-						$.messager.alert('信息提示', '请稍后重试', 'info');
-					}
-					})
+					layer.alert(JSON.stringify(ls));
+					//$.post("AddArt", { "u": ls, }, function (d) {
+					//	if (d > 0) {
+					//		$.messager.alert('信息提示', '文章已保存草稿', 'info');
+					//	} else {
+					//		$.messager.alert('信息提示', '请稍后重试', 'info');
+					//	}
+					//})
 				});
-					$("a").eq(2).click(function () {
+				$("a").eq(2).click(function () {
 					var ls = {
 						"title": $("#title").val(),
 						"cid": $("#cid option:selected").val(),
 						"author": $("#author").val(),
-						"uid": $("#uid").val(),
-						"istop": $('#istop').is(':checked')?1:0,
+						"uid": @((Session["admin"] as CMS_User).uid),
+						"istop": $('#istop').is(':checked') ? 1 : 0,
 						"ahtml": layedit.getContent(index),
-						"state":2
+						"state": 2
 					};
 					//alert(JSON.stringify(ls));
 					$.post("AddArt", { "u": ls, }, function (d) {
-							if (d > 0) {
-						$.messager.alert('信息提示', '文章已发布', 'info');
-					} else {
-						$.messager.alert('信息提示', '请稍后重试', 'info');
-					}
+						if (d > 0) {
+							$.messager.alert('信息提示', '文章已发布', 'info');
+						} else {
+							$.messager.alert('信息提示', '请稍后重试', 'info');
+						}
 					})
 				});
 			})
@@ -152,8 +152,8 @@
 		//			ps.state = state
 		//		},
 		//		success: function (d) {
-				
-				
+
+
 		//		}
 		//	});
 		//}

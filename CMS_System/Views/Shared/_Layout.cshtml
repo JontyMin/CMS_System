@@ -16,7 +16,7 @@
 	else
 	{
 <a title="查看个人资料" href="/Index/Info">
-	<img id="img1" src="../@((Session["user"] as CMS_User).face)" />
+	<img id="img1" title="点击查看个人资料" src="../@((Session["user"] as CMS_User).face)" />
 	@((Session["user"]as CMS_User).uname)
 </a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		<a title="退出登录" href="/Index/rest">注销</a>
@@ -45,7 +45,7 @@
 	<script>
 		$(function () {
 			$("#bt1").click(function () {
-					window.location.href = "/index/Search?title="$("#title").val();
+					window.location.href = "/index/Search?title="+$("#title").val();
 			});
 			//$("#title").keyup(function () {
 
@@ -73,7 +73,7 @@
 				<div class="hd-top-left">
 					<a href="#" onclick="xtip.msg('也改变我们的发量')">代码改变世界</a>
 					<a href="#" onclick="xtip.msg('我们是码农')">关于我们</a>
-					<a href="#" onclick="xtip.msg('教育改变生活，华瑞成就梦想')" ondblclick="window.location.href='/Admin/Default/Index'">加入我们</a>
+					<a href="#" onclick="xtip.msg('教育改变生活，华瑞成就梦想')" ondblclick="window.location.href='/Admin/Default/Login'">加入我们</a>
 				</div>
 				<div class="hd-top-right">
 					@*<a href="register.html">注册</a>

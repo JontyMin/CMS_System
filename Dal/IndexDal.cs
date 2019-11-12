@@ -18,7 +18,7 @@ namespace Dal
 		/// <returns></returns>
 		public List<Model.CMS_Category> GetCMS_Categories()
 		{
-			return db.CMS_Category.OrderBy(c=>c.navorder).ToList();
+			return db.CMS_Category.OrderBy(c=>c.navorder).Where(c=>c.nav==true).ToList();
 		}
 
 

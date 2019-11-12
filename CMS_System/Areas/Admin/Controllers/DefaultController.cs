@@ -9,6 +9,7 @@ using Model;
 namespace CMS_System.Areas.Admin.Controllers
 {
 
+	[Filter]
     public class DefaultController : Controller
     {
 		AdminDal db = new AdminDal();
@@ -16,11 +17,57 @@ namespace CMS_System.Areas.Admin.Controllers
         // GET: Admin/Default
         public ActionResult Index()
         {
-            return View();
+
+				return View();
+            
         }
-		public ActionResult main()
+
+		public ActionResult LoginOut()
+		{
+			Session.Clear();
+			return Redirect("Login");
+		}
+
+		/// <summary>
+		/// 后台登录
+		/// </summary>
+		/// <returns></returns>
+		public ActionResult Login()
 		{
 			return View();
+		}
+
+		[Obsolete]
+		public ActionResult AdminLogin(string uname, string upwd)
+		{
+			upwd = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(upwd, "MD5");
+			CMS_User ls = d1.CMS_User.FirstOrDefault(c=>c.uname==uname&&c.upwd==upwd);
+			if (ls.admin==true)
+			{
+				Session["admin"] = ls;
+				return Json(new
+				{
+					msg = "管理员"+ls.uname+"登录成功",
+					state = true
+
+				});
+			}
+			else
+			{
+				return Json(new
+				{
+					msg = "管理员或密码错误",
+					state = false
+
+				});
+			}
+
+		}
+		public ActionResult main()
+		{
+			
+				return View();
+			
 		}
 
 		/// <summary>
@@ -241,6 +288,10 @@ namespace CMS_System.Areas.Admin.Controllers
 		#region 用户管理
 
 
+		/// <summary>
+		/// 用户管理
+		/// </summary>
+		/// <returns></returns>
 		public ActionResult UserManager()
 		{
 			return View();
@@ -302,6 +353,11 @@ namespace CMS_System.Areas.Admin.Controllers
 			return Json(dc);
 		}
 
+		/// <summary>
+		/// 删除栏目
+		/// </summary>
+		/// <param name="cid"></param>
+		/// <returns></returns>
 		public ActionResult delCol(int cid)
 		{
 			var ls = d1.CMS_Category.Find(cid);
@@ -421,6 +477,11 @@ namespace CMS_System.Areas.Admin.Controllers
 			}
 		}
 
+		/// <summary>
+		/// 修改栏目信息
+		/// </summary>
+		/// <param name="u"></param>
+		/// <returns></returns>
 		public int UpdInfoByCid(CMS_Category u)
 		{
 
@@ -433,6 +494,12 @@ namespace CMS_System.Areas.Admin.Controllers
 			
 		}
 
+
+		/// <summary>
+		/// 添加栏目
+		/// </summary>
+		/// <param name="c"></param>
+		/// <returns></returns>
 		public int AddCol(CMS_Category c)
 		{
 			var ls = d1.CMS_Category.Max(a => a.navorder);
@@ -455,7 +522,10 @@ namespace CMS_System.Areas.Admin.Controllers
 		}
 		#endregion
 
-
+		/// <summary>
+		/// 释放
+		/// </summary>
+		/// <param name="disposing"></param>
 		protected override void Dispose(bool disposing)
 		{
 			d1.Dispose();

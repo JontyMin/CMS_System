@@ -2536,6 +2536,17 @@
     <Content Include="Areas\Admin\layui\lay\modules\tree.js" />
     <Content Include="Areas\Admin\layui\lay\modules\upload.js" />
     <Content Include="Areas\Admin\layui\lay\modules\util.js" />
+    <Content Include="Areas\Admin\login\css\component.css" />
+    <Content Include="Areas\Admin\login\css\demo.css" />
+    <Content Include="Areas\Admin\login\css\normalize.css" />
+    <Content Include="Areas\Admin\login\img\demo-1-bg.jpg" />
+    <Content Include="Areas\Admin\login\img\1.jpg" />
+    <Content Include="Areas\Admin\login\img\login_ico.png" />
+    <Content Include="Areas\Admin\login\js\demo-1.js" />
+    <Content Include="Areas\Admin\login\js\EasePack.min.js" />
+    <Content Include="Areas\Admin\login\js\html5.js" />
+    <Content Include="Areas\Admin\login\js\rAF.js" />
+    <Content Include="Areas\Admin\login\js\TweenLite.min.js" />
     <Content Include="bin\CMS_System.dll" />
     <Content Include="bin\CMS_System.pdb" />
     <Content Include="bin\cs\Microsoft.CodeAnalysis.CSharp.resources.dll" />
@@ -2847,6 +2858,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Filter.cs" />
     <Compile Include="Controllers\Filter.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2927,6 +2939,7 @@
     <Content Include="Areas\Admin\layui\font\iconfont.woff2" />
     <Content Include="Areas\Admin\Views\Default\editarticle.cshtml" />
     <Content Include="Areas\Admin\Views\Default\ListColumn.cshtml" />
+    <Content Include="Areas\Admin\Views\Default\Login.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
