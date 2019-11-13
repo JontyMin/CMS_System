@@ -2940,6 +2940,8 @@
     <Content Include="Areas\Admin\Views\Default\editarticle.cshtml" />
     <Content Include="Areas\Admin\Views\Default\ListColumn.cshtml" />
     <Content Include="Areas\Admin\Views\Default\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Default\Commentlist.cshtml" />
+    <Content Include="Areas\Admin\Views\Default\ArtComList.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />

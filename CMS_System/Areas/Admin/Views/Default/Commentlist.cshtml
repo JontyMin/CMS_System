@@ -27,14 +27,7 @@
 				<div class="wu-toolbar-button">
 					<a href="#" class="easyui-linkbutton" iconcls="icon-refresh" onclick="reload()" plain="true">刷新</a>
 					|
-					<a href="#" class="easyui-linkbutton" iconcls="icon-add" onclick="openAdd()" plain="true">添加</a>
-					<a href="#" class="easyui-linkbutton" iconcls="icon-edit" onclick="openEdit()" plain="true">修改</a>
-					<a href="#" class="easyui-linkbutton" iconcls="icon-delete3" onclick="remove()" plain="true">删除</a>
-					|
-					<a href="#" class="easyui-linkbutton" iconcls="icon-book-go" onclick="setcategory()" plain="true">移动栏目</a>
-					<a href="#" class="easyui-linkbutton" iconcls="icon-section-expanded" onclick="settop(1)" plain="true">置顶</a>
-					<a href="#" class="easyui-linkbutton" iconcls="icon-section-collapsed" onclick="settop(0)" plain="true">取消置顶</a>
-
+					<a href="#" class="easyui-linkbutton" iconcls="icon-search" onclick="Look()" plain="true">查看文章评论</a>
 				</div>
 				<div class="wu-toolbar-search">
 					<label>起始时间：</label><input class="easyui-datebox" id="stime" style="width:120px">
@@ -53,66 +46,31 @@
 			<table id="wu-datagrid" toolbar="#wu-toolbar"></table>
 		</div>
 	</div>
-	<!-- Begin of easyui-dialog -->
-	<div id="wu-dialog" class="easyui-dialog" data-options="closed:true,iconCls:'icon-save'" style="width:400px; padding:10px;">
-		<form id="wu-form" method="post">
-			<p>
-				请选择要移动到哪个栏目:
-			</p>
-			<ul id="wu-datalist" class="easyui-datalist" style="height:200px;">
-			</ul>
-		</form>
-	</div>
+
 	<!-- End of easyui-dialog -->
 	<script type="text/javascript">
 
 		/**
-		* Name 删除记录
-		*/
-		function remove() {
-			//var items = $('#wu-datagrid').datagrid('getSelections');
-			var items = $("#wu-datagrid").datagrid("getSelected");
-
-			if (items != null) {
-				$.messager.confirm('信息提示', '确定要删除这些文章？', function (result) {
-					if (result) {
-						$.post("DelArt", { "aid": items.aid }, function (d) {
-							if (d > 0) {
-								$.messager.alert("提示", "删除成功");
-								$("#wu-datagrid").datagrid("reload");
-							} else {
-								$.messager.alert("提示", "请稍后重试");
-							}
-						});
-					}
-
-
-				});
-			} else {
-				$.messager.alert("提示", "请先选择您要删除的文章");
-			}
-
-		}
 
 		/**
-		* Name 打开添加窗口
-		*/
-		function openAdd() {
-			window.location.href = "addarticle";
-		}
+* 查看文章评论
+*/
 
-		/**
-		* Name 打开修改窗口
-		*/
-		function openEdit() {
+		function Look() {
+
+
+
 			var items = $("#wu-datagrid").datagrid("getSelected");
 			if (items != null) {
-				window.location.href = "editarticle?aid=" + items.aid;
+				window.location.href = "ArtComList?aid=" + items.aid;
 			} else {
-				$.messager.alert("提示", "请先选择您要修改的文章");
+				$.messager.alert("提示", "请先选择您要查看的文章");
 			}
-
 		}
+
+
+
+
 
 		/**
 		* Name 分页过滤器
@@ -150,87 +108,12 @@
 
 		}
 
-		//置顶
-		function settop(istop) {
-			var op = istop == 1 ? "置顶" : "取消置顶";
-			var items = $('#wu-datagrid').datagrid('getSelected');
-			if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要" + op + "的文章"); return; }
-
-			$.messager.confirm('信息提示', '确定要' + op + '此文章？', function (result) {
-				if (result) {
-					$.messager.alert("提示", "文章已" + op);
-					$.post("IstopByAid", { "aid": items.aid, "istop": istop }, function (d) {
-						if (d > 0) {
-							$.messager.alert("提示", "文章已" + op);
-							$("#wu-datagrid").datagrid("reload");
-						} else {
-							$.messager.alert("提示", "请稍后重试");
-						}
-					})
-				}
-
-			});
-		}
-
-		//移动栏目
-		function setcategory() {
-			var items = $('#wu-datagrid').datagrid('getSelected');
-
-			if (!items || items.length == 0) { $.messager.alert("提示", "请先选择您要移动栏目的文章"); return; }
-			//弹出对话框
-			$('#wu-dialog').dialog({
-				closed: false,
-				modal: true,
-				title: "移动栏目",
-				buttons: [{
-					text: '取消',
-					iconCls: 'icon-cancel',
-					handler: function () {
-						$('#wu-dialog').dialog('close');
-					}
-				}, {
-					text: '确定',
-					iconCls: 'icon-ok',
-					handler: function () {
-						//获取选择项
-						var sel = $("#wu-datalist").datalist("getSelections");
-						if (sel.length == 0) {
-							$.messager.alert("提示", "请先选择移动目标栏目");
-							return;
-						}
-						//for (var i = 0; i < sel.length; i++) {
-						//	console.log(sel[i]);
-						//}
-						//console.log(items.aid + "" + sel[0].aid);
-						$.post("UpdArtCidByAid", { "aid": items.aid, "cid": sel[0].cid }, function (d) {
-							if (d > 0) {
-								$.messager.alert('信息提示', '移动栏目成功！', 'info');
-								$("#wu-datagrid").datagrid("reload");
-								$('#wu-dialog').dialog('close');
-							} else {
-								$.messager.alert('信息提示', '请稍后重试', 'info');
-								$('#wu-dialog').dialog('close');
-							}
-
-						});
-
-						//提交移动栏目
-						//...
 
 
-					}
-				}]
-			});
-		}
-
+	
 		$(function () {
 
-			//数据列表，移动栏目
-			$('#wu-datalist').datalist({
-				url: 'GetCategory1',
-				valueField: 'cid',
-				textField: 'ctitle',
-			});
+
 
 			var cid;
 			$('#wu-category-tree').tree({
@@ -279,6 +162,12 @@
 						state: state,
 						title: title,
 						cid: cid
+					},
+					onLoadError: function () {
+						$.messager.alert("提示", "数据加载失败，请检查网络连接");
+					},
+					onDblClickRow: function (index, row) {//行双击事件
+						window.location.href = "ArtComList?aid=" + row.aid;
 					},
 					columns: [[
 						//{ field: 'ck', checkbox: true },

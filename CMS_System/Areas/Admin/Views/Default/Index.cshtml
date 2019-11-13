@@ -1,4 +1,4 @@
-﻿
+﻿@using Model
 @{
 	Layout = null;
 }
@@ -18,17 +18,19 @@
 	<script src="~/Areas/Admin/js/common.js"></script>
 	<script src="~/Areas/Admin/easyui/1.5.2/jquery.easyui.min.js"></script>
 	<script src="~/Areas/Admin/easyui/1.5.2/locale/easyui-lang-zh_CN.js"></script>
-
+	<link href="~/css/style.css" rel="stylesheet" />
+	<link href="~/css/xtiper.css" rel="stylesheet" />
+	<script src="~/Script/xtiper.min.js"></script>
 </head>
 <body class="easyui-layout">
 	<!-- begin of header -->
 	<div class="wu-header" data-options="region:'north',border:false,split:true">
-		<div class="wu-header-left">
+		<div class="wu-header-left" style="padding:8px;margin:8px">
 			<h1>云阿拉丁企业网站管理后台</h1>
 		</div>
-		<div class="wu-header-right">
-			<p><strong>admin</strong>，欢迎您！</p>
-			<p><a href="~/index/index">网站首页</a>|<a href="#">支持论坛</a>|<a href="#">帮助中心</a>|<a href="LoginOut">安全退出</a></p>
+		<div class="wu-header-right" style="padding:8px;margin:8px">
+			<p style="margin-bottom:8px"><strong>@((Session["admin"] as CMS_User).uname)</strong>，欢迎您！</p>
+			<p><a href="~/index/index">网站首页</a>|<a href="#" onclick="xtip.msg('有事找度娘')">支持论坛</a>|<a href="#" onclick="xtip.msg('我们帮不了你')">帮助中心</a>|<a href="LoginOut">安全退出</a></p>
 		</div>
 	</div>
 	<!-- end of header -->
@@ -51,7 +53,7 @@
 
 			<div title="评论管理" data-options="iconCls:'icon-bricks'" style="padding:5px;">
 				<ul class="easyui-tree wu-side-tree">
-					<li iconcls="icon-application-osx"><a href="javascript:void(0)" data-icon="icon-application-osx" data-link="page/layout-3.html" iframe="0">评论管理</a></li>
+					<li iconcls="icon-application-osx"><a href="javascript:void(0)" data-icon="icon-application-osx" data-link="Commentlist" iframe="0">评论管理</a></li>
 					<li iconcls="icon-application-key"><a href="javascript:void(0)" data-icon="icon-application-key" data-link="page/layout-3.html" iframe="0">热门关键字管理</a></li>
 				</ul>
 			</div>
@@ -73,87 +75,87 @@
 	<!-- end of main -->
 	<!-- begin of footer -->
 	<div class="wu-footer" data-options="region:'south',border:true,split:true">
-		&copy; 2013 Wu All Rights Reserved
+		&copy; 2019 Wu All Rights Reserved
 	</div>
 	<!-- end of footer -->
 	<script type="text/javascript">
-        $(function () {
-            $('.wu-side-tree a').on("click", function () {
-                var title = $(this).text();
-                var url = $(this).attr('data-link');
-                var iconCls = $(this).attr('data-icon');
-                var iframe = $(this).attr('iframe') == 1 ? true : false;
-                addTab(title, url, iconCls, iframe);
-            });
-        })
+		$(function () {
+			$('.wu-side-tree a').on("click", function () {
+				var title = $(this).text();
+				var url = $(this).attr('data-link');
+				var iconCls = $(this).attr('data-icon');
+				var iframe = $(this).attr('iframe') == 1 ? true : false;
+				addTab(title, url, iconCls, iframe);
+			});
+		})
 
-        /**
+		/**
 		* Name 选项卡初始化
 		*/
-        $('#wu-tabs').tabs();
+		$('#wu-tabs').tabs();
 
-        //显示首页
-        (function () {
-            var href = "main";
-            var content = '<iframe scrolling="no" frameborder="0"  src="' + href + '" style="width:100%;height:100%;"></iframe>';
-            $('#wu-tabs').tabs('add', {
-                title: "首页",
-                content: content,
-                iconCls: "icon-tip",
-                fit: true,
-                cls: 'pd3',
-                closable: false
-            });
-        })();
+		//显示首页
+		(function () {
+			var href = "main";
+			var content = '<iframe scrolling="no" frameborder="0"  src="' + href + '" style="width:100%;height:100%;"></iframe>';
+			$('#wu-tabs').tabs('add', {
+				title: "首页",
+				content: content,
+				iconCls: "icon-tip",
+				fit: true,
+				cls: 'pd3',
+				closable: false
+			});
+		})();
 
-        /**
+		/**
 		* Name 添加菜单选项
 		* Param title 名称
 		* Param href 链接
 		* Param iconCls 图标样式
 		* Param iframe 链接跳转方式（true为iframe，false为href）
 		*/
-        function addTab(title, href, iconCls, iframe) {
-            iframe = true;
-            var tabPanel = $('#wu-tabs');
-            if (!tabPanel.tabs('exists', title)) {
-                var content = '<iframe scrolling="auto" frameborder="0"  src="' + href + '" style="width:100%;height:100%;"></iframe>';
-                if (iframe) {
-                    tabPanel.tabs('add', {
-                        title: title,
-                        content: content,
-                        iconCls: iconCls,
-                        fit: true,
-                        cls: 'pd3',
-                        closable: true
-                    });
-                }
-                else {
-                    tabPanel.tabs('add', {
-                        title: title,
-                        href: href,
-                        iconCls: iconCls,
-                        fit: true,
-                        cls: 'pd3',
-                        closable: true
-                    });
-                }
-            }
-            else {
-                tabPanel.tabs('select', title);
-            }
-        }
-        /**
+		function addTab(title, href, iconCls, iframe) {
+			iframe = true;
+			var tabPanel = $('#wu-tabs');
+			if (!tabPanel.tabs('exists', title)) {
+				var content = '<iframe scrolling="auto" frameborder="0"  src="' + href + '" style="width:100%;height:100%;"></iframe>';
+				if (iframe) {
+					tabPanel.tabs('add', {
+						title: title,
+						content: content,
+						iconCls: iconCls,
+						fit: true,
+						cls: 'pd3',
+						closable: true
+					});
+				}
+				else {
+					tabPanel.tabs('add', {
+						title: title,
+						href: href,
+						iconCls: iconCls,
+						fit: true,
+						cls: 'pd3',
+						closable: true
+					});
+				}
+			}
+			else {
+				tabPanel.tabs('select', title);
+			}
+		}
+		/**
 		* Name 移除菜单选项
 		*/
-        function removeTab() {
-            var tabPanel = $('#wu-tabs');
-            var tab = tabPanel.tabs('getSelected');
-            if (tab) {
-                var index = tabPanel.tabs('getTabIndex', tab);
-                tabPanel.tabs('close', index);
-            }
-        }
+		function removeTab() {
+			var tabPanel = $('#wu-tabs');
+			var tab = tabPanel.tabs('getSelected');
+			if (tab) {
+				var index = tabPanel.tabs('getTabIndex', tab);
+				tabPanel.tabs('close', index);
+			}
+		}
 	</script>
 </body>
 </html>

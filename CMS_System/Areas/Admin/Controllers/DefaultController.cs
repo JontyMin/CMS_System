@@ -36,7 +36,12 @@ namespace CMS_System.Areas.Admin.Controllers
 		{
 			return View();
 		}
-
+		/// <summary>
+		/// 登录验证
+		/// </summary>
+		/// <param name="uname"></param>
+		/// <param name="upwd"></param>
+		/// <returns></returns>
 		[Obsolete]
 		public ActionResult AdminLogin(string uname, string upwd)
 		{
@@ -196,7 +201,7 @@ namespace CMS_System.Areas.Admin.Controllers
 					title=a.title,
 					cmhtml=c.cmhtml
 				}
-				).OrderByDescending(c=>c.cmid).Take(10).ToList() ;
+				).OrderByDescending(c=>c.cmid).Take(5).ToList() ;
 
 			//var ls = d1.CMS_Comment.OrderByDescending(c => c.cmid).Take(10).ToList();
 			return Json(ls);
@@ -209,7 +214,7 @@ namespace CMS_System.Areas.Admin.Controllers
 		/// <returns></returns>
 		public ActionResult NewUser()
 		{
-			var ls = d1.CMS_User.OrderByDescending(c => c.uid).Take(10).ToList();
+			var ls = d1.CMS_User.OrderByDescending(c => c.uid).Take(5).ToList();
 			return Json(ls);
 		}
 
@@ -220,7 +225,7 @@ namespace CMS_System.Areas.Admin.Controllers
 		/// <returns></returns>
 		public ActionResult NewArt()
 		{
-			var ls = d1.V_CMS_Article.OrderByDescending(c => c.aid).Take(10).ToList();
+			var ls = d1.V_CMS_Article.OrderByDescending(c => c.aid).Take(5).ToList();
 			return Json(ls);
 		}
 
@@ -521,6 +526,33 @@ namespace CMS_System.Areas.Admin.Controllers
 			return db.AddUser(u); 
 		}
 		#endregion
+
+
+		public ActionResult Commentlist()
+		{
+			return View();
+		}
+
+		
+		public ActionResult ArtComList(int ? aid)
+		{
+			Session["aid"] = aid;
+			return View();
+		}
+
+
+		public JsonResult GetComPage()
+		{
+
+			var aid = Convert.ToInt32(Session["aid"]);
+			var ls = d1.V_CMS_Comment.Where(c => c.aid == aid).ToList();
+			return new JsonResult()
+			{
+				Data = ls.ToList(),
+				JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+				MaxJsonLength = 10240000
+			};
+		}
 
 		/// <summary>
 		/// 释放
