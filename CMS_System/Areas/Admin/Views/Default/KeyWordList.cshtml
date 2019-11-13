@@ -21,11 +21,11 @@
 </head>
 <body>
 	<div class="wu-toolbar-search">
-		<label>用户组：</label>
+		<label>分组：</label>
 		<select class="easyui-combobox" panelheight="auto" style="width:100px" id="a1">
-			<option value="">选择用户组</option>
-			<option value="true">管理员</option>
-			<option value="false">用户</option>
+			<option value="">选择分组</option>
+			<option value="true">显示</option>
+			<option value="false">隐藏</option>
 		</select>
 		<label>关键词：</label><input class="wu-text" id="d1" style="width:100px">
 		<a href="#" class="easyui-linkbutton" id="bt1" iconcls="icon-search">开始检索</a>
@@ -44,91 +44,29 @@
 
 			<table>
 				<tr>
-					<td width="60" align="right">用户名:</td>
-					<td><input type="text" name="uname" id="uname" class="wu-text" readonly="readonly" /></td>
+					<td width="60" align="right">关键字:</td>
+					<td><input type="text" name="keyword" id="keyword" class="wu-text" readonly="readonly" /></td>
 				</tr>
 
 				<tr>
-					<td valign="top" align="right">管 理:</td>
+					<td valign="top" align="right">显 示:</td>
 					<td>
-						<input type="radio" id="admin" name="admin" value="true" />是
-						<input type="radio" id="admin" name="admin" value="false" />否
+						<input type="radio" id="show" name="show" value="true" />是
+						<input type="radio" id="show" name="show" value="false" />否
 					</td>
 				</tr>
 			</table>
 		</form>
 	</div>
 
-	<div id="dlg" class="easyui-dialog" title="添加用户信息" style="width:400px;height:300px;padding:10px" closed="true">
-		<div class="easyui-panel" title="" style="width:100%;padding:30px 60px;">
-			<form id="ff" method="post">
-				<table>
-					<tr>
-						<td>用 户 名：</td>
-						<td><input class="easyui-validatebox" type="text" name="uname" placeholder="请输入用户名" /></td>
-					</tr>
 
-					<tr>
-						<td>昵    称：</td>
-						<td><input id="dd" type="text" required="required" name="nname" placeholder="请输入昵称"></td>
-					</tr>
-					<tr>
-						<td>密    码：</td>
-						<td><input id="dd" type="password" required="required" name="upwd" placeholder="请输入密码"></td>
-					</tr>
-					<tr>
-						<td>电话号码：</td>
-						<td><input class="easyui-validatebox" type="number" name="mobile" placeholder="请输入电话号码" /></td>
-					</tr>
-					<tr>
-						<td>权    限：</td>
-						<td>
-							<input type="radio" value="true" name="admin" />管理员
-							<input type="radio" value="false" name="admin" />用户
-						</td>
-					</tr>
-				</table>
-			</form>
-
-		</div>
-
-
-	</div>
 	<!-- End of easyui-dialog -->
 
 	<script type="text/javascript">
 
 		$(function () {
 
-			/**
-			* Name 打开修改窗口
-			*/
-			function openEdit() {
-				$('#wu-form-2').form('clear');
-				var items = $("#wu-datagrid-2").datagrid("getSelected");
-				if (items != null) {
-
-				}
-
-				$('#wu-dialog-2').dialog({
-					closed: false,
-					modal: true,
-					title: "修改信息",
-					buttons: [{
-						text: '确定',
-						iconCls: 'icon-ok',
-						handler: function () {
-							alert($("#admin").val());
-						}
-					}, {
-						text: '取消',
-						iconCls: 'icon-cancel',
-						handler: function () {
-							$('#wu-dialog-2').dialog('close');
-						}
-					}]
-				});
-			}
+	
 			/**
 			* Name 载入数据w
 			*/
@@ -141,43 +79,41 @@
 
 			GetDate("","")
 
-			$("#dlg").dialog({
-				buttons: [{
-
-					text: '添加',
-					handler: function () {
-
-						$("#ff").form("submit", {
-							url: "AddUser",
-							success: function (d) {
-								if (d > 0) {
-									$.messager.alert('提示', '添加成功', 'info');
-									$("#dlg").dialog({
-										closed: true,
-									});
-									$("#wu-datagrid-2").datagrid("reload");
-								} else if (d == -1) {
-									$.messager.alert('提示', '用户名已存在', 'info');
-								} else {
-									$.messager.alert('提示', '请稍后重试', 'info');
-								}
-							}
-						});
-					}
-				}, {
-					text: '关闭',
-					handler: function () {
-						$("#dlg").dialog({
-							closed: true,
-						});
-					}
-				}]
-			});
 		});
+		    /**
+        * Name 分页过滤器
+        */
+        function pagerFilter(data) {
+            if (typeof data.length == 'number' && typeof data.splice == 'function') {// is array
+                data = {
+                    total: data.length,
+                    rows: data
+                }
+            }
+            var dg = $(this);
+            var opts = dg.datagrid('options');
+            var pager = dg.datagrid('getPager');
+            pager.pagination({
+                onSelectPage: function (pageNum, pageSize) {
+                    opts.pageNumber = pageNum;
+                    opts.pageSize = pageSize;
+                    pager.pagination('refresh', { pageNumber: pageNum, pageSize: pageSize });
+                    dg.datagrid('loadData', data);
+                }
+            });
+            if (!data.originalRows) {
+                data.originalRows = (data.rows);
+            }
+            var start = (opts.pageNumber - 1) * parseInt(opts.pageSize);
+            var end = start + parseInt(opts.pageSize);
+            data.rows = (data.originalRows.slice(start, end));
+            return data;
+		}
 
-		function GetDate(admin,uname) {
-				$('#wu-datagrid-2').datagrid({
-				url: "GetPage",
+		function GetDate(show,keyword) {
+			$('#wu-datagrid-2').datagrid({
+				url: "GetKeyWord",
+				loadFilter: pagerFilter,
 				fitColumns: true,
 				striped: true,
 				rownumbers: true,
@@ -192,34 +128,30 @@
 				pageSize: 24,
 				pageList: [18, 20, 24],
 					queryParams: {
-						admin: admin,
-						uname: uname
+						show: show,
+						keyword: keyword
 				},
 				columns: [[
 					//{ field: 'ck', checkbox: true },
-					{ field: 'uid', title: '编号', width: 100, sortable: true, align: 'center' },
-					{ field: 'uname', title: '用户名', width: 180, sortable: true, align: 'center' },
-					{ field: 'nname', title: '昵称', width: 100, align: 'center' },
-					{ field: 'mobile', title: '电话号码', width: 100, align: 'center' },
-					{ field: 'face', title: '头像', width: 100, align: 'center' },
+					{ field: 'kid', title: '编号', width: 100, sortable: true, align: 'center' },
+					{ field: 'keyword', title: '关键字', width: 180, sortable: true, align: 'center' },
+					{ field: 'stimes', title: '搜索量', width: 100, align: 'center' },
 					{
-						field: 'admin', title: '是否管理员', width: 100, align: 'center', formatter: function (a, b, c) {
+						field: 'ltimes', title: '最近搜索', width: 100, align: 'center', formatter: function (value, row, index) {
 
-							return a == true ? "管理员" : "用户"
+							var str = parseFloat(value.substr(6));
+							var t = new Date(str);
+							return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+						}
+					},
+					{
+						field: 'show', title: '是否显示', width: 100, align: 'center', formatter: function (a, b, c) {
+
+							return a == true ? "显示" : "隐藏"
 						}
 					}
 				]],
 				toolbar: [{
-					iconCls: 'icon-add',
-					text: '添加',
-					handler: function () {
-						$("#ff").form("clear");
-						$("#dlg").dialog({
-							closed: false,
-
-						});
-					}
-				}, '-', {
 					iconCls: 'icon-edit',
 					text: '修改',
 					handler: function () {
@@ -236,9 +168,9 @@
 									iconCls: 'icon-ok',
 									handler: function () {
 										$("#wu-form-2").form("submit", {
-											url: "UpdInfo",
+											url: "UpdKeyInfo",
 											onSubmit: function (ps) {
-												ps.uid = items.uid
+												ps.kid = items.kid
 											},
 											success: function (d) {
 
@@ -275,7 +207,7 @@
 							$.messager.confirm('信息提示', '确定要删除该记录？', function (result) {
 								if (result) {
 
-									$.post("delUser", { "uid": items.uid }, function (d) {
+									$.post("delKey", { "kid": items.kid }, function (d) {
 										if (d.state) {
 											$("#wu-datagrid-2").datagrid("reload");
 											$.messager.alert('信息提示', d.msg, 'info');
@@ -302,7 +234,7 @@
 					text: '打印',
 						handler: function () {
 							window.print();
-							
+
 					}
 				}]
 			});

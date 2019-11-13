@@ -214,6 +214,7 @@ namespace Dal
 		public List<CMS_Keyword> GetCMS_Keywords()
 		{
 			return db.CMS_Keyword.OrderByDescending(c => c.stimes)
+				.Where(c=>c.show==true)
 				.Take(5)
 				.ToList();
 		}
