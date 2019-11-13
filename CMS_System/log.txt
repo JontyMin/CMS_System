@@ -1,0 +1,199 @@
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:23
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-Index 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:24
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-main 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:24
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-main 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:24
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetNewCom 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:25
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-NewArt 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:25
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-NewUser 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:30
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-listarticle 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:30
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetCategory1 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:30
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetArticlePage 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:31
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetCategory 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:38
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetArticlePage 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:41
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetArticlePage 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:27:45
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetArticlePage 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:25
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-Index 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:27
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-main 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:27
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetNewCom 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:28
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-NewUser 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:28
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-main 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:28
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-NewArt 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:32
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-listarticle 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:33
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetCategory1 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:33
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetArticlePage 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:34
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetCategory 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:37:38
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetArticlePage 参数-System.Collections.Generic.Dictionary`2[System.String,System.Object]
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:49:25
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-Index 参数-{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:49:25
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-main 参数-{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:49:25
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-main 参数-{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:49:26
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetNewCom 参数-{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:49:26
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-NewArt 参数-{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:49:27
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-NewUser 参数-{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:49:33
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-ListColumn 参数-{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:49:33
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetPageCol 参数-{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/13 19:49:34
+管 理 员：admin
+OnActionExecuting：控制器-Default 动作-GetPageCol 参数-{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+

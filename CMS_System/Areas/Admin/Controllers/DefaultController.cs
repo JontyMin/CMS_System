@@ -562,6 +562,12 @@ namespace CMS_System.Areas.Admin.Controllers
 			return View();
 		}
 
+
+		public ActionResult CommentTree()
+		{
+			return View();
+		}
+
 		/// <summary>
 		/// 文章评论
 		/// </summary>
@@ -584,6 +590,12 @@ namespace CMS_System.Areas.Admin.Controllers
 			return View();
 		}
 
+		/// <summary>
+		/// 关键字分页
+		/// </summary>
+		/// <param name="show"></param>
+		/// <param name="keyword"></param>
+		/// <returns></returns>
 		public ActionResult GetKeyWord(bool? show, string keyword)
 		{
 			var ls = d1.CMS_Keyword.OrderByDescending(c => c.stimes).ToList();

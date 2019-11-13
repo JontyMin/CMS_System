@@ -54,6 +54,8 @@
 				layer.msg('请输入管理员');
 			} else if (password == "" || password == null) {
 				layer.msg('请输入管理员密码');
+			} else if (password.length<=5) {
+				layer.msg('密码格式错误');
 			} else {
 				$.post("AdminLogin", { "uname": username, "upwd": password }, function (d) {
 					var index = layer.load(1, {shade: false}); 
