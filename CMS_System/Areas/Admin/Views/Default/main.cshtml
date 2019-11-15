@@ -105,7 +105,10 @@
 					{ field: 'author', title: '作者', width: 100, align: 'center' },
 					{ field: 'nname', title: '发布', width: 180, align: 'center' },
 					{
-						field: 'ptime', title: '发布时间', width: 100, align: 'center'
+						field: 'ptime', title: '发布时间', width: 100, align: 'center', formatter: function (value, row, index) {
+
+							return To(value);
+						}
 					},
 				]]
 			});

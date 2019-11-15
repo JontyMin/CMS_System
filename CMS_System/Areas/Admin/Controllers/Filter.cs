@@ -23,7 +23,6 @@ namespace CMS_System.Areas.Admin.Controllers
 			if (filterContext.HttpContext.Session["admin"] == null)
 			{
 				filterContext.Result = new System.Web.Mvc.RedirectResult("Login");
-
 			}
 			else
 			{
@@ -43,8 +42,8 @@ namespace CMS_System.Areas.Admin.Controllers
 				StringBuilder sb = new StringBuilder();
 				sb.AppendLine("-----------------------操作日志------------------------");
 				sb.AppendLine("操作时间:" + DateTime.Now.ToString());
-				sb.AppendLine("管 理 员：" + admin);
-				sb.AppendLine("OnActionExecuting：控制器-" + contorllerName + " 动作-" + actionName + " 参数-" + Content);
+				sb.AppendLine("管 理 员:" + admin);
+				sb.AppendLine("OnActionExecuting  控制器: " + contorllerName + "  动作:" + actionName + "  参数:" + Content);
 				sb.AppendLine("ServerHostName:" + Adr);
 				sb.AppendLine("ServerHostIP:" + Ip);
 

@@ -121,7 +121,7 @@
 				onClick: function (node) {
 					//alert(node.id);  // 在用户点击的时候提示
 					cid = node.id;
-					GetDate("", "", "", "", cid);
+					GetDate($("#stime").val(), $("#etime").val(), $("#state option:selected").val(), $("#title").val(), cid);
 				}
 
 
@@ -134,7 +134,7 @@
 				var title = $("#title").val();
 				GetDate(stime, etime, state, title, cid);
 			});
-			GetDate("", "", "", "", "");//页面加载
+			GetDate(null, null, "", "", "");//页面加载
 
 			function GetDate(stime, etime, state, title, cid) {
 				/**
@@ -142,7 +142,7 @@
 				*/
 				$('#wu-datagrid').datagrid({
 					url: 'GetArticlePage',
-					loadFilter: pagerFilter,
+					//loadFilter: pagerFilter,
 					fitColumns: true,
 					striped: true,
 					rownumbers: true,

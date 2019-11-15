@@ -223,6 +223,12 @@
 			});
 		}
 
+
+		function ToDate(value) {
+			var str = parseFloat(value.substr(6));
+			var t = new Date(str);
+			return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+		}
 		$(function () {
 
 			//数据列表，移动栏目
@@ -238,12 +244,12 @@
 				onClick: function (node) {
 					//alert(node.id);  // 在用户点击的时候提示
 					cid = node.id;
-					GetDate("", "", "", "", cid);
+					GetDate($("#stime").val(), $("#etime").val(), $("#state option:selected").val(), $("#title").val(), cid);
 				}
 
 
 			});
-
+			
 			$("#bt1").click(function () {
 				var stime = $("#stime").val();
 				var etime = $("#etime").val();
@@ -251,7 +257,7 @@
 				var title = $("#title").val();
 				GetDate(stime, etime, state, title, cid);
 			});
-			GetDate("", "", "", "", "");//页面加载
+			GetDate(null, null, "", "", "");//页面加载
 
 			function GetDate(stime, etime, state, title, cid) {
 				/**
@@ -259,7 +265,7 @@
 				*/
 				$('#wu-datagrid').datagrid({
 					url: 'GetArticlePage',
-					loadFilter: pagerFilter,
+					//loadFilter: pagerFilter,
 					fitColumns: true,
 					striped: true,
 					rownumbers: true,
@@ -293,17 +299,13 @@
 						{
 							field: 'ctime', title: '创建时间', width: 100, align: 'center', formatter: function (value, row, index) {
 
-								var str = parseFloat(value.substr(6));
-								var t = new Date(str);
-								return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+								return ToDate(value);
 							}
 						},
 						{
 							field: 'ptime', title: '发布时间', width: 100, align: 'center', formatter: function (value, row, index) {
 
-								var str = parseFloat(value.substr(6));
-								var t = new Date(str);
-								return t.getFullYear() + "-" + (t.getMonth() + 1) + "-" + t.getDate() + " " + t.getHours() + ":" + t.getSeconds();
+								return ToDate(value);
 							}
 						},
 						{

@@ -34,7 +34,14 @@ namespace CMS_System.Controllers
 
 		public override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
-			
+			var path = filterContext.HttpContext.Request.Path;
+			if (path.IndexOf("Login") > 0 || path.IndexOf("login") > 0)
+			{
+				if (filterContext.HttpContext.Session["user"] != null)
+				{
+					filterContext.Result = new System.Web.Mvc.RedirectResult("Index");
+				}
+			}
 		}
 		public override void OnResultExecuting(ResultExecutingContext filterContext)
 		{

@@ -100,20 +100,33 @@ namespace CMS_System.Areas.Admin.Controllers
 		/// <param name="title"></param>
 		/// <param name="cid"></param>
 		/// <returns></returns>
-		public ActionResult GetArticlePage(string stime, string etime, int? state, string title, int? cid)
+		public ActionResult GetArticlePage(int page, int rows, DateTime? stime, DateTime? etime, int? state, string title, int? cid)
 		{
 
+			//int total = d1.V_CMS_Article.Count();
+			var ls = d1.V_CMS_Article.OrderBy(c => c.aid) as IEnumerable<V_CMS_Article>;
+			//if (cid!=null)
+			//{
+			//	ls = ls.Where(c => c.cid == cid).Skip((page - 1) * rows).Take(rows);
+			//	total = d1.V_CMS_Article.Where(c => c.cid == cid).Count();
+			//}
+			//else
+			//{
+			//	ls = ls.Skip((page - 1) * rows).Take(rows);
+				
+			//}
 
-			var ls = d1.V_CMS_Article.OrderBy(c => c.aid) as IEnumerable<Model.V_CMS_Article>;
+
+			//var ls = d1.V_CMS_Article.OrderBy(c => c.aid) as IEnumerable<Model.V_CMS_Article>;
 			//.ToList();
-			if (stime != null && stime != "")
+			if (stime != null )
 			{
-				ls = ls.Where(x => x.ctime >= DateTime.Parse(stime));
+				ls = ls.Where(x => x.ptime >= stime);
 			}
-			if (etime != null && etime != "")
+			if (etime != null )
 			{
-				ls = ls.Where(x => x.ptime <= DateTime.Parse(etime));
-			}
+				ls = ls.Where(x => x.ptime <= etime);
+			} 
 			if (state != null && state > 0)
 			{
 				ls = ls.Where(x => x.state == state);
@@ -125,13 +138,21 @@ namespace CMS_System.Areas.Admin.Controllers
 			if (cid != null && cid > 0)
 			{
 				ls = ls.Where(c => c.cid == cid);
+
 			}
-			return new JsonResult()
-			{
-				Data = ls.ToList(),
-				JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-				MaxJsonLength = 10240000
-			};
+			int total = ls.Count();
+			ls = ls.Skip((page - 1) * rows).Take(rows);
+
+			Dictionary<string, object> dc = new Dictionary<string, object>();
+			dc.Add("total",total);
+			dc.Add("rows",ls.ToList());
+			return Json(dc);
+			//return new JsonResult()
+			//{
+			//	Data = ls.ToList(),
+			//	JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+			//	MaxJsonLength = 10240000
+			//};
 		}
 
 		/// <summary>
@@ -455,30 +476,23 @@ namespace CMS_System.Areas.Admin.Controllers
 		[HttpPost]
 		public ActionResult GetPage(bool? admin, string uname, int page, int rows)
 		{
-			if (admin == null && uname == "")
+			var ls = d1.CMS_User.OrderBy(c=>c.uid) as IEnumerable<CMS_User>;
+			if (admin !=null)
 			{
-				int total = d1.CMS_User.Count();
-				var ls = db.GetCMS_Users(page, rows);
-				Dictionary<string, object> dc = new Dictionary<string, object>();
-				dc.Add("total", total);
-				dc.Add("rows", ls);
-				return Json(dc);
+				ls = ls.Where(c=>c.admin ==admin);
 			}
-			else
+			if (uname!=null && uname!="")
 			{
-				var total = d1.CMS_User.Where(c => c.admin == admin && c.uname.Contains(uname)).Count();
-				var ls = d1.CMS_User.Where(c => c.admin == admin && c.uname.Contains(uname))
-					.OrderBy(c => c.uid)
-					.Skip((page - 1) * rows)
+				ls = ls.Where(c => c.uname.Contains(uname));
+			}
+			int total = ls.Count();
+			ls=ls.Skip((page - 1) * rows)
 					.Take(rows)
 					.ToList();
-				Dictionary<string, object> dc = new Dictionary<string, object>();
-				dc.Add("total", total);
-				dc.Add("rows", ls);
-				return Json(dc);
-			}
-
-
+			Dictionary<string, object> dc = new Dictionary<string, object>();
+			dc.Add("total", total);
+			dc.Add("rows", ls);
+			return Json(dc);
 
 
 		}
@@ -596,23 +610,26 @@ namespace CMS_System.Areas.Admin.Controllers
 		/// <param name="show"></param>
 		/// <param name="keyword"></param>
 		/// <returns></returns>
-		public ActionResult GetKeyWord(bool? show, string keyword)
+		public ActionResult GetKeyWord(bool? show, string keyword,int page,int rows)
 		{
-			var ls = d1.CMS_Keyword.OrderByDescending(c => c.stimes).ToList();
+
+			var ls = d1.CMS_Keyword.OrderByDescending(c => c.stimes) as IEnumerable<CMS_Keyword>;
 			if (show!=null)
 			{
-				ls = ls.Where(c=>c.show==show).ToList();
+				ls = ls.Where(c => c.show == show);
 			}
-			if (keyword != null&&keyword!=null)
+			if (keyword!=null&&keyword!="")
 			{
-				ls = ls.Where(c=>c.keyword.Contains(keyword)).ToList();
+				ls = ls.Where(c => c.keyword.Contains(keyword));
 			}
-			return new JsonResult()
-			{
-				Data = ls,
-				JsonRequestBehavior = JsonRequestBehavior.AllowGet,
-				MaxJsonLength = 10240000
-			};
+			int total = ls.Count();
+			ls = ls.Skip((page - 1) * rows)
+				.Take(rows)
+				.ToList();
+			Dictionary<string, object> dc = new Dictionary<string, object>();
+			dc.Add("total", total);
+			dc.Add("rows", ls);
+			return Json(dc);
 		}
 
 

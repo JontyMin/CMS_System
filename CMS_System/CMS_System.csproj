@@ -2958,6 +2958,7 @@
     <Content Include="Views\Index\Regiest.cshtml" />
     <Content Include="Views\Index\Search.cshtml" />
     <Content Include="Views\Index\Info.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
