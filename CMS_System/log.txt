@@ -4378,4 +4378,2350 @@ ServerHostIP:::1
 OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":true,"keyword":"姚东阳","page":1,"rows":24}
 ServerHostName:/Admin/Default/GetKeyWord
 ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:50:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:50:24
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:50:24
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:50:24
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:50:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:50:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:52:10
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:addarticle  参数:{}
+ServerHostName:/Admin/Default/addarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:52:11
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:listarticle  参数:{}
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:52:12
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:52:12
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:52:13
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:13
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:listarticle  参数:{}
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:55:22
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:02
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":5}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:06
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":4}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:06
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":4}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:08
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":2}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:08
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:08
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":2}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:18
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:24
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:28
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":2,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:29
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":3,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":4,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":5,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:31
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":6,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:32
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":7,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:32
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":8,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:33
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":8,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:34
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":9,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:34
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":10,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:35
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":11,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:35
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":12,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:45
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":2}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:51
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":2}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:52
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":2,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":2}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":3,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":2}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":4,"rows":20,"stime":null,"etime":null,"state":null,"title":"","cid":2}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:56
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:57
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:57
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:57
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:57
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:57:58
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:13
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:13
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:13
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:18
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Commentlist  参数:{}
+ServerHostName:/Admin/Default/Commentlist
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:18
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:19
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:22
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ArtComList  参数:{"aid":6}
+ServerHostName:/Admin/Default/ArtComList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:22
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetComPage  参数:{}
+ServerHostName:/Admin/Default/GetComPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:28
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:58:28
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:59:43
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:KeyWordList  参数:{}
+ServerHostName:/Admin/Default/KeyWordList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:59:43
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":null,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:59:47
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:KeyWordList  参数:{}
+ServerHostName:/Admin/Default/KeyWordList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:59:47
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":null,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:59:49
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:KeyWordList  参数:{}
+ServerHostName:/Admin/Default/KeyWordList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:59:49
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":null,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:59:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UserManager  参数:{}
+ServerHostName:/Admin/Default/UserManager
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 13:59:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:00:02
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":true,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:00:05
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":false,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:10
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:11
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:11
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:11
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:11
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:12
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:13
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:listarticle  参数:{}
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:14
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:14
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 14:26:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:26
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:26
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:26
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:27
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:27
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:45
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:listarticle  参数:{}
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:45
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:46
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:47
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:49
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":2,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:07:50
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":3,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:01
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":1,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:04
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:editarticle  参数:{"aid":7}
+ServerHostName:/Admin/Default/editarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:04
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArtByAid  参数:{"aid":7}
+ServerHostName:/Admin/Default/GetArtByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:27
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdArtByAid  参数:{"a":{"aid":7,"cid":1,"title":"微纪录片《潮涌四方 海纳百川》","author":null,"uid":null,"ctime":null,"ptime":null,"istop":null,"state":2,"hits":348,"comments":null,"ahtml":"<p style=\"text-align: center;\">江海通津，东南都会<br>历史，曾在这里起笔<br>开启全球贸易发展史上一大创举<br>迎五洲客，计天下利<br>历史，又在这里续写<br>见证中国开放的大门越开越大<img src=\"https://localhost:44328/Areas/Admin/layui/images/face/48.gif\" alt=\"[伤心]\"></p>"}}
+ServerHostName:/Admin/Default/UpdArtByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:35
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:listarticle  参数:{}
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:35
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:35
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:36
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:41
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:editarticle  参数:{"aid":7}
+ServerHostName:/Admin/Default/editarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:08:42
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArtByAid  参数:{"aid":7}
+ServerHostName:/Admin/Default/GetArtByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:20
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:IstopByAid  参数:{"aid":1,"istop":1}
+ServerHostName:/Admin/Default/IstopByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:IstopByAid  参数:{"aid":1,"istop":0}
+ServerHostName:/Admin/Default/IstopByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:26
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:39
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdArtCidByAid  参数:{"aid":9,"cid":5}
+ServerHostName:/Admin/Default/UpdArtCidByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:39
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:44
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdArtCidByAid  参数:{"aid":9,"cid":1}
+ServerHostName:/Admin/Default/UpdArtCidByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:44
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:50
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:DelArt  参数:{"aid":18}
+ServerHostName:/Admin/Default/DelArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:50
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:09:57
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":5}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:10:06
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:10:06
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:10:06
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:10:22
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:10:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:10:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:10:41
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdInfoByCid  参数:{"u":{"cid":3,"ctitle":"定制服务","cname":"service","nav":false,"navorder":null,"search":true}}
+ServerHostName:/Admin/Default/UpdInfoByCid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:10:41
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:05
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:05
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:05
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:06
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:06
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:06
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:09
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:10
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:10
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdInfoByCid  参数:{"u":{"cid":3,"ctitle":"定制服务","cname":"service","nav":true,"navorder":null,"search":true}}
+ServerHostName:/Admin/Default/UpdInfoByCid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Commentlist  参数:{}
+ServerHostName:/Admin/Default/Commentlist
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:33
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ArtComList  参数:{"aid":2}
+ServerHostName:/Admin/Default/ArtComList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:33
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetComPage  参数:{}
+ServerHostName:/Admin/Default/GetComPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:35
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:35
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:43
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:KeyWordList  参数:{}
+ServerHostName:/Admin/Default/KeyWordList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:11:44
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":null,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:12:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":true,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:12:19
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":false,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:12:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":null,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:12:26
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UserManager  参数:{}
+ServerHostName:/Admin/Default/UserManager
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:12:26
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:34
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UserManager  参数:{}
+ServerHostName:/Admin/Default/UserManager
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:34
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:55
+管 理 员:Kinyip888
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:55
+管 理 员:Kinyip888
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:55
+管 理 员:Kinyip888
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:55
+管 理 员:Kinyip888
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:55
+管 理 员:Kinyip888
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:56
+管 理 员:Kinyip888
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:59
+管 理 员:Kinyip888
+OnActionExecuting  控制器: Default  动作:UserManager  参数:{}
+ServerHostName:/Admin/Default/UserManager
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/18 19:13:59
+管 理 员:Kinyip888
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 13:59:48
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 13:59:48
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 13:59:48
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 13:59:48
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 13:59:49
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 13:59:50
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 13:59:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UserManager  参数:{}
+ServerHostName:/Admin/Default/UserManager
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 13:59:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:00:52
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdInfo  参数:{"u":{"uid":15,"uname":"QQ","upwd":null,"nname":null,"mobile":null,"face":null,"admin":true}}
+ServerHostName:/Admin/Default/UpdInfo
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:00:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:01:10
+管 理 员:QQ
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:01:10
+管 理 员:QQ
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:01:10
+管 理 员:QQ
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:01:10
+管 理 员:QQ
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:01:10
+管 理 员:QQ
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:01:10
+管 理 员:QQ
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:01:18
+管 理 员:QQ
+OnActionExecuting  控制器: Default  动作:UserManager  参数:{}
+ServerHostName:/Admin/Default/UserManager
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:01:18
+管 理 员:QQ
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/19 14:01:22
+管 理 员:QQ
+OnActionExecuting  控制器: Default  动作:delUser  参数:{"uid":15}
+ServerHostName:/Admin/Default/delUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:50:01
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:50:09
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:50:09
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:50:09
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:50:10
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:50:10
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:51:14
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:51:14
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:51:14
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 13:51:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:02:20
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:02:20
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:02:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:02:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:02:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:02:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:02:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:02:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:02:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:41
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:41
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:42
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:42
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:42
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:42
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:46
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Commentlist  参数:{}
+ServerHostName:/Admin/Default/Commentlist
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:46
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:48
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:50
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:KeyWordList  参数:{}
+ServerHostName:/Admin/Default/KeyWordList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:50
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":null,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UserManager  参数:{}
+ServerHostName:/Admin/Default/UserManager
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:55
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UserManager  参数:{}
+ServerHostName:/Admin/Default/UserManager
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:03:55
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:52
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:52
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:52
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:52
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:52
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:52
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:addarticle  参数:{}
+ServerHostName:/Admin/Default/addarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:56
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:listarticle  参数:{}
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:56
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:56
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:08:56
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:00
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:00
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:00
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:01
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:01
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:01
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:03
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:listarticle  参数:{}
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:03
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:03
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:03
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:08
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":43,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:14
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":42,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":43,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:19
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":42,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:20
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":41,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":40,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:22
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":39,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:22
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":38,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":39,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:26
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":40,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:27
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":41,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:27
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":42,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:28
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":43,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":43,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:31
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":43,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:32
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":43,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:32
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":43,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:33
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":43,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:47
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":42,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":42,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":43,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:55
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":44,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:55
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":45,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:56
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":46,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:56
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":47,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:56
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":48,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:57
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":49,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:57
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":50,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:58
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":51,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:58
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":52,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:58
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":53,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:59
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":54,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:59
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":55,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:09:59
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":56,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:10:00
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":57,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:10:00
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":58,"rows":18,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:11:31
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:11:31
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:11:31
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:11:32
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:11:32
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:11:32
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:28
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:29
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:30
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:47
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:listarticle  参数:{}
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:48
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:48
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:48
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:16:55
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:addarticle  参数:{}
+ServerHostName:/Admin/Default/addarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:17:36
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:AddArt  参数:{"u":{"aid":0,"cid":3,"title":"项目答辩","author":"王锦涛","uid":2,"ctime":null,"ptime":null,"istop":null,"state":2,"hits":null,"comments":null,"ahtml":"<p style=\"text-align: center;\">答辩<img src=\"https://localhost:44328/Areas/Admin/layui/images/face/1.gif\" alt=\"[嘻嘻]\"></p>"}}
+ServerHostName:/Admin/Default/AddArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:17:43
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:17:43
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:17:43
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:15
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:listarticle  参数:{}
+ServerHostName:/Admin/Default/listarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:17
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:24
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:editarticle  参数:{"aid":2}
+ServerHostName:/Admin/Default/editarticle
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:24
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArtByAid  参数:{"aid":2}
+ServerHostName:/Admin/Default/GetArtByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:49
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdArtByAid  参数:{"a":{"aid":2,"cid":2,"title":"文章修改","author":null,"uid":null,"ctime":null,"ptime":null,"istop":null,"state":2,"hits":352,"comments":5,"ahtml":"<p style=\"text-align: center;\">xiugai&nbsp;</p>"}}
+ServerHostName:/Admin/Default/UpdArtByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory1  参数:{}
+ServerHostName:/Admin/Default/GetCategory1
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:18:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:03
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:DelArt  参数:{"aid":2}
+ServerHostName:/Admin/Default/DelArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:03
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:12
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdArtCidByAid  参数:{"aid":4,"cid":5}
+ServerHostName:/Admin/Default/UpdArtCidByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:12
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:29
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:IstopByAid  参数:{"aid":4,"istop":1}
+ServerHostName:/Admin/Default/IstopByAid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:29
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:36
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":1}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:38
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":2}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:39
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":3}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:52
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":1,"title":"","cid":3}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:19:58
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":2,"title":"","cid":3}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:20:00
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":2,"rows":24,"stime":null,"etime":null,"state":2,"title":"","cid":3}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:20:01
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":3,"rows":24,"stime":null,"etime":null,"state":2,"title":"","cid":3}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:20:05
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":2,"title":"数据","cid":3}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:20:12
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":2,"title":"微信","cid":3}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:20:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:20:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:20:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:20:49
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:AddCol  参数:{"c":{"cid":0,"ctitle":"测试2","cname":"test2","nav":true,"navorder":null,"search":true}}
+ServerHostName:/Admin/Default/AddCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:20:50
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:07
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:07
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:07
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:07
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:07
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:07
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:17
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:18
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:18
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdInfoByCid  参数:{"u":{"cid":9,"ctitle":"测试2","cname":"test2","nav":false,"navorder":null,"search":false}}
+ServerHostName:/Admin/Default/UpdInfoByCid
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:25
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:50
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:delCol  参数:{"cid":9}
+ServerHostName:/Admin/Default/delCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:50
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ListColumn  参数:{}
+ServerHostName:/Admin/Default/ListColumn
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:21:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:03
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:delCol  参数:{"cid":2}
+ServerHostName:/Admin/Default/delCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:03
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPageCol  参数:{"page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPageCol
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:28
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Index  参数:{}
+ServerHostName:/Admin/Default/Index
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:28
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:28
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:main  参数:{}
+ServerHostName:/Admin/Default/main
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:29
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetNewCom  参数:{}
+ServerHostName:/Admin/Default/GetNewCom
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:29
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewUser  参数:{}
+ServerHostName:/Admin/Default/NewUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:29
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:NewArt  参数:{}
+ServerHostName:/Admin/Default/NewArt
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:36
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:Commentlist  参数:{}
+ServerHostName:/Admin/Default/Commentlist
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:36
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:36
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:44
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ArtComList  参数:{"aid":4}
+ServerHostName:/Admin/Default/ArtComList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:44
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetComPage  参数:{}
+ServerHostName:/Admin/Default/GetComPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:46
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:46
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:49
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ArtComList  参数:{"aid":8}
+ServerHostName:/Admin/Default/ArtComList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:49
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetComPage  参数:{}
+ServerHostName:/Admin/Default/GetComPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:51
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetCategory  参数:{}
+ServerHostName:/Admin/Default/GetCategory
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:51
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetArticlePage  参数:{"page":1,"rows":24,"stime":null,"etime":null,"state":null,"title":"","cid":null}
+ServerHostName:/Admin/Default/GetArticlePage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:ArtComList  参数:{"aid":6}
+ServerHostName:/Admin/Default/ArtComList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:22:54
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetComPage  参数:{}
+ServerHostName:/Admin/Default/GetComPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:23:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:KeyWordList  参数:{}
+ServerHostName:/Admin/Default/KeyWordList
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:23:21
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":null,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:23:43
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdKeyInfo  参数:{"k":{"kid":6,"keyword":"绿化","stimes":null,"ltimes":null,"show":true}}
+ServerHostName:/Admin/Default/UpdKeyInfo
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:23:43
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":null,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:23:47
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:delKey  参数:{"kid":26}
+ServerHostName:/Admin/Default/delKey
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:23:47
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetKeyWord  参数:{"show":null,"keyword":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetKeyWord
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:24:05
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UserManager  参数:{}
+ServerHostName:/Admin/Default/UserManager
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:24:05
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:24:29
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:AddUser  参数:{"u":{"uid":0,"uname":"za","upwd":"qwe123","nname":"照照啊","mobile":"15201543695","face":null,"admin":true}}
+ServerHostName:/Admin/Default/AddUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:24:29
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:24:36
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":true,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:24:39
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":false,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:24:41
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":false,"uname":"姚东阳","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:24:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:UpdInfo  参数:{"u":{"uid":8,"uname":"姚东阳","upwd":null,"nname":null,"mobile":null,"face":null,"admin":true}}
+ServerHostName:/Admin/Default/UpdInfo
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:24:53
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":false,"uname":"姚东阳","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:25:01
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":true,"uname":"姚东阳","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:25:09
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:25:16
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:delUser  参数:{"uid":8}
+ServerHostName:/Admin/Default/delUser
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:25:17
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:GetPage  参数:{"admin":null,"uname":"","page":1,"rows":24}
+ServerHostName:/Admin/Default/GetPage
+ServerHostIP:::1
+-----------------------操作日志------------------------
+操作时间:2019/11/20 14:25:23
+管 理 员:admin
+OnActionExecuting  控制器: Default  动作:delUser  参数:{"uid":2}
+ServerHostName:/Admin/Default/delUser
+ServerHostIP:::1
 

@@ -506,6 +506,15 @@ namespace CMS_System.Areas.Admin.Controllers
 		{
 			var ls = d1.CMS_User.Find(uid);
 			d1.CMS_User.Remove(ls);
+			int Sessionuid = (Session["admin"] as CMS_User).uid;
+			if (uid==Sessionuid)
+			{
+				return Json(new
+				{
+					state = false,
+					msg = "无法进行此操作",
+				});
+			} else
 			if (d1.SaveChanges() > 0)
 			{
 				return Json(new
